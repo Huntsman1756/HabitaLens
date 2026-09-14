@@ -133,6 +133,21 @@ Cobertura como ciudadano de primera clase: `0 features` no es ausencia.
 | Corpus 24 | PASS | Materializado outcome-blind antes de consultar fuentes; replay offline. |
 | CSN | INCONCLUSIVE | Dependencia externa (G0-B.1); no se promociona. |
 
+## Gate G0-D (informe)
+
+Producto: manifest de procedencia como fuente unica de verdad, render HTML/PDF,
+disclaimers y **cero score global**.
+
+| Gate | Estado | Nota |
+|------|--------|------|
+| Renderer HTML | PASS | Determinista; renderiza desde `ReportViewModel`. |
+| Renderer PDF | PASS | `fpdf2` + Helvetica core; contenido canonico determinista. |
+| Provenance manifest | PASS | Schema completo por hallazgo + hashes de artefactos; sin geometria. |
+| Disclaimers | PASS | Oficial + atribucion por fuente en HTML y PDF. |
+| No-global-score guard | PASS | Bloquea `overall_score`, `rating`, `semaforo`, `recommendation`, ... |
+| Determinism | PASS | Mismo manifest -> mismo HTML/PDF canonico/manifest. |
+| Geometry-leak guard | PASS | Sin geometria en HTML/PDF/JSON. |
+
 ## Decisiones y evidencia
 
 - `docs/decisions.md` — routing, CRS, geometria, licencias, cache/provenance.

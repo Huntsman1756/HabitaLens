@@ -222,3 +222,43 @@ distancia ~0), Madrid SIU (clase de suelo).
 
 CSN sigue INCONCLUSIVE (G0-B.1) y **no** se promociona. IS-47 no se incorpora
 como sustituto.
+
+## 11. G0-D: producto (informe)
+
+### 11.1 Manifest como fuente unica de verdad
+
+```text
+Evidence -> provenance_manifest.json -> ReportViewModel -> { HTML, PDF }
+```
+
+HTML y PDF se renderizan **exclusivamente** desde el `ReportViewModel` derivado
+del manifest; no reconstruyen logica de evidencia. Evita divergencias entre
+JSON, HTML y PDF.
+
+### 11.2 Cero score global
+
+`report/guard.py` bloquea `overall_score`, `risk_score`, `rating`, `grade`,
+`overall_status`, `traffic_light`, `recommendation`, `property_score`,
+`valoracion_global`, `semaforo`, `puntuacion`, etc. El guard se aplica a HTML,
+contenido canonico del PDF y manifest; inyectar un agregado hace fallar la
+generacion.
+
+### 11.3 Presentacion por hallazgo
+
+Cada hallazgo muestra estado explicito (OBSERVED/DERIVED/UNAVAILABLE/
+INCONCLUSIVE), valor, `source_crs`/`operational_crs`, metodo, `provenance_id` y
+nota. `UNAVAILABLE` e `INCONCLUSIVE` nunca se colapsan en "sin afeccion".
+
+### 11.4 Determinismo PDF
+
+El determinismo se evalua a **nivel de contenido/estructura canonica** (texto
+por pagina + numero de paginas), no de bytes: WeasyPrint/Pango no aplica (se usa
+`fpdf2` con fuente core Helvetica). El manifest registra `engine` y
+`font_stack`. HTML y manifest son byte-estables; el PDF se compara por
+contenido canonico.
+
+### 11.5 Disclaimers
+
+`report/disclaimers.py` exige el disclaimer oficial y la atribucion por fuente
+en HTML y PDF; la comparacion normaliza espacios porque el texto extraido del
+PDF inserta saltos de linea.

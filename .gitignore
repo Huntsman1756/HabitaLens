@@ -14,6 +14,8 @@ htmlcov/
 .habitalens-*/
 cache/
 *.geoparquet
+reports/
+.habitalens-report/
 # probe scratch / outputs
 .fixtmp/
 .spike/

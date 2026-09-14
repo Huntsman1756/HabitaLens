@@ -167,3 +167,36 @@ Casos duros verificados: `0 features` de SIU -> INCONCLUSIVE (nunca ausencia);
 `aceleracion` null de NCSE dentro de cobertura -> UNAVAILABLE (no OBSERVED, no
 fuera de cobertura); ausencia BTN dentro de cobertura declarada -> OBSERVED
 `observed=false`.
+
+## G0-D: informe (2026-09-14)
+
+Comandos:
+
+```bash
+uv run python scripts/build_reports.py                 # 24 propiedades -> informes
+uv run habitalens report <manifest.json> --out report  # desde un manifest
+uv run pytest                                          # 144 tests offline
+```
+
+Artefactos generados (fixtures offline de G0-C) en `reports/g0c-corpus/`:
+
+```text
+report.html              # render desde el ReportViewModel
+report.pdf               # 6 paginas, fpdf2 + Helvetica core
+provenance_manifest.json # fuente unica de verdad + hashes de artefactos
+```
+
+Guardas verificadas:
+
+- **Disclaimers**: disclaimer oficial + atribucion por fuente presentes en HTML
+  y en el texto canonico del PDF.
+- **Cero score**: el guard detecta `overall_score`, `risk_score`, `rating`,
+  `grade`, `overall_status`, `traffic_light`, `recommendation`,
+  `property_score`, `valoracion_global`, `semaforo`, etc.; inyectar uno en un
+  hallazgo hace fallar la generacion.
+- **Estado explicito**: SIU Navarra se muestra `INCONCLUSIVE`, NCSE null
+  Madrid `UNAVAILABLE`.
+- **Geometria**: HTML/PDF/manifest sin `posList`, `coordinates`, `POINT(`,
+  `geojson` ni claves de geometria.
+- **Determinismo**: mismo manifest -> mismo HTML (sha), mismo contenido canonico
+  de PDF (sha) y mismo numero de paginas.
