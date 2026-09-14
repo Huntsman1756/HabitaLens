@@ -163,37 +163,59 @@ class CartoCiudadClient:
             data = data[0] if data else None
         return _candidate_from_mapping(data) if data else None
 
+    @staticmethod
+    def _normalize(text: str) -> str:
+        import unicodedata
+
+        decomposed = unicodedata.normalize("NFKD", str(text).lower())
+        return "".join(char for char in decomposed if not unicodedata.combining(char)).strip()
+
+    @classmethod
+    def _locality(cls, query: str) -> str:
+        parts = [part.strip() for part in re.split(r"[,]", query) if part.strip()]
+        return parts[-1] if parts else ""
+
+    @classmethod
+    def _locality_ok(cls, query: str, option: GeocodeCandidate) -> bool:
+        locality = cls._normalize(cls._locality(query))
+        if len(locality) < 3:
+            return True
+        haystack = cls._normalize(f"{option.municipality or ''} {option.label}")
+        return locality in haystack
+
     def _match_locality(
         self, query: str, options: list[GeocodeCandidate]
     ) -> GeocodeCandidate | None:
-        tokens = [part.strip().lower() for part in re.split(r"[,\-]", query) if part.strip()]
-        matches: list[GeocodeCandidate] = []
-        for token in tokens:
-            if len(token) < 3:
-                continue
-            for option in options:
-                haystack = f"{option.municipality or ''} {option.label}".lower()
-                if token in haystack and option not in matches:
-                    matches.append(option)
+        matches = [option for option in options if self._locality_ok(query, option)]
         if not matches:
             return None
-        with_refcat = [option for option in matches if option.refcat]
-        return (with_refcat or matches)[0]
+        locality = self._normalize(self._locality(query))
+        exact = [
+            option
+            for option in matches
+            if self._normalize(option.municipality or "") == locality
+        ]
+        pool = exact or matches
+        with_refcat = [option for option in pool if option.refcat]
+        return (with_refcat or pool)[0]
 
     def geocode(self, query: str) -> GeocodeCandidate | None:
-        """Estrategia: ``find`` con fallback a ``candidates`` y desambiguacion local.
+        """Estrategia: desambiguacion estricta por localidad.
 
-        La localidad de la consulta (p.ej. "Donostia") se usa para descartar
-        coincidencias de otras provincias devueltas por la API.
+        Si la consulta incluye una localidad (p.ej. "Vigo") solo se acepta un
+        candidato cuya localidad coincida; asi se evita devolver la parcela de
+        otra ciudad cuando la calle es ambigua. Sin coincidencia -> ``None``.
         """
 
-        found = self.find(query)
         options = self.candidates(query)
         matched = self._match_locality(query, options) if options else None
         if matched is not None:
             return matched
-        if found and found.refcat:
+        found = self.find(query)
+        if found is not None and self._locality_ok(query, found):
             return found
+        if self._normalize(self._locality(query)):
+            return None
         if options:
             with_refcat = [option for option in options if option.refcat]
             if with_refcat:

@@ -7,6 +7,8 @@ INCONCLUSIVE; nunca se degradan a UNAVAILABLE ni se inventan datos.
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from habitalens.evidence.corpus import CorpusProperty
 from habitalens.evidence.crs import choose_operational_crs
 from habitalens.evidence.geometry import parse_wkt, to_wgs84
@@ -15,7 +17,9 @@ from habitalens.evidence.models import (
     FindingStatus,
     PropertyEvidence,
 )
-from habitalens.sources import EvidenceSource, all_sources
+
+if TYPE_CHECKING:  # pragma: no cover - solo tipado
+    from habitalens.sources.base import EvidenceSource
 
 
 def _inconclusive(
@@ -46,9 +50,11 @@ class EvidenceEngine:
         provenance=None,
         refresh: bool = False,
     ):
-        self.sources = sources or all_sources(
-            cache=cache, provenance=provenance, refresh=refresh
-        )
+        if sources is None:
+            from habitalens.sources import all_sources
+
+            sources = all_sources(cache=cache, provenance=provenance, refresh=refresh)
+        self.sources = sources
 
     def evaluate(
         self,
