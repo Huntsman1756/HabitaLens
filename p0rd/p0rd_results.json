@@ -1,0 +1,202 @@
+{
+  "results": [
+    {
+      "property_id": "p0rd01",
+      "refcat": "3865207WE0036N",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "unavailable",
+        "btn.roads": "observed",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": false,
+      "reasons": []
+    },
+    {
+      "property_id": "p0rd02",
+      "refcat": "7330630DG1073D",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    },
+    {
+      "property_id": "p0rd03",
+      "refcat": "6326304UF9762N",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.roads_nearest_distance_m": "derived",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    },
+    {
+      "property_id": "p0rd04",
+      "refcat": "0170012UK9207S",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "unavailable",
+        "btn.roads": "observed",
+        "btn.roads_nearest_distance_m": "derived",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": false,
+      "reasons": []
+    },
+    {
+      "property_id": "p0rd05",
+      "refcat": "6424509DG1062B",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.roads_nearest_distance_m": "derived",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    },
+    {
+      "property_id": "p0rd06",
+      "refcat": "5049117WE0054N",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "unavailable",
+        "btn.roads": "observed",
+        "btn.roads_nearest_distance_m": "derived",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": false,
+      "reasons": []
+    },
+    {
+      "property_id": "p0rd07",
+      "refcat": "9321008DG1092B",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    },
+    {
+      "property_id": "p0rd08",
+      "refcat": "6915509DG1061B",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    },
+    {
+      "property_id": "p0rd09",
+      "refcat": "7305706DG1070B",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    },
+    {
+      "property_id": "p0rd10",
+      "refcat": "5131430DG1053D",
+      "statuses": {
+        "snczi.flood_q100": "observed",
+        "snczi.dph_deslindado": "observed",
+        "eprtr.facilities": "observed",
+        "eprtr.nearest_facility_distance_m": "derived",
+        "csn_radon.status": "inconclusive",
+        "siu.clase_suelo": "observed",
+        "ncse02.hazard": "observed",
+        "btn.roads": "observed",
+        "btn.roads_nearest_distance_m": "derived",
+        "btn.rail": "observed"
+      },
+      "provisional_actionable": true,
+      "reasons": [
+        "ncse02: comprobar diseno sismorresistente"
+      ]
+    }
+  ],
+  "metrics": {
+    "sample": 10,
+    "provisional_actionable": 7,
+    "provisional_actionable_finding_rate": 0.7,
+    "source_traceability": 1.0,
+    "measurable_findings": 82,
+    "false_certainty_incidents": 0,
+    "human_review": "PENDING"
+  }
+}

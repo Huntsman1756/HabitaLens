@@ -22,4 +22,6 @@ p0_metrics.json
 .spike/
 probe_*_output.*
 capture_*_output.*
+p0rd_output.txt
+p0rd/reports/
 
