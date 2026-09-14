@@ -1,0 +1,17 @@
+{
+  "provider": "dgc",
+  "residential_candidates": 36180,
+  "pool_sha256": "33b709872bd0af04a5e2b89f523b2a365729525d8c1c784ca8311b89c7e96fec",
+  "source_version": "DGC INSPIRE ATOM buildings (BU) verificado 2026-09-14",
+  "procedure": "DGC INSPIRE ATOM buildings: enumerate 52 province feeds, collect A.ES.SDGC.BU.<mun>.zip, systematic sample of 8 municipalities, parse bu-ext2d:Building with currentUse=1_residential and numberOfDwellings>=1",
+  "municipalities_sampled": [
+    "02001",
+    "08279",
+    "16014",
+    "22169",
+    "29027",
+    "40002",
+    "45174",
+    "56101"
+  ]
+}

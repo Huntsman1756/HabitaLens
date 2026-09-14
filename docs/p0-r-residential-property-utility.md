@@ -122,4 +122,51 @@ anadir fuentes.
 
 ## 9. Enmiendas
 
-- (sin enmiendas)
+- **P0-R-E1 — Frame materialization (2026-09-14).** Se aplica antes de cualquier
+  consulta a SNCZI/SIU/NCSE/BTN/E-PRTR.
+
+```text
+Para cada proveedor se construye el conjunto candidato exclusivamente
+a partir de datos catastrales autorizados en G0-A.
+
+Cada fila candidata contiene unicamente:
+provider
+stable_property_id
+residential_eligibility
+source_version
+
+No se incorporan atributos procedentes de fuentes G0-B/G0-C.
+
+El procedimiento exacto para enumerar candidatos debe ser determinista
+y quedar registrado por proveedor.
+
+El pool completo utilizado para la seleccion se congela con:
+- numero total de candidatos;
+- SHA-256 del fichero;
+- source_version;
+- procedimiento de adquisicion.
+
+Despues, y solo despues:
+
+score = SHA256("habitalens-p0r-v1|" + provider + "|" + stable_property_id)
+
+Se ordena ascendentemente y se toman: DGC 6, Navarra 1, Bizkaia 1,
+Gipuzkoa 1, Alava 1.
+
+Una sustitucion solo esta permitida si el inmueble seleccionado no puede
+resolverse tecnicamente como propiedad residencial; se toma el siguiente
+hash y se registra el motivo.
+
+No se sustituye por tener resultados poco interesantes, muchos
+UNAVAILABLE o ausencia de hallazgos.
+```
+
+  Se congelan dos artefactos: `p0r_pool_manifest.json` (de donde salieron las
+  candidatas) y `p0r_frame.json` (las diez seleccionadas). El commit de
+  `p0r_frame.json` debe **preceder** a cualquier consulta de riesgo.
+
+  Nota: `UNAVAILABLE` e `INCONCLUSIVE` **no** cuentan automaticamente como
+  `actionable`; solo cuentan si provocan una accion concreta segun la definicion
+  ya congelada. Criterio duro: 5/10 o mas actionable = PASS; 4/10 o menos =
+  FAIL; traceability < 1.00 = FAIL; false certainty > 0.02 = FAIL; controles
+  conocidos < 0.75 = FAIL; revision no completada = INCONCLUSIVE.
