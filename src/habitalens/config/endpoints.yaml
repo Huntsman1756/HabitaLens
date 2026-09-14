@@ -147,3 +147,30 @@ providers:
       level: province
       codes: ["ES-VI"]
       description: "Territorio Historico de Araba/Alava. Sin servicio INSPIRE AD."
+
+# Fuentes oficiales de evidencia espacial (G0-B). Verificadas 2026-09-14.
+evidence_sources:
+  snczi:
+    source_version: "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14"
+    service: "https://gis.miteco.gob.es/geoserver/agua/wfs"
+    layers:
+      flood_q100: "agua:Zi_laminas_q100"
+      dph_deslindado: "agua:DPH_Deslindado"
+    default_crs: "EPSG:4258"
+    license_url: "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html"
+  eprtr:
+    source_version: "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14"
+    query: "https://air.discomap.eea.europa.eu/arcgis/rest/services/Air/IED_SiteMap/MapServer/0/query"
+    layer: "ied_SiteMap"
+    default_crs: "EPSG:4326"
+    search_radius_deg: 0.05
+    license_url: "https://www.eea.europa.eu/en/legal-notice"
+  csn_radon:
+    source_version: "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)"
+    default_crs: "EPSG:4326"
+    usable: false
+    unusable_reason: >-
+      Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion
+      depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente
+      productora hasta que exista licencia declarada y acceso reproducible (regla de
+      G0-B: licencia y acceso antes que parsing).

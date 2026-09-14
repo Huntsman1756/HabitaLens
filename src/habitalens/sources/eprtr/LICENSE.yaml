@@ -1,0 +1,10 @@
+source_authority: "European Environment Agency (EEA) - European Industrial Emissions Portal / E-PRTR"
+license_name: "Creative Commons Reconocimiento 4.0 (CC BY 4.0)"
+license_url: "https://www.eea.europa.eu/en/legal-notice"
+verified_on: "2026-09-14"
+applicable_version: "EEA IED/E-PRTR spatial point dataset v16 (2007-2024)"
+reuse_conditions: >-
+  Reutilizacion permitida, incluso comercial, con atribucion a la EEA como fuente
+  original. Atribucion: "European Environment Agency, European Industrial
+  Emissions Portal (E-PRTR)". Los datos son reportados por los paises; precision
+  de coordenadas "as reported".

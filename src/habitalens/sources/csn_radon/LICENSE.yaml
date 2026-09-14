@@ -1,0 +1,11 @@
+source_authority: "Consejo de Seguridad Nuclear (CSN)"
+license_name: "Sin licencia abierta declarada (reutilizacion bajo Ley 37/2007 y aviso legal CSN)"
+license_url: "https://www.csn.es/aviso-legal"
+verified_on: "2026-09-14"
+applicable_version: "Mapa del potencial de radon de Espana (GDB, Last-Modified 2023-01-20)"
+reuse_conditions: >-
+  El CSN no publica licencia abierta ni entrada en catalogo de datos abiertos;
+  la reutilizacion queda sujeta al aviso legal del CSN y a la Ley 37/2007
+  (atribucion, sin alteracion, sin sugerir caracter oficial). Hasta disponer de
+  licencia declarada y acceso reproducible verificado, la fuente NO se activa en
+  el motor (solo INCONCLUSIVE).
