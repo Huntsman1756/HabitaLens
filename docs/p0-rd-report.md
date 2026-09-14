@@ -4,8 +4,8 @@
 - Preregistro: `docs/p0-rd-preregistration.md`.
 - Frame congelado **antes** de cualquier consulta de riesgo: commit `1fe2f3a`
   (`p0rd/p0rd_frame.json`).
-- **Veredicto: P0-RD = INCONCLUSIVE** (revision humana ciega pendiente), con una
-  senal provisional **desfavorable** (lectura estricta ~1/10).
+- **Veredicto: P0-RD = FAIL** — `actionable_finding_rate 0.10 < 0.50`.
+  `technical_validity: PROVEN`; `buyer_utility_with_current_sources: NOT PROVEN`.
 
 ## 1. Frame
 
@@ -56,14 +56,21 @@ sismica, y solo cuando es apreciable.
 
 ## 5. Veredicto
 
+Revision humana ciega completada (fichero `p0rd/blind_review_relleno.csv`):
+**9/10 `no`, 1/10 `si`** (p0rd03: NCSE 0.17 g).
+
 ```text
-P0-RD   INCONCLUSIVE   # revision humana ciega pendiente
-senal provisional      FAIL (~1/10 bajo lectura estricta)
+P0-RD FAIL — actionable_finding_rate 0.10 < 0.50
+
+Technical validity: PROVEN
+Buyer utility with current source set: NOT PROVEN
 ```
 
-La revision humana ciega decide. Hoja de revision: `p0rd/blind_review.csv`
-(10 filas; el revisor rellena `actionable_HUMANO`, `motivo`, `comprobacion_1a5`).
-Los informes estan en `p0rd/reports/<id>/` (HTML/PDF/manifest).
+`source_traceability = 1.00`, `false_certainty_incidents = 0`,
+`known_condition_recall = 1.00` (las tres cumplen): el FAIL viene **solo** de la
+utilidad (`actionable_finding_rate`). La unica accion detectada fue verificar
+diseno sismorresistente en p0rd03; el resto de viviendas resultaron anodinas.
+Informes en `p0rd/reports/<id>/`; veredicto en `p0rd/p0rd_verdict.json`.
 
 ## 6. Implicacion de producto
 
@@ -102,4 +109,4 @@ FAIL   actionable_finding_rate < 0.50 (u otra metrica incumple)
 INCONCLUSIVE   hoja sin rellenar
 ```
 
-Estado actual: `INCONCLUSIVE` (0/10 filas rellenadas).
+Revision completada: ver seccion 5 (**FAIL**, 1/10).

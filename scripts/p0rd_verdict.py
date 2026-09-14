@@ -11,10 +11,11 @@ from __future__ import annotations
 
 import csv
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = ROOT / "p0rd" / "blind_review.csv"
+REVIEW = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "p0rd" / "blind_review.csv"
 RESULTS = ROOT / "p0rd" / "p0rd_results.json"
 VERDICT = ROOT / "p0rd" / "p0rd_verdict.json"
 

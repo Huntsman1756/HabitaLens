@@ -1,0 +1,11 @@
+property_id,refcat,digest,actionable_HUMANO,motivo,comprobacion_1a5
+p0rd01,3865207WE0036N,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1614m | SIU clase | ncse02=unavailable | roads=no | rail=no,no,,
+p0rd02,7330630DG1073D,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1384m | SIU clase | NCSE 0.04 g | roads=no | rail=no,no,,
+p0rd03,6326304UF9762N,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1179m | SIU clase | NCSE 0.17 g | roads=si | roads_nearest_distance_m=5m | rail=no,si,NCSE 0.17 g: preguntar por cumplimiento sismorresistente y evaluar estado estructural,4
+p0rd04,0170012UK9207S,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=2326m | SIU clase | ncse02=unavailable | roads=si | roads_nearest_distance_m=2m | rail=no,no,,
+p0rd05,6424509DG1062B,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1457m | SIU clase | NCSE 0.04 g | roads=si | roads_nearest_distance_m=4m | rail=no,no,,
+p0rd06,5049117WE0054N,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=859m | SIU clase | ncse02=unavailable | roads=si | roads_nearest_distance_m=2m | rail=no,no,,
+p0rd07,9321008DG1092B,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1722m | SIU clase | NCSE 0.04 g | roads=no | rail=no,no,,
+p0rd08,6915509DG1061B,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1863m | SIU clase | NCSE 0.04 g | roads=no | rail=no,no,,
+p0rd09,7305706DG1070B,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1975m | SIU clase | NCSE 0.04 g | roads=no | rail=no,no,,
+p0rd10,5131430DG1053D,flood_q100=no | dph_deslindado=no | EPRTR inst | nearest_facility_distance_m=1056m | SIU clase | NCSE 0.04 g | roads=si | roads_nearest_distance_m=4m | rail=no,no,,

@@ -1,5 +1,15 @@
 {
   "pilot": "P0-RD",
-  "status": "INCONCLUSIVE",
-  "reason": "revision humana incompleta (0/10 filas con actionable_HUMANO)"
+  "status": "FAIL",
+  "actionable": 1,
+  "sample": 10,
+  "actionable_finding_rate": 0.1,
+  "source_traceability": 1.0,
+  "false_certainty_incidents": 0,
+  "known_condition_recall": 1.0,
+  "reasons": [
+    "actionable_finding_rate 0.10 < 0.5"
+  ],
+  "technical_validity": "PROVEN",
+  "buyer_utility_with_current_sources": "NOT PROVEN"
 }

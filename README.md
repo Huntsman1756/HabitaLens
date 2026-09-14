@@ -164,7 +164,7 @@ disclaimers y **cero score global**.
 - `docs/p0-r-residential-property-utility.md` — validación de utilidad residencial (marco catastral), congelada sin ejecutar.
 - `docs/p0-t0-subastas-probe.md` — probe Subastas Judiciales: **FAIL** (sin dirección/referencia en el CSV).
 - `docs/p0-r-report.md` — materialización del frame P0-R: **INCONCLUSIVE** (pool DGC congelado; forales pendientes).
-- `docs/p0-rd-report.md` — piloto DGC residencial: **INCONCLUSIVE** hasta la revisión humana (`scripts/p0rd_verdict.py`).
+- `docs/p0-rd-report.md` — piloto DGC residencial: **FAIL** (1/10 actionable; utilidad no probada con las fuentes actuales).
 - `docs/spike-oss-candidates.md` — evaluación OSS aislada (`osmnx`, `trece`, idealista18…).
 - `docs/product-opportunities.md` — hipótesis de valor de producto tras un probable P0-RD FAIL.
 - `docs/preflight-ite-cee.md` — preflight ITE/IEE y CEE (Fase 1).
@@ -175,4 +175,4 @@ Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
 (`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),
 P0 **INCONCLUSIVE** (`p0-inconclusive`), P0.1 **DEFERRED**, P0-T0 **FAIL**
 (`p0-t0-fail`), P0-R **INCONCLUSIVE**/frame incompleto (`p0-r-preregistered`),
-P0-RD **INCONCLUSIVE**/revisión humana pendiente.
+P0-RD **FAIL** (1/10 actionable; `technical_validity: PROVEN`, `buyer_utility: NOT PROVEN`).
