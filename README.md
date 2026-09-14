@@ -165,6 +165,8 @@ disclaimers y **cero score global**.
 - `docs/p0-t0-subastas-probe.md` — probe Subastas Judiciales: **FAIL** (sin dirección/referencia en el CSV).
 - `docs/p0-r-report.md` — materialización del frame P0-R: **INCONCLUSIVE** (pool DGC congelado; forales pendientes).
 - `docs/p0-rd-report.md` — piloto DGC residencial: **INCONCLUSIVE** hasta la revisión humana (`scripts/p0rd_verdict.py`).
+- `docs/spike-oss-candidates.md` — evaluación OSS aislada (`osmnx`, `trece`, idealista18…).
+- `docs/product-opportunities.md` — hipótesis de valor de producto tras un probable P0-RD FAIL.
 
 Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
 (`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),
