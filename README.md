@@ -112,3 +112,6 @@ Evidencia live (2026-09-14) y fixtures offline en `tests/`:
 - `docs/decisions.md` — routing, CRS, geometria, licencias, cache/provenance.
 - `docs/probe-evidence.md` — endpoints verificados y resultados de los probes.
 - `docs/spike-cadastre-pipeline.md` — veredicto razonado del spike.
+- `docs/g0-b-preregistration.md` — preregistro congelado de G0-B (aun sin ejecutar).
+
+Estado G0-A: cerrado como **PASS** en la etiqueta `g0-a-pass`.
