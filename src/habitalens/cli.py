@@ -55,7 +55,7 @@ def resolve(
     as_json: bool = typer.Option(False, "--json", help="Salida JSON (sin geometria)."),
 ) -> None:
     try:
-        property_ = PropertyResolver().resolve(reference)
+        property_ = PropertyResolver(refresh=refresh).resolve(reference)
     except ResolverError as exc:
         typer.echo(f"INCONCLUSIVE: {exc}", err=True)
         raise typer.Exit(code=2) from exc

@@ -90,10 +90,16 @@ def _candidate_from_mapping(data: dict) -> GeocodeCandidate:
 
 
 class CartoCiudadClient:
-    def __init__(self, source: Source | None = None, cache: CacheStore | None = None):
+    def __init__(
+        self,
+        source: Source | None = None,
+        cache: CacheStore | None = None,
+        refresh: bool = False,
+    ):
         self.endpoints = load_endpoints()["geocoding"]["cartociudad"]
         self._cache = cache or CacheStore()
         self.source: Source = source or HttpSource(cache=self._cache)
+        self.refresh = refresh
 
     @staticmethod
     def _key(kind: str, query: str) -> str:
@@ -108,6 +114,7 @@ class CartoCiudadClient:
             "cartociudad",
             self._key("candidates", query),
             request,
+            refresh=self.refresh,
             ext="json",
             meta={"kind": "candidates", "query": query},
         )
@@ -124,6 +131,7 @@ class CartoCiudadClient:
             "cartociudad",
             self._key("find", query),
             request,
+            refresh=self.refresh,
             ext="json",
             meta={"kind": "find", "query": query},
         )
@@ -144,6 +152,7 @@ class CartoCiudadClient:
             "cartociudad",
             self._key("reverse", f"{lon},{lat}"),
             request,
+            refresh=self.refresh,
             ext="json",
             meta={"kind": "reverse"},
         )

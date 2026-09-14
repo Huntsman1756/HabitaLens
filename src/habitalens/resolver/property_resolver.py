@@ -25,15 +25,17 @@ class PropertyResolver:
         providers: dict[str, CadastreProvider] | None = None,
         geocoder: CartoCiudadClient | None = None,
         router: TerritoryRouter | None = None,
+        refresh: bool = False,
     ):
         self.providers = providers or {}
-        self.geocoder = geocoder or CartoCiudadClient()
+        self.geocoder = geocoder or CartoCiudadClient(refresh=refresh)
         self.router = router or TerritoryRouter()
+        self.refresh = refresh
 
     def _provider(self, provider_id: str) -> CadastreProvider:
         if provider_id in self.providers:
             return self.providers[provider_id]
-        provider = get_provider(provider_id)
+        provider = get_provider(provider_id, refresh=self.refresh)
         self.providers[provider_id] = provider
         return provider
 
