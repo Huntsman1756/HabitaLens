@@ -167,6 +167,9 @@ disclaimers y **cero score global**.
 - `docs/p0-rd-report.md` — piloto DGC residencial: **INCONCLUSIVE** hasta la revisión humana (`scripts/p0rd_verdict.py`).
 - `docs/spike-oss-candidates.md` — evaluación OSS aislada (`osmnx`, `trece`, idealista18…).
 - `docs/product-opportunities.md` — hipótesis de valor de producto tras un probable P0-RD FAIL.
+- `docs/preflight-ite-cee.md` — preflight ITE/IEE y CEE (Fase 1).
+- `docs/spike-osm-trece.md` — spike aislado `osmnx`/`trece` (Fase 2).
+- `docs/surface-discrepancy.md` — capacidad superficie anunciada vs oficial (Fase 3).
 
 Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
 (`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),

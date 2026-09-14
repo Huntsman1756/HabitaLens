@@ -20,7 +20,7 @@ def main() -> None:
     tags = {"highway": ["motorway", "trunk", "primary", "secondary"], "railway": ["rail", "light_rail", "subway"]}
     try:
         gdf = ox.features_from_point((LAT, LON), tags=tags, dist=800)
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         print("OSM_INCONCLUSIVE:", type(exc).__name__, str(exc)[:200])
         return
     if gdf is None or gdf.empty:

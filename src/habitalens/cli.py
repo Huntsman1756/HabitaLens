@@ -102,5 +102,35 @@ def report(
     typer.echo(DISCLAIMER)
 
 
+@app.command(help=f"Contrasta la superficie anunciada con la oficial del catastro.\n\n{DISCLAIMER}")
+def surface(
+    refcat: str = typer.Argument(..., help="Referencia catastral."),
+    advertised: float = typer.Option(..., "--advertised", help="Superficie anunciada en m2."),
+    tolerance: float = typer.Option(0.05, "--tolerance", help="Tolerancia relativa (por defecto 0.05)."),
+) -> None:
+    from habitalens.evidence.surface import compare_surface
+
+    try:
+        property_ = PropertyResolver().resolve_refcat(refcat)
+    except ResolverError as exc:
+        typer.echo(f"INCONCLUSIVE: {exc}", err=True)
+        raise typer.Exit(code=2) from exc
+
+    official = property_.parcel.area_m2
+    if official is None:
+        typer.echo("INCONCLUSIVE: la fuente no expone superficie oficial", err=True)
+        raise typer.Exit(code=2)
+
+    result = compare_surface(advertised, official, refcat=property_.parcel.refcat, tolerance=tolerance)
+    typer.echo(f"refcat            : {result.refcat}")
+    typer.echo(f"superficie_oficial: {result.official_m2} m2")
+    typer.echo(f"superficie_anuncio: {result.advertised_m2} m2")
+    typer.echo(f"diferencia        : {result.difference_m2:+.2f} m2")
+    typer.echo(f"diferencia_rel    : {result.relative_difference:+.1%}")
+    typer.echo(f"excede_tolerancia : {'si' if result.exceeds_tolerance else 'no'} (tol {result.tolerance:.0%})")
+    typer.echo("")
+    typer.echo(DISCLAIMER)
+
+
 if __name__ == "__main__":  # pragma: no cover
     app()
