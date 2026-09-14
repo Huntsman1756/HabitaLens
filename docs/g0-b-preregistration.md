@@ -161,4 +161,35 @@ Global G0-B: PASS / FAIL / INCONCLUSIVE derivado de los gates reales.
 Cualquier cambio de alcance, fuente, propiedad o criterio se anade aqui con
 fecha y justificacion, antes de ejecutar la fuente afectada.
 
-- (sin enmiendas)
+- **E1 (2026-09-14).** Correccion de autoridad en la seccion 5: la columna
+  "Fuente de la parcela" de las filas 3 y 4 es incorrecta. `8297093`
+  (Donostia) pertenece a **Gipuzkoa** y `59590687` (Vitoria-Gasteiz) a
+  **Araba**, segun la evidencia de G0-A (formato de refcat y E2E). No cambian
+  refcats ni contexto; solo la autoridad del proveedor.
+- **E2 (2026-09-14).** Mecanismo de acceso confirmado tras verificacion live
+  (antes de parsear):
+  - SNCZI: WFS 2.0.0 `https://gis.miteco.gob.es/geoserver/agua/wfs`,
+    capas `agua:Zi_laminas_q100` / `agua:DPH_Deslindado`, CRS `EPSG:4258`,
+    licencia **CC BY 4.0** (atribucion MITECO).
+  - E-PRTR: **no hay WFS**; se usa ArcGIS REST
+    `https://air.discomap.eea.europa.eu/arcgis/services/Air/IED_SiteMap/MapServer/0/query`
+    con salida GeoJSON, licencia **CC BY 4.0** (atribucion EEA).
+  - CSN radon: **no hay servicio OGC** y **no declara licencia abierta**. Su
+    gate se evaluara como **INCONCLUSIVE** y **no se activara como fuente
+    productora** hasta que exista licencia declarada y acceso reproducible
+    verificados (regla: licencia y acceso antes que parsing).
+- **E3 (2026-09-14).** Politica CRS operacional: seleccion por zona UTM ETRS89
+  (25829/25830/25831) a partir de la longitud del centroide; el CRS compuesto
+  `EPSG:5730` de Gipuzkoa se reduce a su componente horizontal `EPSG:25830`
+  para operaciones 2D, registrando la componente vertical por separado.
+- **E4 (2026-09-14).** Correccion de endpoint E-PRTR: la ruta
+  `/arcgis/services/...` devolvia HTTP 403 de forma reproducible; la ruta
+  canonica `/arcgis/rest/services/Air/IED_SiteMap/MapServer/0/query` responde
+  200. Se usa esta ultima. Ademas, la consulta E-PRTR se realiza con un radio
+  de busqueda explicito (`search_radius_deg: 0.05` ~ 5 km) para que la
+  distancia a la instalacion mas cercana sea un hallazgo DERIVED con sentido;
+  el radio se registra en el metodo e inputs del hallazgo.
+- **E5 (2026-09-14).** Se anaden dos **controles positivos** fuera del corpus
+  (no alteran las 8 propiedades): Ebro-Zaragoza para SNCZI (inundacion Q100) y
+  Bilbao-ELMET para E-PRTR (instalacion). Su unica finalidad es demostrar
+  deteccion positiva de cada fuente.

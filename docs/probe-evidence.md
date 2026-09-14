@@ -88,3 +88,41 @@ Correccion de la suposicion: `1707903VK4810F` es de **Madrid (28/079)**, no de
 Fortia (17/079). El feed ATOM de la provincia 28 omite el municipio 28079
 (`A.ES.SDGC.CP.28079.zip` ausente; `...28080.zip` presente), por lo que el
 ATOM municipal no aplica a esa RC. La via oficial es la stored query.
+
+## G0-B: evidencia espacial (2026-09-14)
+
+Comandos:
+
+```bash
+uv run python scripts/capture_g0b.py     # captura live -> fixtures + resultados
+uv run python scripts/probe_g0b.py       # probe live por fuente + replay corpus
+uv run pytest                            # replay offline determinista
+```
+
+Fuentes y accesos verificados:
+
+| Fuente | Endpoint | Resultado |
+|--------|----------|-----------|
+| SNCZI | `gis.miteco.gob.es/geoserver/agua/wfs` (`agua:Zi_laminas_q100`, `agua:DPH_Deslindado`) | WFS 200; control Ebro Q100=True |
+| E-PRTR | `air.discomap.eea.europa.eu/arcgis/rest/services/Air/IED_SiteMap/MapServer/0/query` (GeoJSON) | 200; control Bilbao-ELMET `0.0 m` |
+| CSN | (sin OGC; solo GDB/PNG) | INCONCLUSIVE: sin licencia abierta declarada |
+
+Carga por fuente (5 km de radio para E-PRTR). Resultados live:
+
+| Propiedad | source_crs -> op | SNCZI q100 | SNCZI DPH | E-PRTR inst. | dist. min (m) | CSN |
+|-----------|------------------|-----------|-----------|--------------|----------------|-----|
+| p01 Madrid Castellana | 4326 -> 25830 | off | off | off | - | INCONCLUSIVE |
+| p02 Madrid Mayor | 4326 -> 25830 | off | off | on | 3858.7 | INCONCLUSIVE |
+| p03 Donostia Mayor | 4258 -> 25830 | off | off | on | 474.0 | INCONCLUSIVE |
+| p04 Vitoria Postas | 25830 -> 25830 | off | off | on | 933.2 | INCONCLUSIVE |
+| p05 Bilbao Gran Via | 4258 -> 25830 | off | off | on | 2857.3 | INCONCLUSIVE |
+| p06 Gipuzkoa periurbana | 4258 -> 25830 | off | off | on | 1619.4 | INCONCLUSIVE |
+| p07 Navarra urbana | 4258 -> 25830 | off | off | on | 1105.4 | INCONCLUSIVE |
+| p08 Araba rustica | 25830 -> 25830 | off | off | off | - | INCONCLUSIVE |
+
+Controles positivos (fuera del corpus): `control_ebro_flood` -> SNCZI q100
+`True`; `control_bilbao_plant` -> E-PRTR instalacion `on`, distancia `0.0 m`.
+
+Nota: las 8 propiedades no intersectan Q100 ni DPH. Es un resultado valido del
+corpus preregistrado (seleccion por diversidad, no por resultado), no un fallo
+de la fuente.

@@ -17,5 +17,5 @@ cache/
 # probe scratch / outputs
 .fixtmp/
 .spike/
-probe_*_output.txt
+probe_*_output.*
 

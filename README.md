@@ -107,6 +107,19 @@ Evidencia live (2026-09-14) y fixtures offline en `tests/`:
 | Licensing guard | PASS | `tests/test_licensing_guard.py` en verde. |
 | cadastre-pipeline | DISCARD | Ver `docs/spike-cadastre-pipeline.md`. |
 
+## Gate G0-B (evidencia espacial)
+
+Nucleo de evidencia que convierte geometria de propiedad + fuentes oficiales en
+hallazgos deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE`.
+
+| Gate | Estado | Nota |
+|------|--------|------|
+| SNCZI (zonas inundables) | PASS | WFS INSPIRE; control positivo Ebro Q100. |
+| E-PRTR (instalaciones) | PASS | ArcGIS REST GeoJSON; distancia derivada; control ELMET 0 m. |
+| CSN (radon) | INCONCLUSIVE | Sin servicio OGC y sin licencia abierta declarada: no se activa. |
+| Evidence engine | PASS | Taxonomia, CRS operacional explicito, provenance, replay determinista. |
+| Corpus 8 propiedades | PASS | Replay offline + controles; sin fuga de geometria. |
+
 ## Decisiones y evidencia
 
 - `docs/decisions.md` — routing, CRS, geometria, licencias, cache/provenance.

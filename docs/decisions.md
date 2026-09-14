@@ -134,7 +134,45 @@ no se dispone de RC. Verificado: `Calle Mayor 1, Madrid` -> parcela
   `LicensingNotDeclaredError` si falta, esta vacio o le faltan campos.
 - El guard no se desactiva, mockea ni relaja en ningun test.
 
-## 8. Cache y provenance
+## 8. G0-B: evidencia espacial
+
+### 8.1 Taxonomia (sin ambiguedad)
+
+`OBSERVED` (la fuente intersecta/aplica) · `DERIVED` (calculado) ·
+`UNAVAILABLE` (fuente disponible pero sin cobertura/dato) · `INCONCLUSIVE`
+(no verificable). Las fuentes no activadas o con error se emiten como
+INCONCLUSIVE; nunca se degradan a UNAVAILABLE.
+
+### 8.2 Acceso verificado por fuente
+
+| Fuente | Acceso | CRS fuente | Licencia | Verificado |
+|--------|--------|-----------|----------|------------|
+| SNCZI | WFS 2.0 `gis.miteco.gob.es/geoserver/agua/wfs` | EPSG:4258 (acepta 4326) | CC BY 4.0 | si |
+| E-PRTR | ArcGIS REST `.../arcgis/rest/services/Air/IED_SiteMap/MapServer/0/query` (GeoJSON) | EPSG:4326 | CC BY 4.0 | si |
+| CSN radon | sin OGC; GDB + JSON de webmap | EPSG:4326 (WebMercator embedido) | **sin licencia abierta declarada** | si |
+
+### 8.3 Decision CSN
+
+CSN **no se activa** como fuente productora: no hay servicio OGC verificado y
+no declara licencia abierta. Conforme a "licencia y acceso antes que parsing",
+solo aporta un hallazgo `INCONCLUSIVE`. Se reconsiderara si publica licencia
+declarada y acceso reproducible.
+
+### 8.4 Politica CRS operacional
+
+`source_crs` se conserva en cada evidencia. Toda operacion de interseccion o
+distancia se hace en un CRS operacional explicito: zona UTM ETRS89
+(25829/25830/25831) elegida por la longitud del centroide. No se asume
+EPSG:25830 nacional. Los CRS compuestos se reducen a su componente horizontal
+(`EPSG:5730 -> EPSG:25830`) para operaciones 2D.
+
+### 8.5 Determinismo
+
+Clave de cache por fuente = `fuente:kind:clave:hash(url+params)`; cambiar bbox,
+radio o capa nunca reutiliza una respuesta obsoleta. Regla de replay: misma
+propiedad + misma version de fuente + misma regla = mismos hallazgos.
+
+## 9. Cache y provenance
 
 - Cache cruda + GeoParquet bajo `~/.habitalens/cache/` (configurable con
   `HABITALENS_CACHE`).
