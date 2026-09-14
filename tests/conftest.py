@@ -16,10 +16,10 @@ DATA = Path(__file__).parent / "fixtures" / "data"
 PROVIDER_FIXTURES: dict[str, dict[str, str]] = {
     "dgc": {
         "capabilities": "dgc_capabilities.xml",
-        "atom-index:parcel-index": "dgc_atom_index.xml",
-        "atom-province:17": "dgc_atom_province_17.xml",
-        "atom-zip:parcel:17079": "dgc_parcel.gml",
+        "parcel:1707903VK4810F": "dgc_parcel.gml",
         "building:1707903VK4810F": "dgc_buildings.gml",
+        "dnprc:1707903VK4810F": "dgc_dnprc.xml",
+        "dnprc:0000000XX0000X": "dgc_dnprc_negative.xml",
     },
     "navarra": {
         "capabilities": "navarra_capabilities.xml",

@@ -77,18 +77,11 @@ def extract_feature(zip_path: Path, refcat: str, name: str) -> None:
 
 def main() -> None:
     copy(PROBE_RAW / "dgc" / "capabilities.xml", "dgc_capabilities.xml")
-    trim_feed(
-        PROBE_RAW / "dgc" / "atom-index_https_www.catastro.hacienda.gob.es_INSPIRE_CadastralParcels_ES.SDGC.CP.atom.xml.xml",
-        "dgc_atom_index.xml",
-        "atom_17.xml",
-    )
-    trim_feed(
-        PROBE_RAW / "dgc" / "atom-province_17.xml",
-        "dgc_atom_province_17.xml",
-        "A.ES.SDGC.CP.17079.zip",
-    )
-    copy(FIXTMP / "dgc_parcel.gml", "dgc_parcel.gml")
-    copy(FIXTMP / "bucount.gml", "dgc_buildings.gml")
+    copy(FIXTMP / "dgc_getparcel.gml", "dgc_parcel.gml")
+    copy(FIXTMP / "dgc_getbuilding.gml", "dgc_buildings.gml")
+    copy(FIXTMP / "dgc_dnprc.xml", "dgc_dnprc.xml")
+    copy(FIXTMP / "dgc_dnprc_negative.xml", "dgc_dnprc_negative.xml")
+    copy(FIXTMP / "dgc_atom_28.xml", "dgc_atom_province_28.xml")
 
     copy(PROBE_RAW / "navarra" / "capabilities.xml", "navarra_capabilities.xml")
     copy(PROBE_RAW / "navarra" / "parcel_001010001.xml", "navarra_parcel.xml")
