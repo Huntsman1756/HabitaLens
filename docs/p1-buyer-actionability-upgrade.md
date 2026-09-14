@@ -67,6 +67,25 @@ P1.B CEE (por region)  PASS | FAIL | INCONCLUSIVE
 P1 global (utilidad)   PASS | FAIL | INCONCLUSIVE
 ```
 
-## 6. Enmiendas
+## 6. Estado de ejecucion
+
+- **P1.A Area comparison: PASS (implementado).** Modulo
+  `evidence/surface.py` con `SurfaceConcept`/`ComparabilityStatus`/
+  `SurfaceComponents` y `compare_area`; CLI `habitalens surface <refcat>
+  --advertised N --concept ... [--official-built/--official-common]`. Un m2 sin
+  concepto produce `area.potential_mismatch` ("verificar que concepto usa el
+  anuncio"), nunca una discrepancia factual.
+- **P1.B CEE: PASS parcial (Cataluna) / pendiente (Madrid, CLM).**
+  - Cataluna: adaptador `cee/catalunya` consultable por refcat (Socrata
+    `j6ii-t3w2`), con `LICENSE.yaml`. CLI `habitalens cee <refcat>`. Verificado
+    live: `9533603DG4393S0001LT` -> calificacion E, `metres_cadastre 62.81`.
+    Sin registro -> `INCONCLUSIVE` (no "no consta").
+  - Madrid: dataset oficial **CC BY 4.0**, pero en **ZIP por anyos** (no API de
+    consulta) -> adaptador de descarga+indice pendiente, con su preregistro.
+  - Castilla-La Mancha: **XML por provincia/anyo**, **CC BY-SA 3.0** -> pendiente.
+- **P1 global (utilidad)**: pendiente de una nueva medicion con 10-20 viviendas
+  aportando el m2 anunciado (y CEE donde aplique).
+
+## 7. Enmiendas
 
 - (sin enmiendas)

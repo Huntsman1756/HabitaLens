@@ -1,0 +1,9 @@
+source_authority: "Institut Catala de l'Energia (ICAEN) - Registre de certificats d'eficiencia energetica"
+license_name: "Reutilizacion segun condiciones del portal de transparencia de Cataluna"
+license_url: "https://analisi.transparenciacatalunya.cat/"
+verified_on: "2026-09-14"
+applicable_version: "Dataset j6ii-t3w2 (Certificats d'eficiencia energetica d'edificis), verificado 2026-09-14"
+reuse_conditions: >-
+  Reutilizacion con cita de la fuente. El campo de licencia del portal indica
+  "See Terms of Use"; debe verificarse antes de redistribuir. No se presenta
+  como informacion oficial ni fehaciente.

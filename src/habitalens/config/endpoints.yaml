@@ -206,3 +206,11 @@ evidence_sources:
     coverage_bounds_wgs84: [-18.152815, 27.638737, 4.311363, 43.788616]
     coverage_description: "Red de transporte de cobertura nacional (BTN)"
     license_url: "https://centrodedescargas.cnig.es/CentroDescargas/politica-datos"
+
+# P1.B: registros autonomicos de CEE. Solo Cataluna es consultable por refcat;
+# Madrid y Castilla-La Mancha publican ZIP/XML masivos (adaptadores pendientes).
+cee_sources:
+  catalunya:
+    source_version: "ICAEN CEE Catalunya (Socrata j6ii-t3w2), verificado 2026-09-14"
+    resource: "https://analisi.transparenciacatalunya.cat/resource/j6ii-t3w2.json"
+    license_url: "https://analisi.transparenciacatalunya.cat/"

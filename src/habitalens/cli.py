@@ -168,5 +168,26 @@ def surface(
     typer.echo(DISCLAIMER)
 
 
+@app.command(help=f"Consulta el CEE por referencia catastral en registros autonomicos.\n\n{DISCLAIMER}")
+def cee(refcat: str = typer.Argument(..., help="Referencia catastral.")) -> None:
+    from habitalens.cee import CeeStatus, lookup_any
+
+    for result in lookup_any(refcat):
+        if result.status == CeeStatus.FOUND and result.record is not None:
+            record = result.record
+            typer.echo(f"region   : {result.region}")
+            typer.echo(f"refcat   : {record.refcat}")
+            typer.echo(f"califica : {record.rating}")
+            typer.echo(f"fecha    : {record.date}")
+            typer.echo(f"sup_cat  : {record.built_m2}")
+            typer.echo(f"direccion: {record.address}")
+        else:
+            typer.echo(f"region   : {result.region} -> {result.status.value}")
+            if result.note:
+                typer.echo(f"nota     : {result.note}")
+    typer.echo("")
+    typer.echo(DISCLAIMER)
+
+
 if __name__ == "__main__":  # pragma: no cover
     app()
