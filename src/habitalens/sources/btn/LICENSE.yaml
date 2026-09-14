@@ -1,0 +1,10 @@
+source_authority: "Instituto Geografico Nacional (IGN) / CNIG - Base Topografica Nacional (BTN)"
+license_name: "Licencia IGN compatible con CC BY 4.0 (atribucion obligatoria)"
+license_url: "https://centrodedescargas.cnig.es/CentroDescargas/politica-datos"
+verified_on: "2026-09-14"
+applicable_version: "WFS INSPIRE Redes de transporte (tn-ro:RoadLink, tn-ra:RailwayLink)"
+reuse_conditions: >-
+  Uso libre y gratuito para cualquier proposito legitimo; obligacion estricta de
+  reconocer y mencionar el origen y propiedad del IGN. Atribucion:
+  "BTN CC-BY 4.0 ign.es". Base legal Orden FOM/2807/2015. Sin limitaciones de
+  acceso publico.

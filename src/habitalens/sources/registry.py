@@ -3,14 +3,20 @@
 from __future__ import annotations
 
 from habitalens.sources.base import EvidenceSource
+from habitalens.sources.btn.source import BtnSource
 from habitalens.sources.csn_radon.source import CsnRadonSource
 from habitalens.sources.eprtr.source import EprtrSource
+from habitalens.sources.ncse02.source import Ncse02Source
+from habitalens.sources.siu.source import SiuSource
 from habitalens.sources.snczi.source import SncziSource
 
 _SOURCE_TYPES: dict[str, type[EvidenceSource]] = {
     "snczi": SncziSource,
     "eprtr": EprtrSource,
     "csn_radon": CsnRadonSource,
+    "siu": SiuSource,
+    "ncse02": Ncse02Source,
+    "btn": BtnSource,
 }
 
 

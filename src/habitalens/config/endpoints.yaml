@@ -174,3 +174,35 @@ evidence_sources:
       depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente
       productora hasta que exista licencia declarada y acceso reproducible (regla de
       G0-B: licencia y acceso antes que parsing).
+
+  siu:
+    source_version: "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14"
+    rest_query: "https://mapas.fomento.gob.es/arcgis/rest/services/SIU/Servicios_OGC/MapServer/15/query"
+    wfs: "https://mapas.fomento.gob.es/arcgis/services/SIU/Servicios_OGC/MapServer/WFSServer"
+    layer: "OGC_Clases_Suelo"
+    default_crs: "EPSG:3857"
+    coverage_declared: false
+    coverage_description: >-
+      Cobertura agregada (5.898 municipios integrados, 98,61% de la poblacion); el
+      servicio no expone lista por municipio. 0 features NO implica ausencia.
+    license_url: "https://www.datos.gob.es/avisolegal"
+
+  ncse02:
+    source_version: "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14"
+    service: "https://www.ign.es/wms-inspire/geofisica"
+    layer: "HazardArea2002.NCSE-02"
+    default_crs: "EPSG:4258"
+    coverage_bounds_wgs84: [-19.0, 27.0, 6.0, 46.0]
+    coverage_description: "Peninsula Iberica, Illes Balears, Canarias, Ceuta y Melilla (scope Nacional)"
+    license_url: "https://www.ign.es/web/ign/portal/politica-datos"
+
+  btn:
+    source_version: "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14"
+    service: "https://servicios.idee.es/wfs-inspire/transportes"
+    layers:
+      roads: "tn-ro:RoadLink"
+      rail: "tn-ra:RailwayLink"
+    default_crs: "EPSG:4258"
+    coverage_bounds_wgs84: [-18.152815, 27.638737, 4.311363, 43.788616]
+    coverage_description: "Red de transporte de cobertura nacional (BTN)"
+    license_url: "https://centrodedescargas.cnig.es/CentroDescargas/politica-datos"
