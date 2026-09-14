@@ -164,4 +164,9 @@ class FixtureSource:
             )
         if isinstance(value, bytes):
             return value
-        return Path(value).read_bytes()
+        path = Path(value)
+        if path.suffix == ".gz":
+            import gzip
+
+            return gzip.decompress(path.read_bytes())
+        return path.read_bytes()
