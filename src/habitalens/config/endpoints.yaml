@@ -1,0 +1,144 @@
+# Configuracion versionada de endpoints de proveedores catastrales (G0-A).
+# Verificados en vivo el 2026-09-14. Ver docs/decisions.md y docs/probe-evidence.md.
+config_version: 1
+verified_on: "2026-09-14"
+
+geocoding:
+  cartociudad:
+    base: "https://www.cartociudad.es/geocoder/api/geocoder"
+    candidates: "https://www.cartociudad.es/geocoder/api/geocoder/candidates"
+    find: "https://www.cartociudad.es/geocoder/api/geocoder/find"
+    reverse: "https://www.cartociudad.es/geocoder/api/geocoder/reverseGeocode"
+
+providers:
+  dgc:
+    territory: dgc
+    source_version: "INSPIRE WFS 2.0.0 (CP/BU/AD) + ATOM municipal jerarquico"
+    crs: "EPSG:4326"
+    wfs:
+      parcel: "https://ovc.catastro.meh.es/INSPIRE/wfsCP.aspx"
+      building: "https://ovc.catastro.meh.es/INSPIRE/wfsBU.aspx"
+      address: "https://ovc.catastro.meh.es/INSPIRE/wfsAD.aspx"
+    types:
+      parcel: "cp:CadastralParcel"
+      building: "bu:Building"
+      address: "ad:Address"
+    atom:
+      parcel_index: "https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/ES.SDGC.CP.atom.xml"
+      building_index: "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/ES.SDGC.BU.atom.xml"
+      address_index: "https://www.catastro.hacienda.gob.es/INSPIRE/Addresses/ES.SDGC.AD.atom.xml"
+      hierarchy: province
+    filter:
+      # Verificado: el WFS de la DGC ignora filtros ad-hoc y devuelve una pagina fija.
+      parcel_property: null
+      building_property: null
+    coverage:
+      level: national
+      codes: ["ES"]
+      description: "Todo el territorio del Estado (excepto Pais Vasco y Navarra en regimen foral)."
+
+  navarra:
+    territory: navarra
+    source_version: "IDENA GeoServer WFS 2.0.0 (INSPIRE CP + capas CATAST_ locales)"
+    crs: "EPSG:4258"
+    wfs:
+      parcel: "https://idena.navarra.es/ogc/inspire/wfs"
+      local: "https://idena.navarra.es/ogc/wfs"
+    types:
+      parcel: "CP:CadastralParcel"
+      building: "IDENA:CATAST_Pol_Edificacion"
+      address: "IDENA:CATAST_Txt_Portal"
+    filter:
+      parcel_property: "nationalCadastralReference"
+      building_property: null
+    parcel_feature_tokens: ["CadastralParcel"]
+    building_feature_tokens: ["Edificacion", "Edificios", "Building"]
+    bbox_axis_buildings: "lonlat"
+    bbox_crs_style_buildings: "epsg"
+    crs_by_kind:
+      parcel: "EPSG:4258"
+      building: "EPSG:25830"
+      address: "EPSG:25830"
+    coverage:
+      level: region
+      codes: ["ES-NC"]
+      description: "Comunidad Foral de Navarra."
+    notes: "No existe WFS INSPIRE BU/AD ni ATOM INSPIRE; se usan capas CATAST_ locales."
+
+  bizkaia:
+    territory: bizkaia
+    source_version: "ArcGIS INSPIRE WFS 2.0.0 (Annex1 + Buildings) + ATOM municipal"
+    crs: "EPSG:4258"
+    wfs:
+      parcel: "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Annex1/MapServer/exts/InspireFeatureDownload/service"
+      building: "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service"
+    types:
+      parcel: "cp:CadastralParcel"
+      address: "ad:Address"
+      building: "bu-core2d:Building"
+    atom:
+      parcel_index: "https://apli.bizkaia.eus/apps/Danok/INSPIRE/cadastralparcels.xml"
+      building_index: "https://apli.bizkaia.eus/apps/Danok/INSPIRE/buildings.xml"
+      address_index: "https://apli.bizkaia.eus/apps/Danok/INSPIRE/addresses.xml"
+      municipality_zip: "https://apli.bizkaia.eus/apps/Danok/INSPIRE/ES.BFA.CP.{code}.zip"
+      building_zip: "https://apli.bizkaia.eus/apps/Danok/INSPIRE/ES.BFA.BU.{code}.zip"
+      hierarchy: flat
+      municipality_length: 3
+    filter:
+      # Verificado: ArcGIS InspireFeatureDownload ignora filtros de atributo (CQL y FES).
+      parcel_property: null
+      building_property: null
+    bbox_axis_buildings: "latlon"
+    coverage:
+      level: province
+      codes: ["ES-BI"]
+      description: "Territorio Historico de Bizkaia."
+
+  gipuzkoa:
+    territory: gipuzkoa
+    source_version: "MapServer INSPIRE WFS 2.0.0 (CP/BU/AD) + ATOM"
+    crs: "EPSG:4258"
+    wfs:
+      parcel: "https://b5m.gipuzkoa.eus/inspire/wfs/gipuzkoa_wfs_cp"
+      building: "https://b5m.gipuzkoa.eus/inspire/wfs/gipuzkoa_wfs_bu"
+      address: "https://b5m.gipuzkoa.eus/inspire/wfs/gipuzkoa_wfs_ad"
+    types:
+      parcel: "cp:CadastralParcel"
+      building: "bu-ext2d:Building"
+      address: "ad:Address"
+    atom:
+      parcel_index: "https://b5m.gipuzkoa.eus/inspire/download/cadastralparcels.xml"
+      building_index: "https://b5m.gipuzkoa.eus/inspire/download/buildings.xml"
+      address_index: "https://b5m.gipuzkoa.eus/inspire/download/addresses.xml"
+      hierarchy: territory
+    filter:
+      parcel_property: "cp:nationalCadastralReference"
+      building_property: null
+    bbox_axis_buildings: "lonlat"
+    bbox_crs_style_buildings: "epsg"
+    coverage:
+      level: province
+      codes: ["ES-SS"]
+      description: "Territorio Historico de Gipuzkoa."
+
+  araba:
+    territory: araba
+    source_version: "GeoServer INSPIRE WFS 2.0.0 (CP/BU) + ATOM"
+    crs: "EPSG:25830"
+    wfs:
+      parcel: "https://geo.araba.eus/WFS_INSPIRE_CP"
+      building: "https://geo.araba.eus/WFS_INSPIRE_BU"
+    types:
+      parcel: "INSPIRE_CP:CP.CadastralParcel"
+      building: "INSPIRE_BU:BU.Building"
+    atom:
+      parcel_index: "https://geo.araba.eus/atom/CP/CadastralParcels.atom"
+      building_index: "https://geo.araba.eus/atom/BU/Buildings.atom"
+      hierarchy: territory
+    filter:
+      parcel_property: "INSPIRE_CP:nationalCadastralReference"
+      building_property: null
+    coverage:
+      level: province
+      codes: ["ES-VI"]
+      description: "Territorio Historico de Araba/Alava. Sin servicio INSPIRE AD."
