@@ -1,0 +1,8 @@
+source_authority: "Direccion General del Catastro (Ministerio de Hacienda)"
+license_name: "Reutilizacion de datos INSPIRE de la DGC"
+license_url: "https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia_en.pdf"
+verified_on: "2026-09-14"
+applicable_version: "INSPIRE WFS 2.0.0 + ATOM; capacidades observadas 2026-09-14"
+reuse_conditions: >-
+  Datos reutilizables con cita de la fuente (DGC). No se presentan como
+  informacion catastral oficial ni fehaciente. Se conserva el CRS original.
