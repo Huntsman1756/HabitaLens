@@ -125,6 +125,10 @@ hallazgos deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE`.
 - `docs/decisions.md` — routing, CRS, geometria, licencias, cache/provenance.
 - `docs/probe-evidence.md` — endpoints verificados y resultados de los probes.
 - `docs/spike-cadastre-pipeline.md` — veredicto razonado del spike.
-- `docs/g0-b-preregistration.md` — preregistro congelado de G0-B (aun sin ejecutar).
+- `docs/g0-b-preregistration.md` — preregistro congelado de G0-B.
+- `docs/g0-b-progression-decision.md` — decision de progresion G0-B -> G0-C.
+- `docs/g0-b.1-csn-licensing.md` — remediacion de licencia CSN (INCONCLUSIVE).
+- `docs/g0-c-preregistration.md` — preregistro congelado de G0-C (aun sin ejecutar).
 
-Estado G0-A: cerrado como **PASS** en la etiqueta `g0-a-pass`.
+Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**
+(`g0-b-inconclusive`), G0-C preregistrado y en HOLD.
