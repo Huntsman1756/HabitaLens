@@ -41,7 +41,7 @@ consulta antes de aceptar un candidato.
 
 | Proveedor | Filtro de atributo (refcat) | BBOX (localizacion) | Edificios |
 |-----------|-----------------------------|---------------------|-----------|
-| DGC | **No** (WFS ignora `filter`/`resourceId`) | **Si** (orden `lat,lon`) | BBOX no soportado live |
+| DGC | **Si** (stored query `GetParcel`) | **Si** (orden `lat,lon`) | **Si** (stored query `GetBuildingByParcel`) |
 | Navarra | Si (`nationalCadastralReference`, sin prefijo) | Si | Si (`IDENA:CATAST_Pol_Edificacion`) |
 | Bizkaia | **No** (ArcGIS ignora FES/CQL) | Si (orden `lat,lon`) | Si (`bu-core2d:Building`) |
 | Gipuzkoa | Si (`cp:nationalCadastralReference`) | Si (orden `lat,lon`) | Si (`bu-ext2d:Building`) |
@@ -57,22 +57,42 @@ Notas de implementacion:
   por **ATOM municipal** (feed -> ZIP por municipio -> filtrado local por
   refcat); verificado con `48.020.1619.04006`.
 
-### 3.1 DGC: hallazgo y fallback
+### 3.1 DGC: remediacion (G0-A.1)
 
-El caso preregistrado DGC `1707903VK4810F` **no puede resolverse por refcat**
-con las fuentes WFS+ATOM:
+Una primera version de G0-A concluyo (de forma erronea) que `refcat -> parcela`
+estaba roto en la DGC. La causa real fue doble:
 
-1. El WFS de la DGC ignora los filtros ad-hoc (devuelve una pagina fija de 83
-   parcelas; un refcat inexistente devuelve el mismo resultado).
-2. El ATOM municipal de Fortia (municipio 17079) codifica sus parcelas como
-   `0003001...`, que **no** es el refcat `1707903VK4810F` devuelto por el WFS
-   y por CartoCiudad (0 coincidencias de 1539 parcelas).
-3. El servicio BU no acepta BBOX live.
+1. **Mecanismo equivocado.** La DGC no expone la busqueda por RC mediante
+   `filter`/`resourceId`, sino mediante **stored queries**:
+   `STOREDQUERY_ID=GetParcel&refcat=<RC>` (CP) y
+   `STOREDQUERY_ID=GetBuildingByParcel&refcat=<RC>` (BU). Verificado en
+   `ListStoredQueries` de ambos servicios.
+2. **Suposicion invalida de municipio.** La RC urbana **no** codifica el
+   municipio en sus primeros caracteres. Se asumio que `1707903VK4810F`
+   pertenecia a Fortia (17/079) por empezar por `17079`, y en realidad
+   pertenece a **Madrid (28/079)**. Lo confirma `Consulta_DNPRC`
+   (`cp=28 cm=79 np=nm=MADRID`, `PS CASTELLANA 255`, sfc 564). El
+   ATOM de Fortia jamas podia contener esa parcela.
 
-**Fallback documentado (aplicado):** resolver la parcela DGC por
-**localizacion** (BBOX `lat,lon` sobre `wfsCP.aspx`) usando las coordenadas
-que CartoCiudad ya devuelve para la direccion. Verificado:
-`Calle Mayor 1, Madrid` -> parcela `0343302VK4704C` (area 1179 m2).
+**Estado corregido (verificado):**
+
+- `GetParcel` devuelve exactamente `1707903VK4810F` (519 m2, EPSG:4326) y
+  `0343302VK4704C`; el control negativo `0000000XX0000X` devuelve
+  `No se ha encontrado la parcela ...` (resultado distinto).
+- `GetBuildingByParcel` devuelve el edificio
+  `ES.SDGC.BU.1707903VK4810F` (EPSG:25830).
+- `Consulta_DNPRC` corrobora existencia, provincia/municipio oficiales, area y
+  uso (`Almacen-Estacionamiento`).
+
+**Hallazgo adicional (no bloqueante):** el feed ATOM de la provincia 28
+(Madrid) **omite el municipio 28079 (Madrid capital)**; por eso el ATOM
+municipal no sirve como via de resolucion para esta RC. La via oficial de
+resolucion por RC son las stored queries.
+
+**Fallback conservado:** `get_parcel_near` (BBOX `lat,lon` sobre `wfsCP.aspx`)
+se mantiene para direccion -> localizacion -> parcela, y como respaldo cuando
+no se dispone de RC. Verificado: `Calle Mayor 1, Madrid` -> parcela
+`0343302VK4704C` (area 1179 m2).
 
 ## 4. CartoCiudad
 

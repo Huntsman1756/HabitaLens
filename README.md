@@ -98,7 +98,7 @@ Evidencia live (2026-09-14) y fixtures offline en `tests/`:
 
 | Proveedor | Estado | Nota |
 |-----------|--------|------|
-| DGC | INCONCLUSIVE | Parcela por refcat no resoluble (WFS ignora filtros; ATOM usa otro refcat). Resuelve por localizacion (BBOX) via CartoCiudad. |
+| DGC | PASS | Stored queries `GetParcel` / `GetBuildingByParcel` + corroboracion `Consulta_DNPRC` (G0-A.1). Tambien resuelve por localizacion (BBOX). |
 | Navarra | PASS | Parcela + 3 edificios (EPSG:4258). |
 | Bizkaia | PASS | Parcela + 6 edificios (EPSG:4258). |
 | Gipuzkoa | PASS | Parcela + 5 edificios (EPSG:4258). |
