@@ -1,0 +1,98 @@
+{
+  "pilot": "P0-RD",
+  "pool_sha256": "33b709872bd0af04a5e2b89f523b2a365729525d8c1c784ca8311b89c7e96fec",
+  "selection": "SHA256(\"habitalens-p0rd-v1|\"+stable_property_id), ascending, first 10 resolvable",
+  "selected": [
+    {
+      "property_id": "p0rd01",
+      "stable_property_id": "3865207WE0036N",
+      "score": "00031e81e0ddbcb3946ccd1875d5ca0192be0b80bfa049691385ae970651145f",
+      "provider": "dgc",
+      "resolved_refcat": "3865207WE0036N",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd02",
+      "stable_property_id": "7330630DG1073D",
+      "score": "0006f3ebfc7075c717bcd3d492d55955e5366af6c08ea0715590330c4c47594c",
+      "provider": "dgc",
+      "resolved_refcat": "7330630DG1073D",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd03",
+      "stable_property_id": "6326304UF9762N",
+      "score": "000aea28450267acdd3a40f5442f4b87f8abdfccdcd847c0a25b6574406cdd23",
+      "provider": "dgc",
+      "resolved_refcat": "6326304UF9762N",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd04",
+      "stable_property_id": "0170012UK9207S",
+      "score": "000b8dfbda92a6c8503a71b836806d8c78276faa9b7b4bc4a8738d9794484702",
+      "provider": "dgc",
+      "resolved_refcat": "0170012UK9207S",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd05",
+      "stable_property_id": "6424509DG1062B",
+      "score": "000cdf7626da93ee43322450ea8d7336adc45a681afb173f02a090049294fe87",
+      "provider": "dgc",
+      "resolved_refcat": "6424509DG1062B",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd06",
+      "stable_property_id": "5049117WE0054N",
+      "score": "000f43f4480214419ecb307ebc1ab759ec6dce8b6d4eeff48c3bb2db95b70634",
+      "provider": "dgc",
+      "resolved_refcat": "5049117WE0054N",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd07",
+      "stable_property_id": "9321008DG1092B",
+      "score": "00144d5c5fe2f4f456657b22aa05096ef92c891fc2018e924c48e2a812c224e9",
+      "provider": "dgc",
+      "resolved_refcat": "9321008DG1092B",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd08",
+      "stable_property_id": "6915509DG1061B",
+      "score": "001594a226d5245c1505d8644ee07ac51c12ba1b124134cc58acfd9f95848716",
+      "provider": "dgc",
+      "resolved_refcat": "6915509DG1061B",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd09",
+      "stable_property_id": "7305706DG1070B",
+      "score": "00182fffafa5b2a1dd3ecc5130e4fe6ffb07ce2e66c651b87805ef1e3d18e51f",
+      "provider": "dgc",
+      "resolved_refcat": "7305706DG1070B",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    },
+    {
+      "property_id": "p0rd10",
+      "stable_property_id": "5131430DG1053D",
+      "score": "001a8c2e6b9d81e85908c1c9fbdd043d113ed63c3273829c72e018b05d56f56e",
+      "provider": "dgc",
+      "resolved_refcat": "5131430DG1053D",
+      "source_crs": "EPSG:4326",
+      "numberOfDwellings": 1
+    }
+  ],
+  "substitutions": []
+}
