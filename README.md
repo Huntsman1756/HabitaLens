@@ -141,7 +141,8 @@ Cobertura como ciudadano de primera clase: `0 features` no es ausencia.
 - `docs/g0-b-preregistration.md` — preregistro congelado de G0-B.
 - `docs/g0-b-progression-decision.md` — decision de progresion G0-B -> G0-C.
 - `docs/g0-b.1-csn-licensing.md` — remediacion de licencia CSN (INCONCLUSIVE).
-- `docs/g0-c-preregistration.md` — preregistro congelado de G0-C (aun sin ejecutar).
+- `docs/g0-c-preregistration.md` — preregistro congelado de G0-C.
+- `docs/g0-d-preregistration.md` — contrato congelado de G0-D (aun sin ejecutar).
 
-Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**
-(`g0-b-inconclusive`), G0-C preregistrado y en HOLD.
+Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
+(`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D preregistrado y en HOLD.
