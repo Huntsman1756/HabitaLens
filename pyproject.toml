@@ -16,6 +16,7 @@ dependencies = [
     "pyogrio>=0.7",
     "pyarrow>=15.0",
     "duckdb>=1.0",
+    "fpdf2>=2.7",
 ]
 
 [project.scripts]
@@ -25,6 +26,7 @@ habitalens = "habitalens.cli:app"
 dev = [
     "pytest>=8.0",
     "ruff>=0.6",
+    "pypdf>=4.0",
 ]
 
 [build-system]
@@ -42,6 +44,9 @@ src = ["src", "tests"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
 ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["typer.Argument", "typer.Option"]
 
 [tool.pytest.ini_options]
 addopts = "-q"

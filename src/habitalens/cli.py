@@ -8,15 +8,19 @@ fuente lo expone), territorio, version de fuente y CRS fuente.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import typer
 
 from habitalens import DISCLAIMER, __version__
 from habitalens.resolver import PropertyResolver, ResolverError
 
 HELP_TEXT = (
-    "HabitaLens - analisis reproducible de inmuebles desde fuentes publicas (G0-A).\n\n"
+    "HabitaLens - analisis reproducible de inmuebles desde fuentes publicas.\n\n"
     "Comandos:\n"
-    "  resolve   Resuelve una referencia catastral o una direccion.\n\n"
+    "  resolve   Resuelve una referencia catastral o una direccion.\n"
+    "  report    Genera informe HTML/PDF + manifest de procedencia.\n\n"
     f"{DISCLAIMER}"
 )
 
@@ -78,6 +82,22 @@ def resolve(
     typer.echo(f"edificios     : {len(property_.buildings)}")
     if property_.address is not None:
         typer.echo(f"direccion     : {property_.address.label}")
+    typer.echo("")
+    typer.echo(DISCLAIMER)
+
+
+@app.command(help=f"Genera informe HTML/PDF + manifest desde un manifest JSON.\n\n{DISCLAIMER}")
+def report(
+    manifest: Path = typer.Argument(..., help="Ruta al provenance_manifest.json o manifest base."),
+    out: Path = typer.Option(Path("report"), "--out", help="Directorio de salida."),
+) -> None:
+    from habitalens.report import generate_report
+
+    data = json.loads(Path(manifest).read_text(encoding="utf-8"))
+    artifacts = generate_report(data, Path(out))
+    typer.echo(f"html     : {artifacts.html_path}")
+    typer.echo(f"pdf      : {artifacts.pdf_path} ({artifacts.pdf_pages} paginas)")
+    typer.echo(f"manifest : {artifacts.manifest_path}")
     typer.echo("")
     typer.echo(DISCLAIMER)
 
