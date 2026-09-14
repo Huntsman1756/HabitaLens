@@ -116,4 +116,42 @@ produciria un sistema mas grande, no necesariamente mejor.
 
 ## 11. Enmiendas
 
-- (sin enmiendas)
+- **P0-E1 — sampling constants (2026-09-14).** Aplicada antes de observar
+  cualquier vivienda.
+
+```text
+Portal: Idealista
+Consulta: vivienda de segunda mano en venta, Espana, sin filtros adicionales.
+Snapshot: captura unica de los resultados publicos obtenidos en el GO.
+Orden interno: listing/property ID ascendente.
+offset: 0
+k: 3
+Seleccion: eligible[offset::k][:10]
+
+Elegible:
+- anuncio individual de vivienda;
+- direccion/localizacion suficiente para intentar resolverla;
+- ID estable disponible.
+
+Si una seleccionada no puede resolverse:
+- aplicar exclusivamente la regla de sustitucion preregistrada;
+- no escoger manualmente una alternativa "interesante".
+
+Si no hay 10 elegibles en la captura prevista:
+- continuar paginas/resultados en el orden predeterminado;
+- mantener k=3 y offset=0.
+```
+
+  La muestra se denomina **"muestreo sistematico reproducible"**, no "muestra
+  aleatoria representativa de Espana". Seleccionar cada `k`-esimo elemento es
+  muestreo sistematico; no se sobredescribe lo que demuestra.
+
+  **Definicion operativa de `actionable finding`** (congelada aqui): cuenta solo
+  cuando el revisor considera que el hallazgo justificaria, **antes de ofertar**,
+  al menos una accion concreta: pedir documentacion, comprobar una fuente,
+  preguntar al vendedor/agencia, consultar a un profesional, comprobarlo durante
+  la visita o investigar antes de decidir. "Es interesante" **no** cuenta.
+
+  Los umbrales de la seccion 5 no cambian. Un `actionable_finding_rate` de 4/10
+  es **FAIL**, aunque los controles positivos se detecten perfectamente. No se
+  anade ninguna fuente ni se modifican reglas durante la ejecucion.

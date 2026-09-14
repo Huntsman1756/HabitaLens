@@ -16,6 +16,7 @@ cache/
 *.geoparquet
 reports/
 .habitalens-report/
+p0_metrics.json
 # probe scratch / outputs
 .fixtmp/
 .spike/
