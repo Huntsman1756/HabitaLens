@@ -1,0 +1,221 @@
+{
+  "entries": [
+    {
+      "id": "g0c01",
+      "block": "A",
+      "provider_id": "dgc",
+      "refcat": "1707903VK4810F",
+      "label": "Madrid Castellana 255",
+      "context": "urbano denso",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c02",
+      "block": "A",
+      "provider_id": "dgc",
+      "refcat": "0343302VK4704C",
+      "label": "Madrid Calle Mayor 1",
+      "context": "casco historico",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c03",
+      "block": "A",
+      "provider_id": "gipuzkoa",
+      "refcat": "8297093",
+      "label": "Donostia Calle Mayor",
+      "context": "urbano costero",
+      "source_crs": "EPSG:4258"
+    },
+    {
+      "id": "g0c04",
+      "block": "A",
+      "provider_id": "araba",
+      "refcat": "59590687",
+      "label": "Vitoria Postas 1",
+      "context": "urbano interior",
+      "source_crs": "EPSG:25830"
+    },
+    {
+      "id": "g0c05",
+      "block": "A",
+      "provider_id": "bizkaia",
+      "refcat": "48.020.1619.04006",
+      "label": "Bilbao Gran Via 1",
+      "context": "industrial-portuario",
+      "source_crs": "EPSG:4258"
+    },
+    {
+      "id": "g0c06",
+      "block": "A",
+      "provider_id": "gipuzkoa",
+      "refcat": "8594149",
+      "label": "Gipuzkoa periurbana",
+      "context": "periurbano",
+      "source_crs": "EPSG:4258"
+    },
+    {
+      "id": "g0c07",
+      "block": "A",
+      "provider_id": "navarra",
+      "refcat": "001010001",
+      "label": "Navarra urbana",
+      "context": "urbano",
+      "source_crs": "EPSG:4258"
+    },
+    {
+      "id": "g0c08",
+      "block": "A",
+      "provider_id": "araba",
+      "refcat": "64010007",
+      "label": "Araba rustica",
+      "context": "rustico",
+      "source_crs": "EPSG:25830"
+    },
+    {
+      "id": "g0c09",
+      "block": "A",
+      "provider_id": "dgc",
+      "refcat": "0244604VK4704C",
+      "label": "Madrid proximo",
+      "context": "urbano denso",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c10",
+      "block": "A",
+      "provider_id": "bizkaia",
+      "refcat": "48.001.1055.99082",
+      "label": "Bizkaia rustica",
+      "context": "rustico",
+      "source_crs": "EPSG:4258"
+    },
+    {
+      "id": "g0c11",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "33900A06700439",
+      "label": "Calle Mayor 1, Oviedo",
+      "context": "geocodificada (Oviedo)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c12",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "8823027NJ4082S",
+      "label": "Calle Real 1, A Coruna",
+      "context": "geocodificada (A Coruña)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c13",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "1601018VP3110B",
+      "label": "Calle Mayor 1, Santander",
+      "context": "geocodificada (Santander)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c14",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "5545516UM5154F",
+      "label": "Calle Mayor 1, Valladolid",
+      "context": "geocodificada (Valladolid)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c15",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "0974509XM8107D",
+      "label": "Calle Mayor 1, Zaragoza",
+      "context": "geocodificada (Zaragoza)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c16",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "2118201TG4421N",
+      "label": "Calle Mayor 1, Sevilla",
+      "context": "geocodificada (Sevilla)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c17",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "7687208XH6078N",
+      "label": "Calle Mayor 1, Murcia",
+      "context": "geocodificada (Murcia)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c18",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "2464304QA4426C",
+      "label": "Calle Colon 1, Cadiz",
+      "context": "geocodificada (Cádiz)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c19",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "6972203VG4167B",
+      "label": "Calle Mayor 1, Granada",
+      "context": "geocodificada (Granada)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c20",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "2627121VK1122F",
+      "label": "Calle Comercio 1, Toledo",
+      "context": "geocodificada (Toledo)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c21",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "5951407PD7055B",
+      "label": "Avenida de Huelva 1, Badajoz",
+      "context": "geocodificada (Badajoz)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c22",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "4328511QD2742G",
+      "label": "Calle Mayor 1, Caceres",
+      "context": "geocodificada (Cáceres)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c23",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "5921709WN4052S",
+      "label": "Calle Mayor 1, Logrono",
+      "context": "geocodificada (Logroño)",
+      "source_crs": "EPSG:4326"
+    },
+    {
+      "id": "g0c24",
+      "block": "B",
+      "provider_id": "dgc",
+      "refcat": "4573501TL7347D",
+      "label": "Calle Mayor 1, Salamanca",
+      "context": "geocodificada (Salamanca)",
+      "source_crs": "EPSG:4326"
+    }
+  ],
+  "failures": []
+}

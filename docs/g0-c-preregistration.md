@@ -187,4 +187,14 @@ No promover CSN por esta via. No incorporar IS-47 como sustituto.
 
 ## 13. Enmiendas
 
-- (sin enmiendas)
+- **E1 (2026-09-14).** Lista final del bloque B tras activar la desambiguacion
+  **estricta por localidad** en CartoCiudad (evita devolver la parcela de otra
+  ciudad cuando la calle es ambigua) y comprobar geocodabilidad. Sustituciones,
+  decididas **antes** de consultar SIU/NCSE-02/BTN y sin mirar resultados de
+  esas fuentes: `A Coruna` pasa a "Calle Real 1"; `Cadiz` a "Calle Colon 1";
+  `Badajoz` a "Avenida de Huelva 1"; `Toledo` a "Calle Comercio 1"; se retiran
+  `Vigo` y `Palma` (no geocodifican de forma fiable o resuelven a municipio
+  distinto) y se anaden `Logrono` y `Salamanca`. El bloque A (10 refcats) no
+  cambia. La seleccion sigue siendo outcome-blind y por diversidad
+  administrativa.
+
