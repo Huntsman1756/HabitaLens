@@ -1,0 +1,2490 @@
+{
+  "g0c01": {
+    "property_id": "g0c01",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c01",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "8ae7ce3b4c4c497f",
+        "retrieved_at": "2026-09-14T11:29:57.692798Z",
+        "note": "SUELO URBANO (ProvINE=28079)"
+      },
+      {
+        "property_id": "g0c01",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "81a07ab3ef3c4a7e",
+        "retrieved_at": "2026-09-14T11:29:58.616047Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Madrid)"
+      },
+      {
+        "property_id": "g0c01",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "224fe1dc847c4525",
+        "retrieved_at": "2026-09-14T11:29:58.824200Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c01",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.0,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "224fe1dc847c4525",
+        "retrieved_at": "2026-09-14T11:29:58.824736Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c01",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "82754aadd10c4439",
+        "retrieved_at": "2026-09-14T11:29:58.992846Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c02": {
+    "property_id": "g0c02",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c02",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "2575c78ba5ab479b",
+        "retrieved_at": "2026-09-14T11:29:59.139350Z",
+        "note": "SUELO URBANO (ProvINE=28079)"
+      },
+      {
+        "property_id": "g0c02",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "5d6e0a81608842d8",
+        "retrieved_at": "2026-09-14T11:29:59.375297Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Madrid)"
+      },
+      {
+        "property_id": "g0c02",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "56a914c6537746f6",
+        "retrieved_at": "2026-09-14T11:29:59.544937Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c02",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "06e61cf345c04167",
+        "retrieved_at": "2026-09-14T11:29:59.759368Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c03": {
+    "property_id": "g0c03",
+    "source_crs": "EPSG:4258",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c03",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "d6c2752a6b204edb",
+        "retrieved_at": "2026-09-14T11:29:59.903631Z",
+        "note": "SUELO URBANO (ProvINE=20069)"
+      },
+      {
+        "property_id": "g0c03",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.04,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "db6cae79fb514788",
+        "retrieved_at": "2026-09-14T11:30:00.149229Z",
+        "note": "Donostia-San Sebastián inex=20069 K=(1.0)"
+      },
+      {
+        "property_id": "g0c03",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "6edeec3d78774abf",
+        "retrieved_at": "2026-09-14T11:30:00.357588Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c03",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 1.0362229454205596,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "6edeec3d78774abf",
+        "retrieved_at": "2026-09-14T11:30:00.358554Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c03",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "dc4be18d008641d6",
+        "retrieved_at": "2026-09-14T11:30:00.546324Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c04": {
+    "property_id": "g0c04",
+    "source_crs": "EPSG:25830",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c04",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "2a6b60a5b8ec4cc2",
+        "retrieved_at": "2026-09-14T11:30:00.719063Z",
+        "note": "SUELO URBANO (ProvINE=01059)"
+      },
+      {
+        "property_id": "g0c04",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "a34a368066424db6",
+        "retrieved_at": "2026-09-14T11:30:00.892354Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Vitoria-Gasteiz)"
+      },
+      {
+        "property_id": "g0c04",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "297c5e87590a4631",
+        "retrieved_at": "2026-09-14T11:30:01.101231Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c04",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 2.365122261204756,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "297c5e87590a4631",
+        "retrieved_at": "2026-09-14T11:30:01.102123Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c04",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "9ad3158dda374778",
+        "retrieved_at": "2026-09-14T11:30:01.292691Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c05": {
+    "property_id": "g0c05",
+    "source_crs": "EPSG:4258",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c05",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "a4734d1888ae4c40",
+        "retrieved_at": "2026-09-14T11:30:01.487340Z",
+        "note": "SISTEMAS GENERALES Y OTROS (ProvINE=48020)"
+      },
+      {
+        "property_id": "g0c05",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "f5caf0f4b8054c33",
+        "retrieved_at": "2026-09-14T11:30:01.659131Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Bilbao)"
+      },
+      {
+        "property_id": "g0c05",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "819c9c8ac38145ea",
+        "retrieved_at": "2026-09-14T11:30:01.861111Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c05",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 11.801045432167733,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "819c9c8ac38145ea",
+        "retrieved_at": "2026-09-14T11:30:01.861922Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c05",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "cbb5304f1fe544aa",
+        "retrieved_at": "2026-09-14T11:30:02.057961Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c05",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 15.589650384718578,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "cbb5304f1fe544aa",
+        "retrieved_at": "2026-09-14T11:30:02.058473Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c06": {
+    "property_id": "g0c06",
+    "source_crs": "EPSG:4258",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c06",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 4.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "12f0fbf392414407",
+        "retrieved_at": "2026-09-14T11:30:02.224263Z",
+        "note": "SUELO URBANIZABLE DELIMITADO O SECTORIZADO (ProvINE=20069)"
+      },
+      {
+        "property_id": "g0c06",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.04,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "8a6b14966a234f9b",
+        "retrieved_at": "2026-09-14T11:30:02.448003Z",
+        "note": "Donostia-San Sebastián inex=20069 K=(1.0)"
+      },
+      {
+        "property_id": "g0c06",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "731f668c2a1c415a",
+        "retrieved_at": "2026-09-14T11:30:02.631821Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c06",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "bfdae37c2185490c",
+        "retrieved_at": "2026-09-14T11:30:02.823001Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c07": {
+    "property_id": "g0c07",
+    "source_crs": "EPSG:4258",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c07",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "4afca22eb41d482d",
+        "retrieved_at": "2026-09-14T11:30:02.966632Z",
+        "note": "0 features: cobertura SIU no acreditada; no se interpreta como ausencia de clasificacion"
+      },
+      {
+        "property_id": "g0c07",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.04,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "eb1a3c9a56d2446f",
+        "retrieved_at": "2026-09-14T11:30:03.189646Z",
+        "note": "Abáigar inex=31001 K=(1.0)"
+      },
+      {
+        "property_id": "g0c07",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "6858a6c731a64945",
+        "retrieved_at": "2026-09-14T11:30:03.398110Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c07",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "57e220a0e1b249e8",
+        "retrieved_at": "2026-09-14T11:30:03.590659Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c08": {
+    "property_id": "g0c08",
+    "source_crs": "EPSG:25830",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c08",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "751ad92b0e8445c4",
+        "retrieved_at": "2026-09-14T11:30:03.731901Z",
+        "note": "SISTEMAS GENERALES Y OTROS (ProvINE=01044)"
+      },
+      {
+        "property_id": "g0c08",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "db708b82be29498c",
+        "retrieved_at": "2026-09-14T11:30:03.908297Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Peñacerrada-Urizaharra)"
+      },
+      {
+        "property_id": "g0c08",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "4a1337c2840942bd",
+        "retrieved_at": "2026-09-14T11:30:04.103159Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c08",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.9299783189015345,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "4a1337c2840942bd",
+        "retrieved_at": "2026-09-14T11:30:04.104001Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c08",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "591c00954c1d4588",
+        "retrieved_at": "2026-09-14T11:30:04.291229Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c09": {
+    "property_id": "g0c09",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c09",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "68b57b2d0c8c4e9b",
+        "retrieved_at": "2026-09-14T11:30:04.453906Z",
+        "note": "SUELO URBANO (ProvINE=28079)"
+      },
+      {
+        "property_id": "g0c09",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "cd48156cdb7243c7",
+        "retrieved_at": "2026-09-14T11:30:04.725004Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Madrid)"
+      },
+      {
+        "property_id": "g0c09",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "960da9ede84d4300",
+        "retrieved_at": "2026-09-14T11:30:04.909595Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c09",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "7069809b377d4fce",
+        "retrieved_at": "2026-09-14T11:30:05.104148Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c10": {
+    "property_id": "g0c10",
+    "source_crs": "EPSG:4258",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c10",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 9.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "a2d37bb3dab34d2a",
+        "retrieved_at": "2026-09-14T11:30:05.318901Z",
+        "note": "SUELO URBANO NO CONSOLIDADO (ProvINE=48001)"
+      },
+      {
+        "property_id": "g0c10",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "1c76d7cd5a804245",
+        "retrieved_at": "2026-09-14T11:30:05.507931Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Abadiño)"
+      },
+      {
+        "property_id": "g0c10",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 50.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "e9b2b3c0d90a4c44",
+        "retrieved_at": "2026-09-14T11:30:07.360068Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c10",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.0,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "e9b2b3c0d90a4c44",
+        "retrieved_at": "2026-09-14T11:30:07.369160Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c10",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": true,
+        "value": 35.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "ce201f4e74eb45e3",
+        "retrieved_at": "2026-09-14T11:30:07.717112Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c10",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 38.59166454435249,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "ce201f4e74eb45e3",
+        "retrieved_at": "2026-09-14T11:30:07.724819Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c11": {
+    "property_id": "g0c11",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c11",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "64dca5e3444d4c2f",
+        "retrieved_at": "2026-09-14T11:30:07.924114Z",
+        "note": "SUELO URBANO (ProvINE=33044)"
+      },
+      {
+        "property_id": "g0c11",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "8b00c73e757646da",
+        "retrieved_at": "2026-09-14T11:30:08.109406Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Oviedo)"
+      },
+      {
+        "property_id": "g0c11",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 9.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "a7840df288924264",
+        "retrieved_at": "2026-09-14T11:30:08.336779Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c11",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.0,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "a7840df288924264",
+        "retrieved_at": "2026-09-14T11:30:08.340623Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c11",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "635ef83d54d34849",
+        "retrieved_at": "2026-09-14T11:30:08.527393Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c12": {
+    "property_id": "g0c12",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25829",
+    "findings": [
+      {
+        "property_id": "g0c12",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25829",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "808ab06cde2c4f53",
+        "retrieved_at": "2026-09-14T11:30:08.706506Z",
+        "note": "SUELO URBANO (ProvINE=15030)"
+      },
+      {
+        "property_id": "g0c12",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "e390060ba0d8420e",
+        "retrieved_at": "2026-09-14T11:30:08.863611Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Coruña (A))"
+      },
+      {
+        "property_id": "g0c12",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "cf1dc40b23304ad6",
+        "retrieved_at": "2026-09-14T11:30:09.094701Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c12",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.0,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "cf1dc40b23304ad6",
+        "retrieved_at": "2026-09-14T11:30:09.095515Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c12",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "1657d4d3b13d4b04",
+        "retrieved_at": "2026-09-14T11:30:09.270712Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c13": {
+    "property_id": "g0c13",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c13",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "47df0c7a2c784d42",
+        "retrieved_at": "2026-09-14T11:30:09.421816Z",
+        "note": "SUELO URBANO NO CONSOLIDADO (ProvINE=39075)"
+      },
+      {
+        "property_id": "g0c13",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "96a0896aef404cbf",
+        "retrieved_at": "2026-09-14T11:30:09.599573Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Santander)"
+      },
+      {
+        "property_id": "g0c13",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "06bce76e3ae749bb",
+        "retrieved_at": "2026-09-14T11:30:09.806514Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c13",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.7045615054383886,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "06bce76e3ae749bb",
+        "retrieved_at": "2026-09-14T11:30:09.807316Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c13",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "d1221229b3dd4e43",
+        "retrieved_at": "2026-09-14T11:30:09.993919Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c14": {
+    "property_id": "g0c14",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c14",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "e5f85291b1d240b3",
+        "retrieved_at": "2026-09-14T11:30:10.158086Z",
+        "note": "SUELO URBANO (ProvINE=47186)"
+      },
+      {
+        "property_id": "g0c14",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "7610444132f7487d",
+        "retrieved_at": "2026-09-14T11:30:10.339411Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Valladolid)"
+      },
+      {
+        "property_id": "g0c14",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "af14411e1b1e497b",
+        "retrieved_at": "2026-09-14T11:30:10.527363Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c14",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 3.417435324020739,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "af14411e1b1e497b",
+        "retrieved_at": "2026-09-14T11:30:10.527835Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c14",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "dcec0781f6524f9d",
+        "retrieved_at": "2026-09-14T11:30:10.731598Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c15": {
+    "property_id": "g0c15",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c15",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "9c249ae1d84344f1",
+        "retrieved_at": "2026-09-14T11:30:10.867378Z",
+        "note": "SUELO URBANO (ProvINE=50297)"
+      },
+      {
+        "property_id": "g0c15",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "d062b5af718d40c0",
+        "retrieved_at": "2026-09-14T11:30:11.070980Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Zaragoza)"
+      },
+      {
+        "property_id": "g0c15",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "243fde0612124148",
+        "retrieved_at": "2026-09-14T11:30:11.272815Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c15",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "d5c671792bee4510",
+        "retrieved_at": "2026-09-14T11:30:11.464694Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c16": {
+    "property_id": "g0c16",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c16",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "c41909f9ec324917",
+        "retrieved_at": "2026-09-14T11:30:11.640958Z",
+        "note": "SUELO URBANO NO CONSOLIDADO (ProvINE=41091)"
+      },
+      {
+        "property_id": "g0c16",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.07,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "82ec2da5334a4b6e",
+        "retrieved_at": "2026-09-14T11:30:11.828627Z",
+        "note": "Sevilla inex=41091 K=(1.1)"
+      },
+      {
+        "property_id": "g0c16",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "f53cf0d43ff84faa",
+        "retrieved_at": "2026-09-14T11:30:12.034151Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c16",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 5.097272916100884,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "f53cf0d43ff84faa",
+        "retrieved_at": "2026-09-14T11:30:12.035761Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c16",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "dec14fd769f44cba",
+        "retrieved_at": "2026-09-14T11:30:12.230885Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c17": {
+    "property_id": "g0c17",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c17",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "946302ff4dd14364",
+        "retrieved_at": "2026-09-14T11:30:12.478795Z",
+        "note": "SUELO URBANO NO CONSOLIDADO (ProvINE=30030)"
+      },
+      {
+        "property_id": "g0c17",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.15,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "396715aa20004a80",
+        "retrieved_at": "2026-09-14T11:30:12.688181Z",
+        "note": "Murcia inex=30030 K=(1.0)"
+      },
+      {
+        "property_id": "g0c17",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "00beb461da974a87",
+        "retrieved_at": "2026-09-14T11:30:12.906721Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c17",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 3.2788457226284997,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "00beb461da974a87",
+        "retrieved_at": "2026-09-14T11:30:12.907289Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c17",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "aee1f5fa381d4dc5",
+        "retrieved_at": "2026-09-14T11:30:13.123301Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c18": {
+    "property_id": "g0c18",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25829",
+    "findings": [
+      {
+        "property_id": "g0c18",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25829",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "e9889c10ddf64df5",
+        "retrieved_at": "2026-09-14T11:30:13.319895Z",
+        "note": "SUELO URBANO (ProvINE=11012)"
+      },
+      {
+        "property_id": "g0c18",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.07,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "6350f29d32ea4ceb",
+        "retrieved_at": "2026-09-14T11:30:13.549063Z",
+        "note": "Cádiz inex=11012 K=(1.3)"
+      },
+      {
+        "property_id": "g0c18",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "75d2cd194767490c",
+        "retrieved_at": "2026-09-14T11:30:13.783290Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c18",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 9.04494945346675,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "75d2cd194767490c",
+        "retrieved_at": "2026-09-14T11:30:13.784297Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c18",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "288170324abc4775",
+        "retrieved_at": "2026-09-14T11:30:13.996032Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c19": {
+    "property_id": "g0c19",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c19",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "74d02bbee6d74745",
+        "retrieved_at": "2026-09-14T11:30:14.142152Z",
+        "note": "SUELO URBANO (ProvINE=18087)"
+      },
+      {
+        "property_id": "g0c19",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.23,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "99783186c9f3413a",
+        "retrieved_at": "2026-09-14T11:30:14.333700Z",
+        "note": "Granada inex=18087 K=(1.0)"
+      },
+      {
+        "property_id": "g0c19",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "de3b032088ca42ef",
+        "retrieved_at": "2026-09-14T11:30:14.567760Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c19",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 0.8007851723296348,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "de3b032088ca42ef",
+        "retrieved_at": "2026-09-14T11:30:14.570209Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c19",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "ed27f2c4ec724be4",
+        "retrieved_at": "2026-09-14T11:30:14.774150Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c20": {
+    "property_id": "g0c20",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c20",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "3cf4ab49f3b6457d",
+        "retrieved_at": "2026-09-14T11:30:14.903618Z",
+        "note": "SUELO URBANO (ProvINE=45168)"
+      },
+      {
+        "property_id": "g0c20",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "ab3306f0242e4568",
+        "retrieved_at": "2026-09-14T11:30:15.064530Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Toledo)"
+      },
+      {
+        "property_id": "g0c20",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "1097a04437384bc3",
+        "retrieved_at": "2026-09-14T11:30:15.269958Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c20",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 2.215954461399139,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "1097a04437384bc3",
+        "retrieved_at": "2026-09-14T11:30:15.270579Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c20",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "281ea70a0f064853",
+        "retrieved_at": "2026-09-14T11:30:15.463352Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c21": {
+    "property_id": "g0c21",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25829",
+    "findings": [
+      {
+        "property_id": "g0c21",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25829",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "0a24ca1ed35b4ead",
+        "retrieved_at": "2026-09-14T11:30:15.619925Z",
+        "note": "SUELO URBANO (ProvINE=06015)"
+      },
+      {
+        "property_id": "g0c21",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "observed",
+        "observed": true,
+        "value": 0.05,
+        "unit": "g",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "ddb8aaedb8364aeb",
+        "retrieved_at": "2026-09-14T11:30:15.932243Z",
+        "note": "Badajoz inex=06015 K=(1.3)"
+      },
+      {
+        "property_id": "g0c21",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "350ae95072d84b03",
+        "retrieved_at": "2026-09-14T11:30:16.140462Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c21",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 3.915031674416753,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "350ae95072d84b03",
+        "retrieved_at": "2026-09-14T11:30:16.141249Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c21",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "9d1e3cdd9f3345c5",
+        "retrieved_at": "2026-09-14T11:30:16.336338Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c22": {
+    "property_id": "g0c22",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25829",
+    "findings": [
+      {
+        "property_id": "g0c22",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25829",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "77b2de113b9c4c9a",
+        "retrieved_at": "2026-09-14T11:30:16.515451Z",
+        "note": "SUELO URBANO (ProvINE=10037)"
+      },
+      {
+        "property_id": "g0c22",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "15f994ad071b4acf",
+        "retrieved_at": "2026-09-14T11:30:16.733926Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Cáceres)"
+      },
+      {
+        "property_id": "g0c22",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "91982c9e54fd4989",
+        "retrieved_at": "2026-09-14T11:30:16.972824Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c22",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 5.496661304130209,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "91982c9e54fd4989",
+        "retrieved_at": "2026-09-14T11:30:16.973746Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c22",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25829",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "ed88fa50044e44b4",
+        "retrieved_at": "2026-09-14T11:30:17.179218Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c23": {
+    "property_id": "g0c23",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c23",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "d529c3a41ee44513",
+        "retrieved_at": "2026-09-14T11:30:17.325230Z",
+        "note": "SUELO URBANO (ProvINE=26089)"
+      },
+      {
+        "property_id": "g0c23",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "779723bcee2f476d",
+        "retrieved_at": "2026-09-14T11:30:17.489022Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Logroño)"
+      },
+      {
+        "property_id": "g0c23",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "78032e0d376a416e",
+        "retrieved_at": "2026-09-14T11:30:17.718516Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c23",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "bb841652959d45a7",
+        "retrieved_at": "2026-09-14T11:30:17.909503Z",
+        "note": null
+      }
+    ]
+  },
+  "g0c24": {
+    "property_id": "g0c24",
+    "source_crs": "EPSG:4326",
+    "operational_crs": "EPSG:25830",
+    "findings": [
+      {
+        "property_id": "g0c24",
+        "source": "siu",
+        "source_version": "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14",
+        "kind": "siu.clase_suelo",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "classes",
+        "source_crs": "EPSG:3857",
+        "operational_crs": "EPSG:25830",
+        "method": "arcgis-rest-bbox-query",
+        "inputs": [
+          "property_geometry",
+          "OGC_Clases_Suelo"
+        ],
+        "provenance_id": "1bcf8f493c894819",
+        "retrieved_at": "2026-09-14T11:30:18.067304Z",
+        "note": "SUELO URBANO (ProvINE=37274)"
+      },
+      {
+        "property_id": "g0c24",
+        "source": "ncse02",
+        "source_version": "IGN Peligrosidad sismica NCSE-02 (WFS geofisica), verificado 2026-09-14",
+        "kind": "ncse02.hazard",
+        "status": "unavailable",
+        "observed": null,
+        "value": null,
+        "unit": null,
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-point-in-polygon",
+        "inputs": [
+          "property_geometry",
+          "HazardArea2002.NCSE-02"
+        ],
+        "provenance_id": "e8dc8287acc74f3e",
+        "retrieved_at": "2026-09-14T11:30:18.298629Z",
+        "note": "dentro de cobertura, sin valor NCSE-02 (Salamanca)"
+      },
+      {
+        "property_id": "g0c24",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads",
+        "status": "observed",
+        "observed": true,
+        "value": 1.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "14a745310cba401e",
+        "retrieved_at": "2026-09-14T11:30:18.521458Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c24",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.roads_nearest_distance_m",
+        "status": "derived",
+        "observed": null,
+        "value": 4.236999585317916,
+        "unit": "m",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "14a745310cba401e",
+        "retrieved_at": "2026-09-14T11:30:18.522008Z",
+        "note": null
+      },
+      {
+        "property_id": "g0c24",
+        "source": "btn",
+        "source_version": "IGN/CNIG BTN redes de transporte (WFS), verificado 2026-09-14",
+        "kind": "btn.rail",
+        "status": "observed",
+        "observed": false,
+        "value": 0.0,
+        "unit": "segments",
+        "source_crs": "EPSG:4258",
+        "operational_crs": "EPSG:25830",
+        "method": "wfs-getfeature-bbox",
+        "inputs": [
+          "property_geometry",
+          "operational_bbox"
+        ],
+        "provenance_id": "1dea744bd84545c2",
+        "retrieved_at": "2026-09-14T11:30:18.696933Z",
+        "note": null
+      }
+    ]
+  }
+}

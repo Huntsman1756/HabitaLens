@@ -14,6 +14,8 @@ from habitalens.provenance import ProvenanceRecorder
 DATA = Path(__file__).parent / "fixtures" / "data"
 EVIDENCE = DATA / "evidence"
 PROPERTIES = DATA / "properties"
+EVIDENCE_G0C = DATA / "evidence_g0c"
+PROPERTIES_G0C = DATA / "properties_g0c"
 
 # Mapa provider_id -> {clave_de_fetch: fichero de fixture}
 PROVIDER_FIXTURES: dict[str, dict[str, str]] = {
@@ -93,17 +95,59 @@ def load_property(name: str) -> tuple[str, str]:
 
 
 def make_evidence_sources(tmp_path: Path):
-    from habitalens.sources import all_sources
+    """Fuentes G0-B (snczi, eprtr, csn_radon) con fixtures G0-B congeladas."""
+
+    from habitalens.sources import get_source
 
     mapping = {key: EVIDENCE / name for key, name in evidence_index().items()}
     fixture_source = FixtureSource(mapping)
-    sources = all_sources(
-        cache=CacheStore(tmp_path / "cache"), provenance=ProvenanceRecorder(tmp_path)
-    )
-    for source in sources.values():
+    sources = {}
+    for source_id in ("snczi", "eprtr", "csn_radon"):
+        source = get_source(
+            source_id,
+            cache=CacheStore(tmp_path / source_id),
+            provenance=ProvenanceRecorder(tmp_path / source_id),
+        )
         source.source = fixture_source
+        sources[source_id] = source
     return sources
 
 
 def evidence_golden(name: str) -> dict:
     return json.loads((EVIDENCE / name).read_text(encoding="utf-8"))
+
+
+def g0c_index() -> dict[str, str]:
+    return json.loads((EVIDENCE_G0C / "_index.json").read_text(encoding="utf-8"))
+
+
+def g0c_corpus() -> list[dict]:
+    path = DATA.parents[2] / "src" / "habitalens" / "evidence" / "corpus_g0c.json"
+    return json.loads(path.read_text(encoding="utf-8"))["entries"]
+
+
+def load_g0c_property(property_id: str) -> tuple[str, str]:
+    wkt = (PROPERTIES_G0C / f"{property_id}.wkt").read_text(encoding="utf-8")
+    source_crs = next(e["source_crs"] for e in g0c_corpus() if e["id"] == property_id)
+    return wkt, source_crs
+
+
+def make_g0c_sources(tmp_path: Path):
+    from habitalens.sources import get_source
+
+    mapping = {key: EVIDENCE_G0C / name for key, name in g0c_index().items()}
+    fixture_source = FixtureSource(mapping)
+    sources = {}
+    for source_id in ("siu", "ncse02", "btn"):
+        source = get_source(
+            source_id,
+            cache=CacheStore(tmp_path / source_id),
+            provenance=ProvenanceRecorder(tmp_path / source_id),
+        )
+        source.source = fixture_source
+        sources[source_id] = source
+    return sources
+
+
+def g0c_golden(name: str) -> dict:
+    return json.loads((EVIDENCE_G0C / name).read_text(encoding="utf-8"))

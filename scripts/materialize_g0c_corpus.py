@@ -74,7 +74,7 @@ def main() -> None:
         provider = get_provider(provider_id, cache=cache, provenance=provenance)
         try:
             geometry, crs = _geometry(provider, refcat)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             failures.append(f"{item_id} {refcat}: {exc}")
             continue
         entries.append(
@@ -103,7 +103,7 @@ def main() -> None:
         try:
             provider = get_provider(provider_id, cache=cache, provenance=provenance)
             geometry, crs = _geometry(provider, refcat)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             failures.append(f"{item_id} {address} -> {provider_id} {refcat}: {exc}")
             continue
         entries.append(
