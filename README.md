@@ -160,8 +160,11 @@ disclaimers y **cero score global**.
 - `docs/g0-d-preregistration.md` — contrato congelado de G0-D.
 - `docs/p0-buyer-utility-validation.md` — validación de utilidad (P0).
 - `docs/p0-report.md` — ejecución P0: **INCONCLUSIVE** (muestra no obtenible + revisión humana pendiente).
-- `docs/p0.1-sample-acquisition.md` — remediación P0.1 (snapshot por operador), congelada sin ejecutar.
+- `docs/p0.1-sample-acquisition.md` — remediación P0.1 (snapshot por operador), **DEFERRED**.
+- `docs/p0-r-residential-property-utility.md` — validación de utilidad residencial (marco catastral), congelada sin ejecutar.
+- `docs/p0-t0-subastas-probe.md` — probe Subastas Judiciales: **FAIL** (sin dirección/referencia en el CSV).
 
 Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
 (`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),
-P0 **INCONCLUSIVE** (`p0-preregistered`).
+P0 **INCONCLUSIVE** (`p0-inconclusive`), P0.1 **DEFERRED**, P0-R preregistrado,
+P0-T0 **FAIL**.
