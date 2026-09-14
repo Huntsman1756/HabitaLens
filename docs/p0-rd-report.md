@@ -77,3 +77,29 @@ gestion, eso se resuelve estudiando producto, no anadiendo fuentes a ciegas.
 - `p0rd_frame.json` commiteado (`1fe2f3a`) **antes** de la primera consulta de
   riesgo.
 - Sin sustituciones por interes; sin cambios de umbrales; sin fuentes nuevas.
+
+## 8. Cierre (una sola tarea humana)
+
+El gate final es la **revision humana ciega**, que no puede sustituir el
+ejecutor automatico. Pasos:
+
+1. Una persona rellena `p0rd/blind_review.csv` (columna `actionable_HUMANO`:
+   `si`/`no`; opcional `motivo`, `comprobacion_1a5`).
+2. Ejecutar:
+
+```bash
+uv run python scripts/p0rd_verdict.py
+```
+
+El script **no** mueve umbrales; aplica los congelados y emite
+`p0rd/p0rd_verdict.json`:
+
+```text
+PASS   actionable_finding_rate >= 0.50 y resto de metricas OK
+FAIL   actionable_finding_rate < 0.50 (u otra metrica incumple)
+       -> technical_validity: PROVEN
+          buyer_utility_with_current_sources: NOT PROVEN
+INCONCLUSIVE   hoja sin rellenar
+```
+
+Estado actual: `INCONCLUSIVE` (0/10 filas rellenadas).
