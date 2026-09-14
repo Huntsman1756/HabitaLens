@@ -102,13 +102,31 @@ def report(
     typer.echo(DISCLAIMER)
 
 
-@app.command(help=f"Contrasta la superficie anunciada con la oficial del catastro.\n\n{DISCLAIMER}")
+@app.command(help=f"Contrasta la superficie anunciada con la oficial (comparabilidad).\n\n{DISCLAIMER}")
 def surface(
     refcat: str = typer.Argument(..., help="Referencia catastral."),
     advertised: float = typer.Option(..., "--advertised", help="Superficie anunciada en m2."),
+    concept: str = typer.Option(
+        "unknown",
+        "--concept",
+        help="Concepto del anuncio: unknown | construida | util | construida_con_comunes.",
+    ),
+    official_built: float = typer.Option(None, "--official-built", help="Superficie construida oficial (m2), si se conoce."),
+    official_common: float = typer.Option(None, "--official-common", help="Elementos comunes oficiales (m2), si se conocen."),
     tolerance: float = typer.Option(0.05, "--tolerance", help="Tolerancia relativa (por defecto 0.05)."),
 ) -> None:
-    from habitalens.evidence.surface import compare_surface
+    from habitalens.evidence.surface import (
+        ComparabilityStatus,
+        SurfaceComponents,
+        SurfaceConcept,
+        compare_area,
+    )
+
+    try:
+        surface_concept = SurfaceConcept(concept)
+    except ValueError as exc:
+        typer.echo(f"FAIL: concepto no valido ({concept})", err=True)
+        raise typer.Exit(code=1) from exc
 
     try:
         property_ = PropertyResolver().resolve_refcat(refcat)
@@ -116,18 +134,36 @@ def surface(
         typer.echo(f"INCONCLUSIVE: {exc}", err=True)
         raise typer.Exit(code=2) from exc
 
-    official = property_.parcel.area_m2
-    if official is None:
-        typer.echo("INCONCLUSIVE: la fuente no expone superficie oficial", err=True)
-        raise typer.Exit(code=2)
+    built = official_built
+    if built is None and property_.parcel.provider == "dgc":
+        try:
+            from habitalens.cadastre_providers import get_provider
 
-    result = compare_surface(advertised, official, refcat=property_.parcel.refcat, tolerance=tolerance)
+            data = get_provider("dgc").corroborate_reference(refcat)
+            built = data.area_m2
+        except Exception:
+            built = None
+
+    components = SurfaceComponents(built_m2=built, common_m2=official_common)
+    result = compare_area(
+        advertised, components, advertised_concept=surface_concept, refcat=refcat, tolerance=tolerance
+    )
+
     typer.echo(f"refcat            : {result.refcat}")
-    typer.echo(f"superficie_oficial: {result.official_m2} m2")
-    typer.echo(f"superficie_anuncio: {result.advertised_m2} m2")
-    typer.echo(f"diferencia        : {result.difference_m2:+.2f} m2")
-    typer.echo(f"diferencia_rel    : {result.relative_difference:+.1%}")
-    typer.echo(f"excede_tolerancia : {'si' if result.exceeds_tolerance else 'no'} (tol {result.tolerance:.0%})")
+    typer.echo(f"superficie_anuncio: {result.advertised_m2} m2 ({result.advertised_concept.value})")
+    typer.echo(f"construida_oficial: {result.official.built_m2}")
+    typer.echo(f"comunes_oficial   : {result.official.common_m2}")
+    typer.echo(f"referencia        : {result.reference_m2}")
+    typer.echo(f"comparabilidad    : {result.comparability.value}")
+    if result.comparability == ComparabilityStatus.INSUFFICIENT:
+        typer.echo("INCONCLUSIVE: sin superficie oficial comparable; aportar --official-built")
+    else:
+        typer.echo(f"diferencia        : {result.difference_m2:+.2f} m2")
+        typer.echo(f"diferencia_rel    : {result.relative_difference:+.1%}")
+        typer.echo(
+            f"excede_tolerancia : {'si' if result.exceeds_tolerance else 'no'} (tol {result.tolerance:.0%})"
+        )
+        typer.echo(f"hallazgo          : {result.kind}")
     typer.echo("")
     typer.echo(DISCLAIMER)
 

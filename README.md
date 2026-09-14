@@ -170,6 +170,7 @@ disclaimers y **cero score global**.
 - `docs/preflight-ite-cee.md` — preflight ITE/IEE y CEE (Fase 1).
 - `docs/spike-osm-trece.md` — spike aislado `osmnx`/`trece` (Fase 2).
 - `docs/surface-discrepancy.md` — capacidad superficie anunciada vs oficial (Fase 3).
+- `docs/p1-buyer-actionability-upgrade.md` — P1 (superficie con comparabilidad + CEE regional).
 
 Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
 (`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),
