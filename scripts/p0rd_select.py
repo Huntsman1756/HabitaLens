@@ -47,8 +47,8 @@ def main() -> None:
         refcat = row["stable_property_id"]
         try:
             parcel = provider.resolve_reference(refcat)
-            geometry, crs = provider._parcel_geometry(parcel.refcat)
-        except Exception as exc:  # noqa: BLE001
+            _geometry, crs = provider._parcel_geometry(parcel.refcat)
+        except Exception as exc:
             substitutions.append({"stable_property_id": refcat, "reason": str(exc)[:160]})
             continue
         selected.append(
