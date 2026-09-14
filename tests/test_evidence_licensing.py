@@ -25,6 +25,14 @@ def test_all_sources_declare_valid_license() -> None:
         assert declaration.applicable_version
 
 
+def test_csn_license_records_undeclared_open_license() -> None:
+    root = Path(sources_package.__file__).parent
+    declaration = load_license(root / "csn_radon")
+    assert "sin licencia abierta" in declaration.license_name.lower()
+    assert declaration.reuse_conditions
+    assert "1495" in declaration.reuse_conditions or "aviso legal" in declaration.reuse_conditions.lower()
+
+
 def test_missing_license_raises(tmp_path) -> None:
     package = tmp_path / "no_license"
     package.mkdir()
