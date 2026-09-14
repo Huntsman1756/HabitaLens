@@ -10,7 +10,6 @@ import hashlib
 import io
 import json
 import re
-import urllib.request
 import zipfile
 from pathlib import Path
 
@@ -80,7 +79,7 @@ def main() -> None:
         code = re.search(r"BU\.(\d{5})\.zip", url).group(1)
         try:
             payload = _get(url)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             print(f"  {code}: ERROR {exc}")
             continue
         with zipfile.ZipFile(io.BytesIO(payload)) as archive:
