@@ -65,15 +65,6 @@ def find_municipality_zip(
     return None
 
 
-def find_province_feed(entries: list[AtomEntry], province_code: str) -> str | None:
-    """Busca el sub-feed por provincia (formato jerarquico de la DGC)."""
-
-    for entry in entries:
-        if f"atom_{province_code}.xml" in entry.href:
-            return entry.href
-    return None
-
-
 def extract_zip_text(content: bytes, *, suffix: str = ".gml") -> list[bytes]:
     """Extrae el contenido de los ficheros GML/XML de un ZIP en memoria.
 
@@ -89,13 +80,6 @@ def extract_zip_text(content: bytes, *, suffix: str = ".gml") -> list[bytes]:
             if name.lower().endswith(suffix) or name.lower().endswith(".xml"):
                 results.append(archive.read(name))
     return results
-
-
-def municipality_from_refcat_dgc(refcat: str) -> str:
-    """La DGC codifica el municipio en los 5 primeros caracteres del refcat."""
-
-    digits = re.sub(r"\D", "", refcat)
-    return digits[:5]
 
 
 def municipality_from_refcat_bizkaia(refcat: str) -> str:

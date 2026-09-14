@@ -13,12 +13,17 @@ geocoding:
 providers:
   dgc:
     territory: dgc
-    source_version: "INSPIRE WFS 2.0.0 (CP/BU/AD) + ATOM municipal jerarquico"
+    source_version: "INSPIRE WFS 2.0.0 stored queries (GetParcel/GetBuildingByParcel) + ATOM"
     crs: "EPSG:4326"
     wfs:
       parcel: "https://ovc.catastro.meh.es/INSPIRE/wfsCP.aspx"
       building: "https://ovc.catastro.meh.es/INSPIRE/wfsBU.aspx"
       address: "https://ovc.catastro.meh.es/INSPIRE/wfsAD.aspx"
+    stored_queries:
+      parcel: "GetParcel"
+      building: "GetBuildingByParcel"
+      building_parts: "GetBuildingPartByParcel"
+    dnprc: "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfCallejero/COVCCallejero.svc/rest/Consulta_DNPRC"
     types:
       parcel: "cp:CadastralParcel"
       building: "bu:Building"

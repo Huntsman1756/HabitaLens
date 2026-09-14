@@ -202,7 +202,7 @@ class CadastreProvider(ABC):
 
     def get_buildings(self, refcat: str) -> list[Building]:
         parsed_list, content, request = self._fetch_buildings(refcat)
-        cache_path = self._persist_geometry(refcat, parsed_list)
+        cache_path = self._persist_geometry(refcat, parsed_list, kind="building")
         provenance = self._record(
             kind="building",
             refcat=refcat,
@@ -352,7 +352,7 @@ class CadastreProvider(ABC):
         minx, miny, maxx, maxy = geometry.bounds
         return minx, miny, maxx, maxy, crs
 
-    def _persist_geometry(self, refcat: str, parsed: list) -> Path | None:
+    def _persist_geometry(self, refcat: str, parsed: list, kind: str = "parcel") -> Path | None:
         if not self.persist:
             return None
         items = [(item.refcat, item.geometry, item.crs) for item in parsed if item.geometry]
@@ -368,13 +368,13 @@ class CadastreProvider(ABC):
         frame = gpd.GeoDataFrame({"refcat": refcats}, geometry=geometries, crs=crs)
         return self._cache.write_geoparquet(
             self.provider_id,
-            f"parcel:{refcat}",
+            f"{kind}:{refcat}",
             frame,
             meta={
                 "provider": self.provider_id,
                 "source_version": self.source_version(),
                 "crs": crs,
-                "kind": "parcel",
+                "kind": kind,
             },
         )
 
