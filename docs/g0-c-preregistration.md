@@ -197,4 +197,15 @@ No promover CSN por esta via. No incorporar IS-47 como sustituto.
   distinto) y se anaden `Logrono` y `Salamanca`. El bloque A (10 refcats) no
   cambia. La seleccion sigue siendo outcome-blind y por diversidad
   administrativa.
+- **E2 (2026-09-14).** Mecanismos de acceso confirmados antes de parsear el
+  corpus: SIU via ArcGIS REST `Servicios_OGC/MapServer/15/query` (capa
+  `OGC_Clases_Suelo`), NCSE-02 via WFS `www.ign.es/wms-inspire/geofisica`
+  (capa `HazardArea2002.NCSE-02`), BTN via WFS
+  `servicios.idee.es/wfs-inspire/transportes` (`tn-ro:RoadLink`,
+  `tn-ra:RailwayLink`). Semantica de casos duros fijada: SIU 0 features ->
+  INCONCLUSIVE; NCSE null dentro de cobertura -> UNAVAILABLE; BTN ausencia
+  dentro de cobertura declarada -> OBSERVED-ausencia.
+- **E3 (2026-09-14).** Se anaden cuatro **controles positivos** fuera del corpus
+  (Granada NCSE, Madrid NCSE-null, Madrid BTN, Madrid SIU), sin alterar las 24
+  propiedades.
 

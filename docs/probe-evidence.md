@@ -126,3 +126,44 @@ Controles positivos (fuera del corpus): `control_ebro_flood` -> SNCZI q100
 Nota: las 8 propiedades no intersectan Q100 ni DPH. Es un resultado valido del
 corpus preregistrado (seleccion por diversidad, no por resultado), no un fallo
 de la fuente.
+
+## G0-C: cobertura (2026-09-14)
+
+Corpus de 24 propiedades materializado y congelado **antes** de consultar
+SIU/NCSE-02/BTN (`corpus_g0c.json`, commit `b907509`).
+
+Comandos:
+
+```bash
+uv run python scripts/materialize_g0c_corpus.py   # 24 propiedades
+uv run python scripts/capture_g0c.py             # captura live -> fixtures
+uv run python scripts/probe_g0c.py               # gates + casos duros
+uv run pytest                                    # replay offline
+```
+
+Accesos: SIU `mapas.fomento.gob.es/.../SIU/Servicios_OGC/MapServer/15/query`
+(RISP); NCSE-02 `www.ign.es/wms-inspire/geofisica` capa `HazardArea2002.NCSE-02`
+(CC BY 4.0); BTN `servicios.idee.es/wfs-inspire/transportes` `tn-ro:RoadLink` +
+`tn-ra:RailwayLink` (CC BY 4.0 compatible).
+
+Resultados live (24 propiedades):
+
+```text
+SIU:     observed 23 | inconclusive 1        (g0c07 Navarra: 0 features -> NO ausencia)
+NCSE-02: observed  8 | unavailable 16        (Madrid/Bilbao/Zaragoza: null dentro de cobertura)
+BTN:     observed 48 | derived 20            (carretera + ferrocarril; distancias)
+```
+
+Controles positivos (fuera del corpus):
+
+| Control | Fuente | Resultado |
+|---------|--------|-----------|
+| Granada | NCSE-02 | OBSERVED `aceleracion=0.23 g` |
+| Madrid centro | NCSE-02 | UNAVAILABLE (null dentro de cobertura) |
+| Madrid carretera | BTN | OBSERVED `RoadLink`, distancia `~0 m` |
+| Madrid centro | SIU | OBSERVED `ClaseSuelo` |
+
+Casos duros verificados: `0 features` de SIU -> INCONCLUSIVE (nunca ausencia);
+`aceleracion` null de NCSE dentro de cobertura -> UNAVAILABLE (no OBSERVED, no
+fuera de cobertura); ausencia BTN dentro de cobertura declarada -> OBSERVED
+`observed=false`.

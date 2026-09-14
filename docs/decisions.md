@@ -181,3 +181,44 @@ propiedad + misma version de fuente + misma regla = mismos hallazgos.
 - Refetch explicito con `--refresh`.
 - Provenance append-only en `~/.habitalens/provenance/provenance.jsonl`,
   registrando la version/esquema realmente observado.
+
+## 10. G0-C: cobertura
+
+### 10.1 Cobertura como ciudadano de primera clase
+
+Regla dura: `0 features` **no** es "sin afecciones". Para OBSERVED-ausencia se
+exige acreditar cobertura; si no, UNAVAILABLE (sin cobertura oficial) o
+INCONCLUSIVE (indeterminable). Implementado en `evidence/coverage.py`.
+
+### 10.2 Acceso verificado por fuente
+
+| Fuente | Acceso | CRS | Cobertura | Licencia |
+|--------|--------|-----|-----------|----------|
+| SIU | ArcGIS REST `.../SIU/Servicios_OGC/MapServer/15/query` (capa 15 Clases_Suelo) | EPSG:3857 | **no declarada por municipio** (solo agregada) | RISP (atribucion) |
+| NCSE-02 | WFS `www.ign.es/wms-inspire/geofisica`, capa `HazardArea2002.NCSE-02` | EPSG:4258 | sobre declarado (-19,27)-(6,46), scope nacional | CC BY 4.0 |
+| BTN | WFS `servicios.idee.es/wfs-inspire/transportes`, `tn-ro:RoadLink` / `tn-ra:RailwayLink` | EPSG:4258 | nacional declarada | CC BY 4.0 compatible |
+
+### 10.3 Semantica aplicada (casos duros)
+
+- **SIU**: features -> OBSERVED (la feature acredita cobertura + `ProvINE`/
+  `ClaseSuelo`); 0 features -> **INCONCLUSIVE** (cobertura no acreditable),
+  nunca OBSERVED-ausencia. Resultado live: 23 OBSERVED + 1 INCONCLUSIVE
+  (Navarra `g0c07`).
+- **NCSE-02**: fuera del sobre -> UNAVAILABLE; poligono con `aceleracion` ->
+  OBSERVED (valor en g); poligono con `aceleracion` **null** -> **UNAVAILABLE**
+  ("dentro de cobertura, sin valor NCSE-02"; NO es ausencia ni fuera de
+  cobertura). Resultado live: 8 OBSERVED + 16 UNAVAILABLE (Madrid, Bilbao,
+  Zaragoza, ...).
+- **BTN**: cobertura nacional declarada; features -> OBSERVED presente +
+  DERIVED distancia; 0 features -> OBSERVED-ausencia. Resultado live: 48
+  OBSERVED + 20 DERIVED.
+
+### 10.4 Controles positivos (fuera del corpus)
+
+Granada NCSE (0.23 g), Madrid NCSE null (UNAVAILABLE), Madrid BTN (carretera,
+distancia ~0), Madrid SIU (clase de suelo).
+
+### 10.5 CSN / IS-47
+
+CSN sigue INCONCLUSIVE (G0-B.1) y **no** se promociona. IS-47 no se incorpora
+como sustituto.

@@ -120,6 +120,19 @@ hallazgos deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE`.
 | Evidence engine | PASS | Taxonomia, CRS operacional explicito, provenance, replay determinista. |
 | Corpus 8 propiedades | PASS | Replay offline + controles; sin fuga de geometria. |
 
+## Gate G0-C (cobertura)
+
+Cobertura como ciudadano de primera clase: `0 features` no es ausencia.
+
+| Gate | Estado | Nota |
+|------|--------|------|
+| SIU | PASS | 23 OBSERVED + 1 INCONCLUSIVE; 0 features nunca es ausencia; control Madrid. |
+| NCSE-02 | PASS | 8 OBSERVED + 16 UNAVAILABLE (null dentro de cobertura); control Granada 0.23 g. |
+| BTN | PASS | 48 OBSERVED + 20 DERIVED; ausencia dentro de cobertura declarada; control Madrid. |
+| Coverage core | PASS | `evidence/coverage.py` + semantica UNAVAILABLE/INCONCLUSIVE estricta. |
+| Corpus 24 | PASS | Materializado outcome-blind antes de consultar fuentes; replay offline. |
+| CSN | INCONCLUSIVE | Dependencia externa (G0-B.1); no se promociona. |
+
 ## Decisiones y evidencia
 
 - `docs/decisions.md` — routing, CRS, geometria, licencias, cache/provenance.
