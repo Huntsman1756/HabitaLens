@@ -18,4 +18,5 @@ cache/
 .fixtmp/
 .spike/
 probe_*_output.*
+capture_*_output.*
 
