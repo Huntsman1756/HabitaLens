@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -11,6 +12,8 @@ from habitalens.net import FixtureSource
 from habitalens.provenance import ProvenanceRecorder
 
 DATA = Path(__file__).parent / "fixtures" / "data"
+EVIDENCE = DATA / "evidence"
+PROPERTIES = DATA / "properties"
 
 # Mapa provider_id -> {clave_de_fetch: fichero de fixture}
 PROVIDER_FIXTURES: dict[str, dict[str, str]] = {
@@ -77,3 +80,30 @@ def make_provider(provider_id: str, tmp_path: Path, extra=None):
 @pytest.fixture
 def data_dir() -> Path:
     return DATA
+
+
+def evidence_index() -> dict[str, str]:
+    return json.loads((EVIDENCE / "_index.json").read_text(encoding="utf-8"))
+
+
+def load_property(name: str) -> tuple[str, str]:
+    wkt = (PROPERTIES / f"{name}.wkt").read_text(encoding="utf-8")
+    meta = json.loads((PROPERTIES / f"{name}.json").read_text(encoding="utf-8"))
+    return wkt, meta["source_crs"]
+
+
+def make_evidence_sources(tmp_path: Path):
+    from habitalens.sources import all_sources
+
+    mapping = {key: EVIDENCE / name for key, name in evidence_index().items()}
+    fixture_source = FixtureSource(mapping)
+    sources = all_sources(
+        cache=CacheStore(tmp_path / "cache"), provenance=ProvenanceRecorder(tmp_path)
+    )
+    for source in sources.values():
+        source.source = fixture_source
+    return sources
+
+
+def evidence_golden(name: str) -> dict:
+    return json.loads((EVIDENCE / name).read_text(encoding="utf-8"))
