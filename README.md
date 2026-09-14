@@ -157,7 +157,9 @@ disclaimers y **cero score global**.
 - `docs/g0-b-progression-decision.md` — decision de progresion G0-B -> G0-C.
 - `docs/g0-b.1-csn-licensing.md` — remediacion de licencia CSN (INCONCLUSIVE).
 - `docs/g0-c-preregistration.md` — preregistro congelado de G0-C.
-- `docs/g0-d-preregistration.md` — contrato congelado de G0-D (aun sin ejecutar).
+- `docs/g0-d-preregistration.md` — contrato congelado de G0-D.
+- `docs/p0-buyer-utility-validation.md` — validación de utilidad (P0), congelada sin ejecutar.
 
 Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
-(`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D preregistrado y en HOLD.
+(`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),
+P0 preregistrado y en HOLD.
