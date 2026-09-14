@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:georss="http://www.georss.org/georss"  xmlns:inspire_dls = "http://inspire.ec.europa.eu/schemas/inspire_dls/1.0" xml:lang="en">
+<entry>
+		<!-- title for pre-defined dataset -->
+		<title> 17079-FORTIA Cadastral Parcels</title>
+		<!-- Spatial Dataset Unique Resourse Identifier for this dataset-->
+		<inspire_dls:spatial_dataset_identifier_code>CP</inspire_dls:spatial_dataset_identifier_code>
+		<inspire_dls:spatial_dataset_identifier_namespace>SDGC</inspire_dls:spatial_dataset_identifier_namespace>
+		<content type="xhtml" xml:lang="en">
+		  <div xmlns="http://www.w3.org/1999/xhtml">
+		  </div>
+		</content>
+        <link rel="enclosure" href="https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/17/17079-FORTIA/A.ES.SDGC.CP.17079.zip" type="application/atom+xml" hreflang="en" />
+        <!-- identifier for pre-defined dataset -->
+        <id>https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/17/17079-FORTIA/A.ES.SDGC.CP.17079.zip</id>
+        <!-- rights, access info for pre-defined dataset -->
+        <rights>This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information</rights>
+        <!-- last date/time pre-defined dataset was updated -->
+        <updated>2026-08-21T00:00:00Z</updated>
+        <!-- optional GeoRSS-Simple bounding box of the pre-defined dataset. Must be lat lon -->
+        <georss:polygon>42.224297101122545 3.0082915379671435 42.224297101122545 3.06449399647284 42.26170022440228 3.06449399647284 42.26170022440228 3.0082915379671435 42.224297101122545 3.0082915379671435</georss:polygon>
+        <!-- INSPIRE Spatial Object Types contained in the pre-defined dataset -->
+        <category term="http://www.opengis.net/def/crs/EPSG/0/25831"  label="ETRS89"/>
+    </entry>
+</feed>

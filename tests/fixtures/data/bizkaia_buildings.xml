@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<wfs:FeatureCollection timeStamp="2026-09-14T08:26:45.062+01:00" numberReturned="6" numberMatched="unknown" xmlns:act-core="http://inspire.ec.europa.eu/schemas/act-core/4.0" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:base2="http://inspire.ec.europa.eu/schemas/base2/2.0" xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:bu-core2d="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0" xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0" xmlns="http://www.interactive-instruments.de/a4i/1.0" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/a4i/1.0 https://geo.bizkaia.eus/arcgisserverinspire/rest/directories/arcgisforinspire/schema/INSPIRE/A4I-10.4.xsd http://www.opengis.net/gml/3.2 https://geo.bizkaia.eus/arcgisserverinspire/rest/directories/arcgisforinspire/schema/ogc/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 https://geo.bizkaia.eus/arcgisserverinspire/rest/directories/arcgisforinspire/schema/ogc/wfs/2.0/wfs.xsd">
+<wfs:member>
+<bu-core2d:Building gml:id="BuildingS.137279">
+<gml:identifier codeSpace="http://inspire.jrc.ec.europa.eu/ids">https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=BuildingS.137279</gml:identifier>
+<bu-base:beginLifespanVersion>2014-04-10T11:41:24</bu-base:beginLifespanVersion>
+<bu-base:conditionOfConstruction xlink:title="functional"/>
+<bu-base:dateOfConstruction>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end>1868-12-31T00:00:00</bu-base:end>
+</bu-base:DateOfEvent>
+</bu-base:dateOfConstruction>
+<bu-base:dateOfDemolition>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfDemolition>
+<bu-base:dateOfRenovation>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfRenovation>
+<bu-base:elevation xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:externalReference>
+<bu-base:ExternalReference>
+<bu-base:informationSystem>https://appsec.ebizkaia.eus/O4GC000C/vistas/visor.xhtml?CODMUN=020&amp;CODCALLE=04380&amp;NUMPORTAL=   004   </bu-base:informationSystem>
+<bu-base:informationSystemName>
+<gco:CharacterString>Cadastral Data</gco:CharacterString>
+</bu-base:informationSystemName>
+<bu-base:reference>02016190400401001</bu-base:reference>
+</bu-base:ExternalReference>
+</bu-base:externalReference>
+<bu-base:heightAboveGround xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:inspireId>
+<base:Identifier>
+<base:localId>48.020.1619.04004.01.001</base:localId>
+<base:namespace>ES.BFA.BU</base:namespace>
+<base:versionId xsi:nil="true" nilReason="other:unpopulated"/>
+</base:Identifier>
+</bu-base:inspireId>
+<bu-base:name xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:buildingNature xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse xlink:title="residential   "/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:numberOfDwellings>25</bu-base:numberOfDwellings>
+<bu-base:numberOfBuildingUnits>41</bu-base:numberOfBuildingUnits>
+<bu-base:numberOfFloorsAboveGround>8</bu-base:numberOfFloorsAboveGround>
+<bu-base:parts xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-core2d:geometry2D>
+<bu-base:BuildingGeometry2D>
+<bu-base:geometry>
+<gml:Polygon gml:id="BuildingS.ifcid.137279.shape.Geom_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>43.260956128000 -2.928425501000 43.260786538000 -2.928231522000 43.260782032000 -2.928226353000 43.260681378000 -2.928398224000 43.260675441000 -2.928408334000 43.260618952000 -2.928504627000 43.260615807000 -2.928515226000 43.260615091000 -2.928523113000 43.260615908000 -2.928533461000 43.260619426000 -2.928543191000 43.260743222000 -2.928802031000 43.260908635000 -2.928509586000 43.260956128000 -2.928425501000</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+</bu-base:geometry>
+<bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+<bu-base:horizontalGeometryReference xlink:title="footprint"/>
+<bu-base:horizontalGeometryEstimatedAccuracy uom="m">1.000000</bu-base:horizontalGeometryEstimatedAccuracy>
+<bu-base:verticalGeometryEstimatedAccuracy xsi:nil="true" nilReason="other:unpopulated" uom="na"/>
+</bu-base:BuildingGeometry2D>
+</bu-core2d:geometry2D>
+</bu-core2d:Building>
+</wfs:member>
+<wfs:member>
+<bu-core2d:Building gml:id="BuildingS.137295">
+<gml:identifier codeSpace="http://inspire.jrc.ec.europa.eu/ids">https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=BuildingS.137295</gml:identifier>
+<bu-base:beginLifespanVersion>2016-06-10T09:55:23</bu-base:beginLifespanVersion>
+<bu-base:conditionOfConstruction xlink:title="functional"/>
+<bu-base:dateOfConstruction>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end>1975-12-31T00:00:00</bu-base:end>
+</bu-base:DateOfEvent>
+</bu-base:dateOfConstruction>
+<bu-base:dateOfDemolition>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfDemolition>
+<bu-base:dateOfRenovation>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfRenovation>
+<bu-base:elevation xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:externalReference>
+<bu-base:ExternalReference>
+<bu-base:informationSystem>https://appsec.ebizkaia.eus/O4GC000C/vistas/visor.xhtml?CODMUN=020&amp;CODCALLE=04040&amp;NUMPORTAL=   007   </bu-base:informationSystem>
+<bu-base:informationSystemName>
+<gco:CharacterString>Cadastral Data</gco:CharacterString>
+</bu-base:informationSystemName>
+<bu-base:reference>02016190400101001</bu-base:reference>
+</bu-base:ExternalReference>
+</bu-base:externalReference>
+<bu-base:heightAboveGround xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:inspireId>
+<base:Identifier>
+<base:localId>48.020.1619.04001.01.001</base:localId>
+<base:namespace>ES.BFA.BU</base:namespace>
+<base:versionId xsi:nil="true" nilReason="other:unpopulated"/>
+</base:Identifier>
+</bu-base:inspireId>
+<bu-base:name xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:buildingNature xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse xlink:title="retail        "/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:numberOfDwellings xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:numberOfBuildingUnits>1</bu-base:numberOfBuildingUnits>
+<bu-base:numberOfFloorsAboveGround>8</bu-base:numberOfFloorsAboveGround>
+<bu-base:parts xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-core2d:geometry2D>
+<bu-base:BuildingGeometry2D>
+<bu-base:geometry>
+<gml:Polygon gml:id="BuildingS.ifcid.137295.shape.Geom_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>43.261609570000 -2.929250741000 43.261506448000 -2.928785864000 43.261503739000 -2.928773669000 43.261417321000 -2.928384055000 43.261052276000 -2.928535538000 43.260956128000 -2.928425501000 43.260908635000 -2.928509586000 43.261061152000 -2.929196671000 43.260953754000 -2.929241767000 43.261183579000 -2.929721897000 43.261280313000 -2.929760596000 43.261377791000 -2.929690871000 43.261498677000 -2.929614218000 43.261618128000 -2.929548409000 43.261647766000 -2.929422576000 43.261609570000 -2.929250741000</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+</bu-base:geometry>
+<bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+<bu-base:horizontalGeometryReference xlink:title="footprint"/>
+<bu-base:horizontalGeometryEstimatedAccuracy uom="m">1.000000</bu-base:horizontalGeometryEstimatedAccuracy>
+<bu-base:verticalGeometryEstimatedAccuracy xsi:nil="true" nilReason="other:unpopulated" uom="na"/>
+</bu-base:BuildingGeometry2D>
+</bu-core2d:geometry2D>
+</bu-core2d:Building>
+</wfs:member>
+<wfs:member>
+<bu-core2d:Building gml:id="BuildingS.137303">
+<gml:identifier codeSpace="http://inspire.jrc.ec.europa.eu/ids">https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=BuildingS.137303</gml:identifier>
+<bu-base:beginLifespanVersion>2022-02-05T12:51:24</bu-base:beginLifespanVersion>
+<bu-base:conditionOfConstruction xlink:title="functional"/>
+<bu-base:dateOfConstruction>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end>1998-12-31T00:00:00</bu-base:end>
+</bu-base:DateOfEvent>
+</bu-base:dateOfConstruction>
+<bu-base:dateOfDemolition>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfDemolition>
+<bu-base:dateOfRenovation>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfRenovation>
+<bu-base:elevation xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:externalReference>
+<bu-base:ExternalReference>
+<bu-base:informationSystem>https://appsec.ebizkaia.eus/O4GC000C/vistas/visor.xhtml?CODMUN=020&amp;CODCALLE=01110&amp;NUMPORTAL=   002   </bu-base:informationSystem>
+<bu-base:informationSystemName>
+<gco:CharacterString>Cadastral Data</gco:CharacterString>
+</bu-base:informationSystemName>
+<bu-base:reference>02016190400301001</bu-base:reference>
+</bu-base:ExternalReference>
+</bu-base:externalReference>
+<bu-base:heightAboveGround xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:inspireId>
+<base:Identifier>
+<base:localId>48.020.1619.04003.01.001</base:localId>
+<base:namespace>ES.BFA.BU</base:namespace>
+<base:versionId xsi:nil="true" nilReason="other:unpopulated"/>
+</base:Identifier>
+</bu-base:inspireId>
+<bu-base:name xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:buildingNature xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse xlink:title="retail        "/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:numberOfDwellings xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:numberOfBuildingUnits>1</bu-base:numberOfBuildingUnits>
+<bu-base:numberOfFloorsAboveGround>8</bu-base:numberOfFloorsAboveGround>
+<bu-base:parts xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-core2d:geometry2D>
+<bu-base:BuildingGeometry2D>
+<bu-base:geometry>
+<gml:Polygon gml:id="BuildingS.ifcid.137303.shape.Geom_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>43.260908635000 -2.928509586000 43.260743222000 -2.928802031000 43.260953754000 -2.929241767000 43.261061152000 -2.929196671000 43.260908635000 -2.928509586000</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+</bu-base:geometry>
+<bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+<bu-base:horizontalGeometryReference xlink:title="footprint"/>
+<bu-base:horizontalGeometryEstimatedAccuracy uom="m">1.000000</bu-base:horizontalGeometryEstimatedAccuracy>
+<bu-base:verticalGeometryEstimatedAccuracy xsi:nil="true" nilReason="other:unpopulated" uom="na"/>
+</bu-base:BuildingGeometry2D>
+</bu-core2d:geometry2D>
+</bu-core2d:Building>
+</wfs:member>
+<wfs:member>
+<bu-core2d:Building gml:id="BuildingS.149693">
+<gml:identifier codeSpace="http://inspire.jrc.ec.europa.eu/ids">https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=BuildingS.149693</gml:identifier>
+<bu-base:beginLifespanVersion>2014-03-20T12:23:20</bu-base:beginLifespanVersion>
+<bu-base:conditionOfConstruction xlink:title="functional"/>
+<bu-base:dateOfConstruction>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end>2006-12-31T00:00:00</bu-base:end>
+</bu-base:DateOfEvent>
+</bu-base:dateOfConstruction>
+<bu-base:dateOfDemolition>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfDemolition>
+<bu-base:dateOfRenovation>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfRenovation>
+<bu-base:elevation xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:externalReference>
+<bu-base:ExternalReference>
+<bu-base:informationSystem>https://appsec.ebizkaia.eus/O4GC000C/vistas/visor.xhtml?CODMUN=020&amp;CODCALLE=03290&amp;NUMPORTAL=   002A  </bu-base:informationSystem>
+<bu-base:informationSystemName>
+<gco:CharacterString>Cadastral Data</gco:CharacterString>
+</bu-base:informationSystemName>
+<bu-base:reference>02016300200501011</bu-base:reference>
+</bu-base:ExternalReference>
+</bu-base:externalReference>
+<bu-base:heightAboveGround xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:inspireId>
+<base:Identifier>
+<base:localId>48.020.1630.02005.01.011</base:localId>
+<base:namespace>ES.BFA.BU</base:namespace>
+<base:versionId xsi:nil="true" nilReason="other:unpopulated"/>
+</base:Identifier>
+</bu-base:inspireId>
+<bu-base:name xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:buildingNature xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse xlink:title="residential   "/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:numberOfDwellings xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:numberOfBuildingUnits>1</bu-base:numberOfBuildingUnits>
+<bu-base:numberOfFloorsAboveGround>1</bu-base:numberOfFloorsAboveGround>
+<bu-base:parts xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-core2d:geometry2D>
+<bu-base:BuildingGeometry2D>
+<bu-base:geometry>
+<gml:Polygon gml:id="BuildingS.ifcid.149693.shape.Geom_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>43.260977819000 -2.927126847000 43.260972063000 -2.927137820000 43.260962523000 -2.927145347000 43.260952709000 -2.927146591000 43.260944783000 -2.927144382000 43.260936675000 -2.927138601000 43.260932799000 -2.927132076000 43.260929913000 -2.927124440000 43.260927483000 -2.927127277000 43.260737768000 -2.926865930000 43.260703610000 -2.926818043000 43.260679456000 -2.926784313000 43.260677473000 -2.926781604000 43.260645388000 -2.926736795000 43.260621233000 -2.926702941000 43.260586534000 -2.926654439000 43.260331667000 -2.927022521000 43.260311069000 -2.927057660000 43.260157436000 -2.927319660000 43.260153380000 -2.927314490000 43.260047603000 -2.927500044000 43.259968849000 -2.927415863000 43.259946181000 -2.927454454000 43.259905362000 -2.927409778000 43.259927309000 -2.927371681000 43.259799805000 -2.927232732000 43.259777677000 -2.927270952000 43.259736047000 -2.927226278000 43.259758534000 -2.927187564000 43.259630579000 -2.927048123000 43.259398513000 -2.927305901000 43.258971121000 -2.927828432000 43.258890700000 -2.927956291000 43.258971351000 -2.928049832000 43.259364366000 -2.927417444000 43.259470699000 -2.927541140000 43.259629110000 -2.927286160000 43.259870793000 -2.927565923000 43.259567483000 -2.928085352000 43.259604067000 -2.928125352000 43.259199380000 -2.928818492000 43.259162796000 -2.928778492000 43.258596281000 -2.929748774000 43.258639985000 -2.929800100000 43.258662473000 -2.929761265000 43.258665975000 -2.929745490000 43.258700517000 -2.929685820000 43.258801166000 -2.929794987000 43.258847210000 -2.929844955000 43.258811409000 -2.929905613000 43.258777856000 -2.929962449000 43.258782632000 -2.929967988000 43.258896332000 -2.929772700000 43.258739096000 -2.929603844000 43.259109965000 -2.928966812000 43.259177996000 -2.929039794000 43.260047812000 -2.927546123000 43.260137109000 -2.927641996000 43.260093844000 -2.927716219000 43.260147640000 -2.927777512000 43.260253330000 -2.927595409000 43.260114651000 -2.927442303000 43.260174827000 -2.927339353000 43.260347928000 -2.927530490000 43.260428343000 -2.927392894000 43.260648088000 -2.927017092000 43.260709994000 -2.927084906000 43.260712782000 -2.927080097000 43.260958601000 -2.927349263000 43.260964855000 -2.927413694000 43.260773088000 -2.927749421000 43.260775250000 -2.927751390000 43.260972327000 -2.927410852000 43.260965981000 -2.927344080000 43.260961976000 -2.927276319000 43.260967244000 -2.927205468000 43.260976835000 -2.927136089000 43.260977819000 -2.927126847000</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+<gml:interior>
+<gml:LinearRing>
+<gml:posList>43.259468165000 -2.927237316000 43.259572729000 -2.927126305000 43.259601486000 -2.927177032000 43.259496832000 -2.927287920000 43.259468165000 -2.927237316000</gml:posList>
+</gml:LinearRing>
+</gml:interior>
+<gml:interior>
+<gml:LinearRing>
+<gml:posList>43.259605051000 -2.927119490000 43.259634915000 -2.927070049000 43.259737012000 -2.927185249000 43.259707238000 -2.927234690000 43.259605051000 -2.927119490000</gml:posList>
+</gml:LinearRing>
+</gml:interior>
+<gml:interior>
+<gml:LinearRing>
+<gml:posList>43.259770312000 -2.927299915000 43.259800086000 -2.927250473000 43.259902272000 -2.927365674000 43.259872498000 -2.927415115000 43.259770312000 -2.927299915000</gml:posList>
+</gml:LinearRing>
+</gml:interior>
+</gml:Polygon>
+</bu-base:geometry>
+<bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+<bu-base:horizontalGeometryReference xlink:title="footprint"/>
+<bu-base:horizontalGeometryEstimatedAccuracy uom="m">1.000000</bu-base:horizontalGeometryEstimatedAccuracy>
+<bu-base:verticalGeometryEstimatedAccuracy xsi:nil="true" nilReason="other:unpopulated" uom="na"/>
+</bu-base:BuildingGeometry2D>
+</bu-core2d:geometry2D>
+</bu-core2d:Building>
+</wfs:member>
+<wfs:member>
+<bu-core2d:Building gml:id="BuildingS.149694">
+<gml:identifier codeSpace="http://inspire.jrc.ec.europa.eu/ids">https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=BuildingS.149694</gml:identifier>
+<bu-base:beginLifespanVersion>2019-10-15T12:15:07</bu-base:beginLifespanVersion>
+<bu-base:conditionOfConstruction xlink:title="functional"/>
+<bu-base:dateOfConstruction>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end>1910-12-31T00:00:00</bu-base:end>
+</bu-base:DateOfEvent>
+</bu-base:dateOfConstruction>
+<bu-base:dateOfDemolition>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfDemolition>
+<bu-base:dateOfRenovation>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfRenovation>
+<bu-base:elevation xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:externalReference>
+<bu-base:ExternalReference>
+<bu-base:informationSystem>https://appsec.ebizkaia.eus/O4GC000C/vistas/visor.xhtml?CODMUN=020&amp;CODCALLE=03290&amp;NUMPORTAL=   002   </bu-base:informationSystem>
+<bu-base:informationSystemName>
+<gco:CharacterString>Cadastral Data</gco:CharacterString>
+</bu-base:informationSystemName>
+<bu-base:reference>02016300200501001</bu-base:reference>
+</bu-base:ExternalReference>
+</bu-base:externalReference>
+<bu-base:heightAboveGround xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:inspireId>
+<base:Identifier>
+<base:localId>48.020.1630.02005.01.001</base:localId>
+<base:namespace>ES.BFA.BU</base:namespace>
+<base:versionId xsi:nil="true" nilReason="other:unpopulated"/>
+</base:Identifier>
+</bu-base:inspireId>
+<bu-base:name xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:buildingNature xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse xlink:title="office        "/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:numberOfDwellings xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:numberOfBuildingUnits>32</bu-base:numberOfBuildingUnits>
+<bu-base:numberOfFloorsAboveGround>7</bu-base:numberOfFloorsAboveGround>
+<bu-base:parts xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-core2d:geometry2D>
+<bu-base:BuildingGeometry2D>
+<bu-base:geometry>
+<gml:Polygon gml:id="BuildingS.ifcid.149694.shape.Geom_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>43.260773088000 -2.927749421000 43.260964855000 -2.927413694000 43.260958601000 -2.927349263000 43.260712782000 -2.927080097000 43.260709994000 -2.927084906000 43.260648088000 -2.927017092000 43.260428343000 -2.927392894000 43.260764182000 -2.927763847000 43.260768859000 -2.927755463000 43.260773088000 -2.927749421000</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+</bu-base:geometry>
+<bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+<bu-base:horizontalGeometryReference xlink:title="footprint"/>
+<bu-base:horizontalGeometryEstimatedAccuracy uom="m">1.000000</bu-base:horizontalGeometryEstimatedAccuracy>
+<bu-base:verticalGeometryEstimatedAccuracy xsi:nil="true" nilReason="other:unpopulated" uom="na"/>
+</bu-base:BuildingGeometry2D>
+</bu-core2d:geometry2D>
+</bu-core2d:Building>
+</wfs:member>
+<wfs:member>
+<bu-core2d:Building gml:id="BuildingS.660656">
+<gml:identifier codeSpace="http://inspire.jrc.ec.europa.eu/ids">https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Catastro/Buildings/MapServer/exts/InspireFeatureDownload/service?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=BuildingS.660656</gml:identifier>
+<bu-base:beginLifespanVersion>2022-05-20T09:50:17</bu-base:beginLifespanVersion>
+<bu-base:conditionOfConstruction xlink:title="functional"/>
+<bu-base:dateOfConstruction>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end>2021-12-31T00:00:00</bu-base:end>
+</bu-base:DateOfEvent>
+</bu-base:dateOfConstruction>
+<bu-base:dateOfDemolition>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfDemolition>
+<bu-base:dateOfRenovation>
+<bu-base:DateOfEvent>
+<bu-base:anyPoint xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:beginning xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:end xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:DateOfEvent>
+</bu-base:dateOfRenovation>
+<bu-base:elevation xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:externalReference>
+<bu-base:ExternalReference>
+<bu-base:informationSystem>https://appsec.ebizkaia.eus/O4GC000C/vistas/visor.xhtml?CODMUN=020&amp;CODCALLE=04040&amp;NUMPORTAL=   001   </bu-base:informationSystem>
+<bu-base:informationSystemName>
+<gco:CharacterString>Cadastral Data</gco:CharacterString>
+</bu-base:informationSystemName>
+<bu-base:reference>02016190400601001</bu-base:reference>
+</bu-base:ExternalReference>
+</bu-base:externalReference>
+<bu-base:heightAboveGround xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:inspireId>
+<base:Identifier>
+<base:localId>48.020.1619.04006.01.001</base:localId>
+<base:namespace>ES.BFA.BU</base:namespace>
+<base:versionId xsi:nil="true" nilReason="other:unpopulated"/>
+</base:Identifier>
+</bu-base:inspireId>
+<bu-base:name xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:buildingNature xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse xlink:title="office        "/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:currentUse>
+<bu-base:CurrentUse>
+<bu-base:currentUse/>
+<bu-base:percentage xsi:nil="true" nilReason="other:unpopulated"/>
+</bu-base:CurrentUse>
+</bu-base:currentUse>
+<bu-base:numberOfDwellings xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-base:numberOfBuildingUnits>1</bu-base:numberOfBuildingUnits>
+<bu-base:numberOfFloorsAboveGround>22</bu-base:numberOfFloorsAboveGround>
+<bu-base:parts xsi:nil="true" nilReason="other:unpopulated"/>
+<bu-core2d:geometry2D>
+<bu-base:BuildingGeometry2D>
+<bu-base:geometry>
+<gml:Polygon gml:id="BuildingS.ifcid.660656.shape.Geom_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4258" srsDimension="2">
+<gml:exterior>
+<gml:LinearRing>
+<gml:posList>43.261417321000 -2.928384055000 43.261376864000 -2.928198055000 43.261352300000 -2.928085593000 43.261334206000 -2.928093130000 43.261063517000 -2.927795035000 43.260953688000 -2.927981580000 43.260940802000 -2.927967426000 43.260847704000 -2.928126353000 43.260832682000 -2.928151998000 43.260831240000 -2.928150275000 43.260824494000 -2.928161741000 43.260829900000 -2.928167649000 43.260789782000 -2.928235215000 43.260956128000 -2.928425501000 43.261052276000 -2.928535538000 43.261417321000 -2.928384055000</gml:posList>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+</bu-base:geometry>
+<bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+<bu-base:horizontalGeometryReference xlink:title="footprint"/>
+<bu-base:horizontalGeometryEstimatedAccuracy uom="m">1.000000</bu-base:horizontalGeometryEstimatedAccuracy>
+<bu-base:verticalGeometryEstimatedAccuracy xsi:nil="true" nilReason="other:unpopulated" uom="na"/>
+</bu-base:BuildingGeometry2D>
+</bu-core2d:geometry2D>
+</bu-core2d:Building>
+</wfs:member>
+</wfs:FeatureCollection>

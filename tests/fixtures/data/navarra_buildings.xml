@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:IDENA="https://idena.navarra.es/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" numberMatched="3" numberReturned="3" timeStamp="2026-09-14T06:27:00.236Z" xsi:schemaLocation="https://idena.navarra.es/ https://idena.navarra.es/ogc/wfs?service=WFS&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typeName=IDENA%3ACATAST_Pol_Edificacion http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+  <wfs:member>
+    <IDENA:CATAST_Pol_Edificacion gml:id="CATAST_Pol_Edificacion.31">
+      <IDENA:the_geom>
+        <gml:MultiSurface srsName="http://www.opengis.net/gml/srs/epsg.xml#4258" srsDimension="2" gml:id="CATAST_Pol_Edificacion.31.the_geom">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="CATAST_Pol_Edificacion.31.the_geom.1">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-2.14141739 42.64857885 -2.14141589 42.64863214 -2.14140087 42.64865155 -2.14134461 42.64863901 -2.14134199 42.64870774 -2.14125402 42.64870636 -2.14125563 42.64867864 -2.14126389 42.64858867 -2.14128928 42.64858704 -2.14141739 42.64857885</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+        </gml:MultiSurface>
+      </IDENA:the_geom>
+      <IDENA:FEATURE>200002</IDENA:FEATURE>
+      <IDENA:GEOM_AREA>135.28</IDENA:GEOM_AREA>
+      <IDENA:GEOM_PERI>53.79</IDENA:GEOM_PERI>
+      <IDENA:BEGINLIFE>12/09/2026</IDENA:BEGINLIFE>
+    </IDENA:CATAST_Pol_Edificacion>
+  </wfs:member>
+  <wfs:member>
+    <IDENA:CATAST_Pol_Edificacion gml:id="CATAST_Pol_Edificacion.99">
+      <IDENA:the_geom>
+        <gml:MultiSurface srsName="http://www.opengis.net/gml/srs/epsg.xml#4258" srsDimension="2" gml:id="CATAST_Pol_Edificacion.99.the_geom">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="CATAST_Pol_Edificacion.99.the_geom.1">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-2.14128928 42.64858704 -2.14128314 42.64853455 -2.1413068 42.64853299 -2.14133748 42.64853183 -2.14141866 42.64852732 -2.14142384 42.64857844 -2.14141739 42.64857885 -2.14128928 42.64858704</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+        </gml:MultiSurface>
+      </IDENA:the_geom>
+      <IDENA:FEATURE>200002</IDENA:FEATURE>
+      <IDENA:GEOM_AREA>64.08</IDENA:GEOM_AREA>
+      <IDENA:GEOM_PERI>33.75</IDENA:GEOM_PERI>
+      <IDENA:BEGINLIFE>12/09/2026</IDENA:BEGINLIFE>
+    </IDENA:CATAST_Pol_Edificacion>
+  </wfs:member>
+  <wfs:member>
+    <IDENA:CATAST_Pol_Edificacion gml:id="CATAST_Pol_Edificacion.165">
+      <IDENA:the_geom>
+        <gml:MultiSurface srsName="http://www.opengis.net/gml/srs/epsg.xml#4258" srsDimension="2" gml:id="CATAST_Pol_Edificacion.165.the_geom">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="CATAST_Pol_Edificacion.165.the_geom.1">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-2.14126389 42.64858867 -2.14122733 42.64859084 -2.14122629 42.64853828 -2.14128314 42.64853455 -2.14128928 42.64858704 -2.14126389 42.64858867</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+        </gml:MultiSurface>
+      </IDENA:the_geom>
+      <IDENA:FEATURE>200002</IDENA:FEATURE>
+      <IDENA:GEOM_AREA>28.55</IDENA:GEOM_AREA>
+      <IDENA:GEOM_PERI>21.46</IDENA:GEOM_PERI>
+      <IDENA:BEGINLIFE>12/09/2026</IDENA:BEGINLIFE>
+    </IDENA:CATAST_Pol_Edificacion>
+  </wfs:member>
+</wfs:FeatureCollection>

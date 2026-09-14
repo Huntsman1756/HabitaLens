@@ -1,0 +1,377 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wfs:FeatureCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://inspire.ec.europa.eu/schemas/bu-ext2d/4.0 https://b5m.gipuzkoa.eus/inspire/wfs/gipuzkoa_wfs_bu?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;OUTPUTFORMAT=application%2Fgml%2Bxml%3B+version%3D3.2&amp;TYPENAME=bu-ext2d:Building&amp;NAMESPACES=xmlns(bu-ext2d,http%3A%2F%2Finspire.ec.europa.eu%2Fschemas%2Fbu-ext2d%2F4.0)" xmlns:wfs="http://www.opengis.net/wfs/2.0" timeStamp="2026-09-14T06:26:59Z" xmlns:gml="http://www.opengis.net/gml/3.2" numberMatched="5" numberReturned="5">
+  <wfs:boundedBy>
+    <gml:Envelope srsName="EPSG:4258">
+      <gml:lowerCorner>-1.943561 43.293916</gml:lowerCorner>
+      <gml:upperCorner>-1.942863 43.295754</gml:upperCorner>
+    </gml:Envelope>
+  </wfs:boundedBy>
+  <wfs:member>
+    <bu-ext2d:Building xmlns:bu-ext2d="http://inspire.ec.europa.eu/schemas/bu-ext2d/4.0" gml:id="ES.GFA.BU.71185">
+      <bu-base:inspireId xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <base:Identifier xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3">
+          <base:localId>71185</base:localId>
+          <base:namespace>ES.GFA.BU</base:namespace>
+        </base:Identifier>
+      </bu-base:inspireId>
+      <bu-base:beginLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">2026-08-08T00:00:00</bu-base:beginLifespanVersion>
+      <bu-base:endLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:conditionOfConstruction xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ConditionOfConstructionValue/functional"/>
+      <bu-base:dateOfConstruction xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:DateOfEvent>
+          <bu-base:end>1989-05-11T00:00:00</bu-base:end>
+        </bu-base:DateOfEvent>
+      </bu-base:dateOfConstruction>
+      <bu-base:elevation xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:Elevation>
+          <bu-base:elevationReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:elevationValue srsName="https://www.opengis.net/def/crs/EPSG/0/5730" srsDimension="1">19</bu-base:elevationValue>
+        </bu-base:Elevation>
+      </bu-base:elevation>
+      <bu-base:externalReference xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:ExternalReference>
+          <bu-base:informationSystem>https://ssl6.gipuzkoa.net/Catastro/map.htm?id=84&amp;RefCat=8594011&amp;idioma=eus</bu-base:informationSystem>
+          <bu-base:informationSystemName>
+            <gmd:PT_FreeText xmlns:gmd="http://www.isotc211.org/2005/gmd">
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="eng">Cadastral data</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </bu-base:informationSystemName>
+          <bu-base:reference>8594011</bu-base:reference>
+        </bu-base:ExternalReference>
+      </bu-base:externalReference>
+      <bu-base:heightAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:HeightAboveGround>
+          <bu-base:heightReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalRoof"/>
+          <bu-base:lowReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:status xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HeightStatusValue/estimated"/>
+          <bu-base:value uom="m">9</bu-base:value>
+        </bu-base:HeightAboveGround>
+      </bu-base:heightAboveGround>
+      <bu-base:numberOfDwellings xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="false">0</bu-base:numberOfDwellings>
+      <bu-base:numberOfFloorsAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="false">1</bu-base:numberOfFloorsAboveGround>
+      <bu-ext2d:buildingInfo>
+        <bu-ext:numberOfFloorsBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="false">0</bu-ext:numberOfFloorsBelowGround>
+        <bu-ext:heightBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" uom="m">0</bu-ext:heightBelowGround>
+        <bu-ext:document xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+        <bu-ext:address xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0">
+          <ad:AddressRepresentation xmlns:ad="http://inspire.ec.europa.eu/schemas/ad/4.0">
+            <ad:adminUnit>
+              <gn:GeographicalName xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0">
+                <gn:language>mul</gn:language>
+                <gn:nativeness xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/NativenessValue/endonym"/>
+                <gn:nameStatus xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/NameStatusValue/official"/>
+                <gn:sourceOfName xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unknown"/>
+                <gn:pronunciation xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+                <gn:spelling>
+                  <gn:SpellingOfName>
+                    <gn:text>Astigarraga</gn:text>
+                    <gn:script>Latn</gn:script>
+                  </gn:SpellingOfName>
+                </gn:spelling>
+              </gn:GeographicalName>
+            </ad:adminUnit>
+            <ad:thoroughfare>
+              <gn:GeographicalName xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0">
+                <gn:language>und</gn:language>
+                <gn:nativeness xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/NativenessValue/endonym"/>
+                <gn:nameStatus xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/NameStatusValue/official"/>
+                <gn:sourceOfName xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unknown"/>
+                <gn:pronunciation xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+                <gn:spelling>
+                  <gn:SpellingOfName>
+                    <gn:text>Ubarburu pasealekua</gn:text>
+                    <gn:script>Latn</gn:script>
+                  </gn:SpellingOfName>
+                </gn:spelling>
+              </gn:GeographicalName>
+            </ad:thoroughfare>
+            <ad:locatorDesignator>58</ad:locatorDesignator>
+            <ad:postCode>20115</ad:postCode>
+          </ad:AddressRepresentation>
+        </bu-ext:address>
+        <bu-ext:officialValue xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0">
+          <bu-ext:OfficialValue>
+            <bu-ext:value>2554124</bu-ext:value>
+            <bu-ext:currency xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/CurrencyValue/EUR"/>
+            <bu-ext:referencePercentage>80</bu-ext:referencePercentage>
+            <bu-ext:officialValueReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/OfficialValueReferenceValue/transactionPriceFull"/>
+            <bu-ext:valuationDate>2002-08-01T00:00:00</bu-ext:valuationDate>
+          </bu-ext:OfficialValue>
+        </bu-ext:officialValue>
+        <bu-ext:cadastralParcel xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://b5m.gipuzkoa.eus/inspire/wfs/gipuzkoa_wfs_cp?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;id=ES.GFA.CP.084-8594011-10610"/>
+      </bu-ext2d:buildingInfo>
+      <bu-base:currentUse xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:CurrentUse>
+          <bu-base:currentUse xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/CurrentUseValue/industrial"/>
+          <bu-base:percentage>100</bu-base:percentage>
+        </bu-base:CurrentUse>
+      </bu-base:currentUse>
+      <bu-core2d:geometry2D xmlns:bu-core2d="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0">
+        <bu-base:BuildingGeometry2D xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+          <bu-base:geometry>
+            <gml:Polygon gml:id="ES.GFA.BU.71185_BU-CORE2D_GEOMETRY2D" srsName="EPSG:4258">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-1.942938 43.295748 -1.943248 43.295707 -1.943531 43.295670 -1.943496 43.295530 -1.943460 43.295391 -1.943425 43.295251 -1.943389 43.295111 -1.943387 43.295102 -1.943358 43.294989 -1.943354 43.294972 -1.943341 43.294921 -1.943332 43.294883 -1.943319 43.294833 -1.943285 43.294700 -1.943286 43.294700 -1.943285 43.294693 -1.943284 43.294693 -1.943284 43.294692 -1.943275 43.294693 -1.943275 43.294693 -1.943222 43.294701 -1.943222 43.294700 -1.943211 43.294701 -1.943211 43.294702 -1.943197 43.294704 -1.943157 43.294710 -1.943157 43.294709 -1.943146 43.294710 -1.943146 43.294711 -1.943092 43.294719 -1.943091 43.294718 -1.943080 43.294719 -1.943080 43.294720 -1.943027 43.294727 -1.943027 43.294727 -1.943018 43.294728 -1.943018 43.294730 -1.943018 43.294730 -1.943032 43.294782 -1.943033 43.294781 -1.943041 43.294818 -1.943041 43.294818 -1.943043 43.294826 -1.943044 43.294826 -1.943053 43.294862 -1.943052 43.294862 -1.943053 43.294868 -1.942997 43.294875 -1.942997 43.294875 -1.942988 43.294876 -1.942988 43.294878 -1.943024 43.295015 -1.942958 43.295024 -1.942958 43.295026 -1.942994 43.295164 -1.942928 43.295172 -1.942928 43.295174 -1.942964 43.295311 -1.942898 43.295320 -1.942898 43.295322 -1.942934 43.295460 -1.942868 43.295468 -1.942868 43.295470 -1.942881 43.295525 -1.942882 43.295525 -1.942891 43.295561 -1.942890 43.295561 -1.942892 43.295569 -1.942893 43.295569 -1.942901 43.295597 -1.942900 43.295597 -1.942900 43.295597 -1.942902 43.295605 -1.942901 43.295605 -1.942903 43.295610 -1.942916 43.295661 -1.942917 43.295661 -1.942926 43.295698 -1.942925 43.295698 -1.942927 43.295706 -1.942928 43.295706 -1.942938 43.295748</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </bu-base:geometry>
+          <bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+          <bu-base:horizontalGeometryReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/roofEdge"/>
+          <bu-base:horizontalGeometryEstimatedAccuracy uom="m">0.1</bu-base:horizontalGeometryEstimatedAccuracy>
+        </bu-base:BuildingGeometry2D>
+      </bu-core2d:geometry2D>
+    </bu-ext2d:Building>
+  </wfs:member>
+  <wfs:member>
+    <bu-ext2d:Building xmlns:bu-ext2d="http://inspire.ec.europa.eu/schemas/bu-ext2d/4.0" gml:id="ES.GFA.BU.750520">
+      <bu-base:inspireId xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <base:Identifier xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3">
+          <base:localId>750520</base:localId>
+          <base:namespace>ES.GFA.BU</base:namespace>
+        </base:Identifier>
+      </bu-base:inspireId>
+      <bu-base:beginLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">2026-08-08T00:00:00</bu-base:beginLifespanVersion>
+      <bu-base:endLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:conditionOfConstruction xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ConditionOfConstructionValue/functional"/>
+      <bu-base:elevation xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:Elevation>
+          <bu-base:elevationReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:elevationValue srsName="https://www.opengis.net/def/crs/EPSG/0/5730" srsDimension="1">28</bu-base:elevationValue>
+        </bu-base:Elevation>
+      </bu-base:elevation>
+      <bu-base:externalReference xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:ExternalReference>
+          <bu-base:informationSystem>https://b5m.gipuzkoa.eus/map/eu/E_A750520</bu-base:informationSystem>
+          <bu-base:informationSystemName>
+            <gmd:PT_FreeText xmlns:gmd="http://www.isotc211.org/2005/gmd">
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="eng">GFA data (without address)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </bu-base:informationSystemName>
+        </bu-base:ExternalReference>
+      </bu-base:externalReference>
+      <bu-base:heightAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:HeightAboveGround>
+          <bu-base:heightReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalRoof"/>
+          <bu-base:lowReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:status xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HeightStatusValue/estimated"/>
+          <bu-base:value uom="m">0</bu-base:value>
+        </bu-base:HeightAboveGround>
+      </bu-base:heightAboveGround>
+      <bu-base:numberOfDwellings xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:numberOfFloorsAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-ext2d:buildingInfo>
+        <bu-ext:numberOfFloorsBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+        <bu-ext:heightBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" uom="m">0</bu-ext:heightBelowGround>
+        <bu-ext:document xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      </bu-ext2d:buildingInfo>
+      <bu-core2d:geometry2D xmlns:bu-core2d="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0">
+        <bu-base:BuildingGeometry2D xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+          <bu-base:geometry>
+            <gml:Polygon gml:id="ES.GFA.BU.750520_BU-CORE2D_GEOMETRY2D" srsName="EPSG:4258">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-1.943555 43.293965 -1.943558 43.293948 -1.943524 43.293945 -1.943521 43.293962 -1.943555 43.293965</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </bu-base:geometry>
+          <bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+          <bu-base:horizontalGeometryReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/roofEdge"/>
+          <bu-base:horizontalGeometryEstimatedAccuracy uom="m">0.2</bu-base:horizontalGeometryEstimatedAccuracy>
+        </bu-base:BuildingGeometry2D>
+      </bu-core2d:geometry2D>
+    </bu-ext2d:Building>
+  </wfs:member>
+  <wfs:member>
+    <bu-ext2d:Building xmlns:bu-ext2d="http://inspire.ec.europa.eu/schemas/bu-ext2d/4.0" gml:id="ES.GFA.BU.869037">
+      <bu-base:inspireId xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <base:Identifier xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3">
+          <base:localId>869037</base:localId>
+          <base:namespace>ES.GFA.BU</base:namespace>
+        </base:Identifier>
+      </bu-base:inspireId>
+      <bu-base:beginLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">2026-08-08T00:00:00</bu-base:beginLifespanVersion>
+      <bu-base:endLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:conditionOfConstruction xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ConditionOfConstructionValue/functional"/>
+      <bu-base:elevation xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:Elevation>
+          <bu-base:elevationReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:elevationValue srsName="https://www.opengis.net/def/crs/EPSG/0/5730" srsDimension="1">21</bu-base:elevationValue>
+        </bu-base:Elevation>
+      </bu-base:elevation>
+      <bu-base:externalReference xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:ExternalReference>
+          <bu-base:informationSystem>https://b5m.gipuzkoa.eus/map/eu/E_A869037</bu-base:informationSystem>
+          <bu-base:informationSystemName>
+            <gmd:PT_FreeText xmlns:gmd="http://www.isotc211.org/2005/gmd">
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="eng">GFA data (without address)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </bu-base:informationSystemName>
+        </bu-base:ExternalReference>
+      </bu-base:externalReference>
+      <bu-base:heightAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:HeightAboveGround>
+          <bu-base:heightReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalRoof"/>
+          <bu-base:lowReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:status xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HeightStatusValue/estimated"/>
+          <bu-base:value uom="m">0</bu-base:value>
+        </bu-base:HeightAboveGround>
+      </bu-base:heightAboveGround>
+      <bu-base:numberOfDwellings xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:numberOfFloorsAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-ext2d:buildingInfo>
+        <bu-ext:numberOfFloorsBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+        <bu-ext:heightBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" uom="m">0</bu-ext:heightBelowGround>
+        <bu-ext:document xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      </bu-ext2d:buildingInfo>
+      <bu-core2d:geometry2D xmlns:bu-core2d="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0">
+        <bu-base:BuildingGeometry2D xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+          <bu-base:geometry>
+            <gml:Polygon gml:id="ES.GFA.BU.869037_BU-CORE2D_GEOMETRY2D" srsName="EPSG:4258">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-1.943358 43.294989 -1.943387 43.295102 -1.943412 43.295099 -1.943383 43.294986 -1.943358 43.294989</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </bu-base:geometry>
+          <bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+          <bu-base:horizontalGeometryReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/roofEdge"/>
+          <bu-base:horizontalGeometryEstimatedAccuracy uom="m">0.1</bu-base:horizontalGeometryEstimatedAccuracy>
+        </bu-base:BuildingGeometry2D>
+      </bu-core2d:geometry2D>
+    </bu-ext2d:Building>
+  </wfs:member>
+  <wfs:member>
+    <bu-ext2d:Building xmlns:bu-ext2d="http://inspire.ec.europa.eu/schemas/bu-ext2d/4.0" gml:id="ES.GFA.BU.868898">
+      <bu-base:inspireId xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <base:Identifier xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3">
+          <base:localId>868898</base:localId>
+          <base:namespace>ES.GFA.BU</base:namespace>
+        </base:Identifier>
+      </bu-base:inspireId>
+      <bu-base:beginLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">2026-08-08T00:00:00</bu-base:beginLifespanVersion>
+      <bu-base:endLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:conditionOfConstruction xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ConditionOfConstructionValue/functional"/>
+      <bu-base:elevation xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:Elevation>
+          <bu-base:elevationReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:elevationValue srsName="https://www.opengis.net/def/crs/EPSG/0/5730" srsDimension="1">22</bu-base:elevationValue>
+        </bu-base:Elevation>
+      </bu-base:elevation>
+      <bu-base:externalReference xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:ExternalReference>
+          <bu-base:informationSystem>https://b5m.gipuzkoa.eus/map/eu/E_A868898</bu-base:informationSystem>
+          <bu-base:informationSystemName>
+            <gmd:PT_FreeText xmlns:gmd="http://www.isotc211.org/2005/gmd">
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="eng">GFA data (without address)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </bu-base:informationSystemName>
+        </bu-base:ExternalReference>
+      </bu-base:externalReference>
+      <bu-base:heightAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:HeightAboveGround>
+          <bu-base:heightReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalRoof"/>
+          <bu-base:lowReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:status xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HeightStatusValue/estimated"/>
+          <bu-base:value uom="m">0</bu-base:value>
+        </bu-base:HeightAboveGround>
+      </bu-base:heightAboveGround>
+      <bu-base:numberOfDwellings xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:numberOfFloorsAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-ext2d:buildingInfo>
+        <bu-ext:numberOfFloorsBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+        <bu-ext:heightBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" uom="m">0</bu-ext:heightBelowGround>
+        <bu-ext:document xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      </bu-ext2d:buildingInfo>
+      <bu-core2d:geometry2D xmlns:bu-core2d="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0">
+        <bu-base:BuildingGeometry2D xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+          <bu-base:geometry>
+            <gml:Polygon gml:id="ES.GFA.BU.868898_BU-CORE2D_GEOMETRY2D" srsName="EPSG:4258">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-1.943341 43.294921 -1.943364 43.294919 -1.943355 43.294880 -1.943332 43.294883 -1.943341 43.294921</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </bu-base:geometry>
+          <bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+          <bu-base:horizontalGeometryReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/roofEdge"/>
+          <bu-base:horizontalGeometryEstimatedAccuracy uom="m">0.1</bu-base:horizontalGeometryEstimatedAccuracy>
+        </bu-base:BuildingGeometry2D>
+      </bu-core2d:geometry2D>
+    </bu-ext2d:Building>
+  </wfs:member>
+  <wfs:member>
+    <bu-ext2d:Building xmlns:bu-ext2d="http://inspire.ec.europa.eu/schemas/bu-ext2d/4.0" gml:id="ES.GFA.BU.750446">
+      <bu-base:inspireId xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <base:Identifier xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3">
+          <base:localId>750446</base:localId>
+          <base:namespace>ES.GFA.BU</base:namespace>
+        </base:Identifier>
+      </bu-base:inspireId>
+      <bu-base:beginLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">2026-08-08T00:00:00</bu-base:beginLifespanVersion>
+      <bu-base:endLifespanVersion xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:conditionOfConstruction xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ConditionOfConstructionValue/functional"/>
+      <bu-base:elevation xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:Elevation>
+          <bu-base:elevationReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:elevationValue srsName="https://www.opengis.net/def/crs/EPSG/0/5730" srsDimension="1">30</bu-base:elevationValue>
+        </bu-base:Elevation>
+      </bu-base:elevation>
+      <bu-base:externalReference xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:ExternalReference>
+          <bu-base:informationSystem>https://b5m.gipuzkoa.eus/map/eu/E_A750446</bu-base:informationSystem>
+          <bu-base:informationSystemName>
+            <gmd:PT_FreeText xmlns:gmd="http://www.isotc211.org/2005/gmd">
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="eng">GFA data (without address)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </bu-base:informationSystemName>
+        </bu-base:ExternalReference>
+      </bu-base:externalReference>
+      <bu-base:heightAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+        <bu-base:HeightAboveGround>
+          <bu-base:heightReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalRoof"/>
+          <bu-base:lowReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue/generalGround"/>
+          <bu-base:status xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HeightStatusValue/estimated"/>
+          <bu-base:value uom="m">0</bu-base:value>
+        </bu-base:HeightAboveGround>
+      </bu-base:heightAboveGround>
+      <bu-base:numberOfDwellings xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-base:numberOfFloorsAboveGround xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      <bu-ext2d:buildingInfo>
+        <bu-ext:numberOfFloorsBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+        <bu-ext:heightBelowGround xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" uom="m">0</bu-ext:heightBelowGround>
+        <bu-ext:document xmlns:bu-ext="http://inspire.ec.europa.eu/schemas/bu-ext/4.0" xsi:nil="true" nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated"/>
+      </bu-ext2d:buildingInfo>
+      <bu-core2d:geometry2D xmlns:bu-core2d="http://inspire.ec.europa.eu/schemas/bu-core2d/4.0">
+        <bu-base:BuildingGeometry2D xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0">
+          <bu-base:geometry>
+            <gml:Polygon gml:id="ES.GFA.BU.750446_BU-CORE2D_GEOMETRY2D" srsName="EPSG:4258">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>-1.943308 43.293958 -1.943374 43.293958 -1.943375 43.293921 -1.943308 43.293921 -1.943308 43.293958</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </bu-base:geometry>
+          <bu-base:referenceGeometry>true</bu-base:referenceGeometry>
+          <bu-base:horizontalGeometryReference xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/roofEdge"/>
+          <bu-base:horizontalGeometryEstimatedAccuracy uom="m">1</bu-base:horizontalGeometryEstimatedAccuracy>
+        </bu-base:BuildingGeometry2D>
+      </bu-core2d:geometry2D>
+    </bu-ext2d:Building>
+  </wfs:member>
+</wfs:FeatureCollection>
