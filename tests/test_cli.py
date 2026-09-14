@@ -27,3 +27,9 @@ def test_version() -> None:
     result = runner.invoke(app, ["--version"])
     assert result.exit_code == 0
     assert "habitalens" in result.stdout
+
+
+def test_report_help_shows_disclaimer() -> None:
+    result = runner.invoke(app, ["report", "--help"])
+    assert result.exit_code == 0
+    assert "no representa ni sustituye" in result.stdout

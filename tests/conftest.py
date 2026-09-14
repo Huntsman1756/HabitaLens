@@ -151,3 +151,33 @@ def make_g0c_sources(tmp_path: Path):
 
 def g0c_golden(name: str) -> dict:
     return json.loads((EVIDENCE_G0C / name).read_text(encoding="utf-8"))
+
+
+def make_report_manifest(tmp_path: Path, property_ids=None, report_id: str = "test-report"):
+    from habitalens.evidence import EvidenceEngine
+    from habitalens.evidence.corpus_g0c import CORPUS_G0C
+    from habitalens.report import build_manifest
+    from habitalens.report.manifest import property_entry
+
+    engine = EvidenceEngine(sources=make_g0c_sources(tmp_path))
+    entries = []
+    for item in CORPUS_G0C:
+        if property_ids is not None and item.id not in property_ids:
+            continue
+        wkt, source_crs = load_g0c_property(item.id)
+        evidence = engine.evaluate(item, wkt, source_crs)
+        entries.append(
+            property_entry(
+                {
+                    "id": item.id,
+                    "label": item.label,
+                    "provider_id": item.provider_id,
+                    "refcat": item.refcat,
+                    "context": item.context,
+                },
+                evidence,
+            )
+        )
+    return build_manifest(
+        report_id=report_id, entries=entries, generated_at="2026-09-14T00:00:00Z"
+    )
