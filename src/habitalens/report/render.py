@@ -24,13 +24,14 @@ def _property_html(prop: PropertyView) -> str:
         note = html_lib.escape(finding.note or "")
         rows.append(
             "      <tr>"
-            f"<td>{html_lib.escape(finding.source)}</td>"
+            f"<td>{html_lib.escape(finding.source)} / {html_lib.escape(finding.source_version)}</td>"
             f"<td>{html_lib.escape(finding.label)}</td>"
             f"<td>{html_lib.escape(finding.status)}</td>"
             f"<td>{html_lib.escape(finding.status_label)}</td>"
             f"<td>{html_lib.escape(finding.value_text)}</td>"
             f"<td>{html_lib.escape(finding.source_crs or '')} / {html_lib.escape(finding.operational_crs or '')}</td>"
             f"<td>{html_lib.escape(finding.method)}</td>"
+            f"<td>{html_lib.escape('; '.join(finding.inputs))}</td>"
             f"<td>{html_lib.escape(finding.provenance_id or '')}</td>"
             f"<td>{note}</td>"
             "      </tr>"
@@ -44,7 +45,7 @@ def _property_html(prop: PropertyView) -> str:
         f"crs operacional: {html_lib.escape(prop.operational_crs)}</p>\n"
         "      <table>\n"
         "        <thead><tr><th>fuente</th><th>hallazgo</th><th>estado</th><th>estado (es)</th>"
-        "<th>valor</th><th>crs</th><th>metodo</th><th>provenance</th><th>nota</th></tr></thead>\n"
+        "<th>valor</th><th>crs</th><th>metodo</th><th>inputs</th><th>provenance</th><th>nota</th></tr></thead>\n"
         "        <tbody>\n" + "\n".join(rows) + "\n        </tbody>\n"
         "      </table>\n"
         "    </article>"
@@ -63,7 +64,7 @@ def render_html(view: ReportViewModel) -> str:
         "  <header>\n"
         "    <h1>Informe HabitaLens</h1>\n"
         f'    <p class="meta">informe: {html_lib.escape(view.report_id)} | '
-        f"fecha: {html_lib.escape(view.generated_at)} | plantilla: 1</p>\n"
+        f"fecha: {html_lib.escape(view.generated_at)} | plantilla: {html_lib.escape(view.template_version)}</p>\n"
         "  </header>\n"
         '  <section id="disclaimers">\n    <h2>Disclaimers y atribuciones</h2>\n    <ul>\n'
         f"{disclaimers}\n    </ul>\n  </section>\n"
@@ -84,8 +85,9 @@ def _finding_lines(prop: PropertyView) -> list[str]:
         note = f" | nota: {finding.note}" if finding.note else ""
         lines.append(
             f"  * {finding.label} [{finding.status}] {finding.value_text} "
-            f"(fuente {finding.source} {finding.source_crs}/{finding.operational_crs}; "
-            f"metodo {finding.method}; provenance {finding.provenance_id}){note}"
+            f"(fuente {finding.source}; version {finding.source_version}; "
+            f"{finding.source_crs}/{finding.operational_crs}; metodo {finding.method}; "
+            f"inputs {'; '.join(finding.inputs)}; provenance {finding.provenance_id}){note}"
         )
     return lines
 

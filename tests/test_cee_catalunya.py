@@ -44,6 +44,15 @@ def test_lookup_absent_is_inconclusive(tmp_path) -> None:
     assert result.note
 
 
+def test_lookup_rejects_unsafe_refcat(tmp_path) -> None:
+    # El refcat se interpola en el $where de Socrata: caracteres fuera del
+    # formato catastral no deben llegar a la consulta.
+    provider = _provider(tmp_path, "x' OR '1'='1", "cee_catalunya_notfound.json")
+    result = provider.lookup("x' OR '1'='1")
+    assert result.status == CeeStatus.INCONCLUSIVE
+    assert result.record is None
+
+
 def test_catalunya_declares_license() -> None:
     declaration = load_license(Path(catalunya_pkg.__file__).parent)
     assert declaration.license_url.startswith("http")

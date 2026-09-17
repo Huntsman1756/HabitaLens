@@ -175,7 +175,7 @@ def compare_area(
         raise ValueError("tolerance no puede ser negativa")
 
     reference, comparability = _reference_for(advertised_concept, official)
-    factual = comparability in (ComparabilityStatus.DIRECT, ComparabilityStatus.PARTIAL)
+    factual = comparability == ComparabilityStatus.DIRECT
     kind = KIND_MISMATCH if factual else KIND_POTENTIAL
 
     if reference is None:
@@ -231,6 +231,8 @@ def area_finding(
     if comparison.relative_difference is not None:
         parts.append(f"relativa={comparison.relative_difference:+.1%}")
         parts.append(f"excede={'si' if comparison.exceeds_tolerance else 'no'}")
+    if comparison.comparability == ComparabilityStatus.PARTIAL:
+        parts.append("util y construida son conceptos distintos; la diferencia no acredita discrepancia")
     if comparison.comparability == ComparabilityStatus.NOT_COMPARABLE:
         parts.append("verificar que concepto de superficie usa el anuncio")
 

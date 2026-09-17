@@ -5,7 +5,6 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "control_ebro_flood",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
@@ -20,19 +19,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": null,
+        "property_id": "control_ebro_flood",
         "provenance_id": "552e4ddab1a74a5e",
-        "retrieved_at": "2026-09-14T10:41:59.389027Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:59.389027Z"
       },
       {
-        "property_id": "control_ebro_flood",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -40,12 +39,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "control_ebro_flood",
         "provenance_id": "95303e612374440b",
-        "retrieved_at": "2026-09-14T10:41:59.510759Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:59.510759Z"
       },
       {
-        "property_id": "control_ebro_flood",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -60,12 +59,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "control_ebro_flood",
         "provenance_id": "4832e571fb0b472d",
-        "retrieved_at": "2026-09-14T10:41:59.736097Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:59.736097Z"
       },
       {
-        "property_id": "control_ebro_flood",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -80,12 +79,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "SAICA NATUR, S.L. ZARAGOZA",
+        "property_id": "control_ebro_flood",
         "provenance_id": "4832e571fb0b472d",
-        "retrieved_at": "2026-09-14T10:42:00.214392Z",
-        "note": "SAICA NATUR, S.L. ZARAGOZA"
+        "retrieved_at": "2026-09-14T10:42:00.214392Z"
       },
       {
-        "property_id": "control_ebro_flood",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -97,9 +96,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "control_ebro_flood",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:42:00.214462Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:42:00.214462Z"
       }
     ]
   },
@@ -109,14 +109,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "control_bilbao_plant",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -124,19 +123,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "control_bilbao_plant",
         "provenance_id": "e9d16b9b32c74d08",
-        "retrieved_at": "2026-09-14T10:42:00.368825Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:42:00.368825Z"
       },
       {
-        "property_id": "control_bilbao_plant",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -144,12 +143,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "control_bilbao_plant",
         "provenance_id": "df34e176c5054ebe",
-        "retrieved_at": "2026-09-14T10:42:00.470229Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:42:00.470229Z"
       },
       {
-        "property_id": "control_bilbao_plant",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -164,12 +163,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "control_bilbao_plant",
         "provenance_id": "ccc2012ba65f44c9",
-        "retrieved_at": "2026-09-14T10:42:00.701397Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:42:00.701397Z"
       },
       {
-        "property_id": "control_bilbao_plant",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -184,12 +183,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "ELMET, S.L.U. (ELMET)",
+        "property_id": "control_bilbao_plant",
         "provenance_id": "ccc2012ba65f44c9",
-        "retrieved_at": "2026-09-14T10:42:00.859557Z",
-        "note": "ELMET, S.L.U. (ELMET)"
+        "retrieved_at": "2026-09-14T10:42:00.859557Z"
       },
       {
-        "property_id": "control_bilbao_plant",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -201,9 +200,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "control_bilbao_plant",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:42:00.859585Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:42:00.859585Z"
       }
     ]
   }

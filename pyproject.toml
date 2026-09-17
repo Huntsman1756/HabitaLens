@@ -1,10 +1,10 @@
 [project]
 name = "habitalens"
 version = "0.0.1"
-description = "HabitaLens - motor OSS de analisis reproducible de inmuebles a partir de fuentes publicas (gate G0-A)."
+description = "HabitaLens - motor OSS de analisis reproducible de inmuebles a partir de fuentes publicas."
 readme = "README.md"
 requires-python = ">=3.12"
-license = { text = "MIT" }
+license = "MIT"
 authors = [{ name = "HabitaLens" }]
 dependencies = [
     "pydantic>=2.7",
@@ -15,8 +15,8 @@ dependencies = [
     "shapely>=2.0",
     "pyogrio>=0.7",
     "pyarrow>=15.0",
-    "duckdb>=1.0",
     "fpdf2>=2.7",
+    "pypdf>=4.0",
 ]
 
 [project.scripts]
@@ -26,7 +26,6 @@ habitalens = "habitalens.cli:app"
 dev = [
     "pytest>=8.0",
     "ruff>=0.6",
-    "pypdf>=4.0",
 ]
 
 [build-system]

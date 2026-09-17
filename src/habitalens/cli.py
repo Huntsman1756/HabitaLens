@@ -1,4 +1,4 @@
-"""CLI de HabitaLens (gate G0-A).
+"""CLI de HabitaLens.
 
 Comando: ``habitalens resolve <refcat|direccion>``.
 
@@ -47,7 +47,7 @@ def main(
         help="Muestra la version y sale.",
     ),
 ) -> None:
-    """HabitaLens (G0-A)."""
+    """HabitaLens."""
 
 
 @app.command(help=f"Resuelve <refcat|direccion> a parcela + edificios.\n\n{DISCLAIMER}")

@@ -92,6 +92,11 @@ class CadastreProvider(ABC):
         for item in parsed_list:
             self._parcel_geometry_cache[item.refcat] = (item.geometry, item.crs)
         parsed_list = self._order_by_proximity(parsed_list, lon, lat)
+        if not parsed_list:
+            raise ParcelNotFoundError(
+                f"{self.provider_id}: ninguna parcela contiene la localizacion "
+                f"({lat}, {lon})"
+            )
         return self._finalize_parcel(None, parsed_list, content, request)
 
     @staticmethod
@@ -121,7 +126,7 @@ class CadastreProvider(ABC):
             if item.geometry is not None and item.geometry.covers(point)
         ]
         if not inside:
-            return parsed_list
+            return []
         inside.sort(key=lambda item: item.geometry.area)
         outside = [item for item in parsed_list if item not in inside]
         return inside + outside

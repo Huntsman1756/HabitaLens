@@ -5,14 +5,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p01_madrid_castellana",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -20,19 +19,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p01_madrid_castellana",
         "provenance_id": "da8a01d3d3ac4cc6",
-        "retrieved_at": "2026-09-14T10:41:51.119741Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:51.119741Z"
       },
       {
-        "property_id": "p01_madrid_castellana",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -40,12 +39,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p01_madrid_castellana",
         "provenance_id": "6b795cbd5a7e4d35",
-        "retrieved_at": "2026-09-14T10:41:51.229144Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:51.229144Z"
       },
       {
-        "property_id": "p01_madrid_castellana",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -60,12 +59,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p01_madrid_castellana",
         "provenance_id": "783976292b1d4936",
-        "retrieved_at": "2026-09-14T10:41:51.551822Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:51.551822Z"
       },
       {
-        "property_id": "p01_madrid_castellana",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -80,12 +79,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "sin instalaciones en radio 0.05deg",
+        "property_id": "p01_madrid_castellana",
         "provenance_id": "783976292b1d4936",
-        "retrieved_at": "2026-09-14T10:41:51.551836Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:51.551836Z"
       },
       {
-        "property_id": "p01_madrid_castellana",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -97,9 +96,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p01_madrid_castellana",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:51.551856Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:51.551856Z"
       }
     ]
   },
@@ -109,14 +109,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p02_madrid_mayor",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -124,19 +123,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p02_madrid_mayor",
         "provenance_id": "641e98d2886747ce",
-        "retrieved_at": "2026-09-14T10:41:52.033082Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:52.033082Z"
       },
       {
-        "property_id": "p02_madrid_mayor",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -144,12 +143,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p02_madrid_mayor",
         "provenance_id": "fd2ba9f4dc0d4d79",
-        "retrieved_at": "2026-09-14T10:41:52.119270Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:52.119270Z"
       },
       {
-        "property_id": "p02_madrid_mayor",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -164,12 +163,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p02_madrid_mayor",
         "provenance_id": "7eec8448c7e34a5e",
-        "retrieved_at": "2026-09-14T10:41:52.330869Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:52.330869Z"
       },
       {
-        "property_id": "p02_madrid_mayor",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -184,12 +183,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "SIS MADRID",
+        "property_id": "p02_madrid_mayor",
         "provenance_id": "7eec8448c7e34a5e",
-        "retrieved_at": "2026-09-14T10:41:52.384004Z",
-        "note": "SIS MADRID"
+        "retrieved_at": "2026-09-14T10:41:52.384004Z"
       },
       {
-        "property_id": "p02_madrid_mayor",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -201,9 +200,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p02_madrid_mayor",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:52.384022Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:52.384022Z"
       }
     ]
   },
@@ -213,14 +213,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p03_donostia_mayor",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -228,19 +227,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p03_donostia_mayor",
         "provenance_id": "6e11ad6b23ac4e07",
-        "retrieved_at": "2026-09-14T10:41:52.476424Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:52.476424Z"
       },
       {
-        "property_id": "p03_donostia_mayor",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -248,12 +247,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p03_donostia_mayor",
         "provenance_id": "2951bf587e9144c9",
-        "retrieved_at": "2026-09-14T10:41:52.564729Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:52.564729Z"
       },
       {
-        "property_id": "p03_donostia_mayor",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -268,12 +267,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p03_donostia_mayor",
         "provenance_id": "8584f73275a04e5e",
-        "retrieved_at": "2026-09-14T10:41:52.813785Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:52.813785Z"
       },
       {
-        "property_id": "p03_donostia_mayor",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -288,12 +287,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "ESTAÑOS MATIENA S.A.",
+        "property_id": "p03_donostia_mayor",
         "provenance_id": "8584f73275a04e5e",
-        "retrieved_at": "2026-09-14T10:41:52.999012Z",
-        "note": "ESTAÑOS MATIENA S.A."
+        "retrieved_at": "2026-09-14T10:41:52.999012Z"
       },
       {
-        "property_id": "p03_donostia_mayor",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -305,9 +304,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p03_donostia_mayor",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:52.999047Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:52.999047Z"
       }
     ]
   },
@@ -317,14 +317,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p04_vitoria_postas",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -332,19 +331,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p04_vitoria_postas",
         "provenance_id": "916b7287e377417a",
-        "retrieved_at": "2026-09-14T10:41:53.296071Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:53.296071Z"
       },
       {
-        "property_id": "p04_vitoria_postas",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -352,12 +351,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p04_vitoria_postas",
         "provenance_id": "9cfbd3626324494d",
-        "retrieved_at": "2026-09-14T10:41:53.419772Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:53.419772Z"
       },
       {
-        "property_id": "p04_vitoria_postas",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -372,12 +371,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p04_vitoria_postas",
         "provenance_id": "6f05298a68194490",
-        "retrieved_at": "2026-09-14T10:41:53.674862Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:53.674862Z"
       },
       {
-        "property_id": "p04_vitoria_postas",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -392,12 +391,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "OLAZABAL Y HUARTE, S.A.",
+        "property_id": "p04_vitoria_postas",
         "provenance_id": "6f05298a68194490",
-        "retrieved_at": "2026-09-14T10:41:54.332301Z",
-        "note": "OLAZABAL Y HUARTE, S.A."
+        "retrieved_at": "2026-09-14T10:41:54.332301Z"
       },
       {
-        "property_id": "p04_vitoria_postas",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -409,9 +408,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p04_vitoria_postas",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:54.332390Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:54.332390Z"
       }
     ]
   },
@@ -421,14 +421,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p05_bilbao_granvia",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -436,19 +435,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p05_bilbao_granvia",
         "provenance_id": "95d60f3ac20f4581",
-        "retrieved_at": "2026-09-14T10:41:54.478342Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:54.478342Z"
       },
       {
-        "property_id": "p05_bilbao_granvia",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -456,12 +455,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p05_bilbao_granvia",
         "provenance_id": "9b230816eca448c9",
-        "retrieved_at": "2026-09-14T10:41:54.586190Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:54.586190Z"
       },
       {
-        "property_id": "p05_bilbao_granvia",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -476,12 +475,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p05_bilbao_granvia",
         "provenance_id": "29359d8b0cb54828",
-        "retrieved_at": "2026-09-14T10:41:54.842731Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:54.842731Z"
       },
       {
-        "property_id": "p05_bilbao_granvia",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -496,12 +495,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "Site of facility: PRAXAIR PRODUCCION ESPAÑA, S.L. (PRAXAIR PLANTA DE DEUSTO)",
+        "property_id": "p05_bilbao_granvia",
         "provenance_id": "29359d8b0cb54828",
-        "retrieved_at": "2026-09-14T10:41:55.448089Z",
-        "note": "Site of facility: PRAXAIR PRODUCCION ESPAÑA, S.L. (PRAXAIR PLANTA DE DEUSTO)"
+        "retrieved_at": "2026-09-14T10:41:55.448089Z"
       },
       {
-        "property_id": "p05_bilbao_granvia",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -513,9 +512,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p05_bilbao_granvia",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:55.448177Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:55.448177Z"
       }
     ]
   },
@@ -525,14 +525,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p06_gipuzkoa_periurbana",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -540,19 +539,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p06_gipuzkoa_periurbana",
         "provenance_id": "05f03a3a3eed442c",
-        "retrieved_at": "2026-09-14T10:41:55.617809Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:55.617809Z"
       },
       {
-        "property_id": "p06_gipuzkoa_periurbana",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -560,12 +559,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p06_gipuzkoa_periurbana",
         "provenance_id": "ae5fe843a37e411b",
-        "retrieved_at": "2026-09-14T10:41:55.729272Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:55.729272Z"
       },
       {
-        "property_id": "p06_gipuzkoa_periurbana",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -580,12 +579,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p06_gipuzkoa_periurbana",
         "provenance_id": "e83e843b52d34aaa",
-        "retrieved_at": "2026-09-14T10:41:55.932614Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:55.932614Z"
       },
       {
-        "property_id": "p06_gipuzkoa_periurbana",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -600,12 +599,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "EDAR LOIOLA¬-8¬",
+        "property_id": "p06_gipuzkoa_periurbana",
         "provenance_id": "e83e843b52d34aaa",
-        "retrieved_at": "2026-09-14T10:41:56.439779Z",
-        "note": "EDAR LOIOLA¬-8¬"
+        "retrieved_at": "2026-09-14T10:41:56.439779Z"
       },
       {
-        "property_id": "p06_gipuzkoa_periurbana",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -617,9 +616,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p06_gipuzkoa_periurbana",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:56.439848Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:56.439848Z"
       }
     ]
   },
@@ -629,14 +629,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p07_navarra_urbana",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -644,19 +643,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p07_navarra_urbana",
         "provenance_id": "74c7c134bb8c4296",
-        "retrieved_at": "2026-09-14T10:41:56.657865Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:56.657865Z"
       },
       {
-        "property_id": "p07_navarra_urbana",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -664,12 +663,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p07_navarra_urbana",
         "provenance_id": "5011c15b9adf49f7",
-        "retrieved_at": "2026-09-14T10:41:56.767947Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:56.767947Z"
       },
       {
-        "property_id": "p07_navarra_urbana",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -684,12 +683,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p07_navarra_urbana",
         "provenance_id": "5c49e8ab85254921",
-        "retrieved_at": "2026-09-14T10:41:57.033010Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:57.033010Z"
       },
       {
-        "property_id": "p07_navarra_urbana",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -704,12 +703,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "SCHMIDT-CLEMENS SPAIN, S.A.U.",
+        "property_id": "p07_navarra_urbana",
         "provenance_id": "5c49e8ab85254921",
-        "retrieved_at": "2026-09-14T10:41:57.135385Z",
-        "note": "SCHMIDT-CLEMENS SPAIN, S.A.U."
+        "retrieved_at": "2026-09-14T10:41:57.135385Z"
       },
       {
-        "property_id": "p07_navarra_urbana",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -721,9 +720,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p07_navarra_urbana",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:57.135409Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:57.135409Z"
       }
     ]
   },
@@ -733,14 +733,13 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
-        "property_id": "p08_araba_rustica",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -748,19 +747,19 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p08_araba_rustica",
         "provenance_id": "c0ff4ff871dc47ad",
-        "retrieved_at": "2026-09-14T10:41:57.229710Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:57.229710Z"
       },
       {
-        "property_id": "p08_araba_rustica",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
-        "status": "observed",
-        "observed": false,
-        "value": 0.0,
-        "unit": "zones",
+        "status": "inconclusive",
+        "observed": null,
+        "value": null,
+        "unit": null,
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
         "method": "wfs-getfeature-bbox-intersects",
@@ -768,12 +767,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
+        "note": "sin intersecciones: cobertura SNCZI no acreditada",
+        "property_id": "p08_araba_rustica",
         "provenance_id": "dee0cb5defc145ea",
-        "retrieved_at": "2026-09-14T10:41:57.347035Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:57.347035Z"
       },
       {
-        "property_id": "p08_araba_rustica",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -788,12 +787,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
+        "note": null,
+        "property_id": "p08_araba_rustica",
         "provenance_id": "985c78a16f774e00",
-        "retrieved_at": "2026-09-14T10:41:57.604425Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:57.604425Z"
       },
       {
-        "property_id": "p08_araba_rustica",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -808,12 +807,12 @@
           "property_geometry",
           "eprtr.facilities"
         ],
+        "note": "sin instalaciones en radio 0.05deg",
+        "property_id": "p08_araba_rustica",
         "provenance_id": "985c78a16f774e00",
-        "retrieved_at": "2026-09-14T10:41:57.604433Z",
-        "note": null
+        "retrieved_at": "2026-09-14T10:41:57.604433Z"
       },
       {
-        "property_id": "p08_araba_rustica",
         "source": "csn_radon",
         "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
         "kind": "csn_radon.status",
@@ -825,9 +824,10 @@
         "operational_crs": "EPSG:25830",
         "method": "source-not-usable",
         "inputs": [],
+        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
+        "property_id": "p08_araba_rustica",
         "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:41:57.604441Z",
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing)."
+        "retrieved_at": "2026-09-14T10:41:57.604441Z"
       }
     ]
   }

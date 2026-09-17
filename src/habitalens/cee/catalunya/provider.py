@@ -8,15 +8,26 @@ registro por referencia no esta acreditada); nunca se afirma "no consta".
 from __future__ import annotations
 
 import json
+import re
 
 from habitalens.cee.base import CeeLookupResult, CeeProvider, CeeRecord, CeeStatus
 from habitalens.net import HttpRequest
+
+_REFCAT_SAFE = re.compile(r"[A-Za-z0-9.\-_]+")
 
 
 class CatalunyaCeeProvider(CeeProvider):
     region = "catalunya"
 
     def lookup(self, refcat: str) -> CeeLookupResult:
+        refcat = str(refcat).strip()
+        if not _REFCAT_SAFE.fullmatch(refcat):
+            return CeeLookupResult(
+                refcat=refcat,
+                region=self.region,
+                status=CeeStatus.INCONCLUSIVE,
+                note="referencia catastral con formato no valido",
+            )
         request = HttpRequest(
             method="GET",
             url=self.config["resource"],

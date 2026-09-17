@@ -45,9 +45,45 @@ def test_dnprc_corroborates_reference_and_locates_real_municipality(tmp_path) ->
     assert (data.province_code, data.municipality_code) == ("28", "79")
     assert data.municipality_name == "MADRID"
     assert data.province_name == "MADRID"
-    assert data.area_m2 == 564.0
-    assert data.land_use == "Almacen-Estacionamiento"
+    assert data.area_m2 is None
+    assert data.land_use is None
     assert data.address and "CASTELLANA" in data.address
+
+
+def test_dnprc_selects_exact_unit_from_multiunit_response(tmp_path) -> None:
+    refcat = "1707903VK4810F0002AF"
+    provider = make_provider("dgc", tmp_path, extra={
+        f"dgc:dnprc:{refcat}": DATA / "dgc_dnprc.xml",
+    })
+    data = provider.corroborate_reference(refcat)
+    assert data.exists
+    assert data.refcat == refcat
+    assert data.area_m2 == 91.0
+    assert data.land_use == "Comercial"
+
+
+def test_dnprc_unmatched_unit_does_not_borrow_area() -> None:
+    data = parse_dnprc(
+        (DATA / "dgc_dnprc.xml").read_bytes(), "1707903VK4810F9999ZZ"
+    )
+    assert not data.exists
+    assert data.area_m2 is None
+    assert data.land_use is None
+
+
+def test_dnprc_single_unit_and_duplicate_match() -> None:
+    unit = (
+        "<bi><rc><pc1>1707903</pc1><pc2>VK4810F</pc2><car>0002</car>"
+        "<cc1>A</cc1><cc2>F</cc2></rc><debi><sfc>91</sfc>"
+        "<luso>Comercial</luso></debi></bi>"
+    )
+    single = parse_dnprc(f"<consulta>{unit}</consulta>".encode())
+    assert single.area_m2 == 91.0
+    duplicate = parse_dnprc(
+        f"<consulta>{unit}{unit}</consulta>".encode(), "1707903VK4810F0002AF"
+    )
+    assert duplicate.area_m2 is None
+    assert duplicate.land_use is None
 
 
 def test_dnprc_negative_control_differs(tmp_path) -> None:

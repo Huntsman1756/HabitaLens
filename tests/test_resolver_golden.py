@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import pytest
+
+from habitalens.cadastre_providers.base import ParcelNotFoundError
 from habitalens.geocoding import CartoCiudadClient
 from habitalens.net import FixtureSource
 from habitalens.resolver import PropertyResolver, TerritoryRouter
@@ -74,6 +77,41 @@ def test_resolver_refcat_to_foral_provider(tmp_path) -> None:
     assert property_.parcel.crs == "EPSG:4258"
     assert len(property_.buildings) == 5
     assert property_.address is None
+
+
+def test_resolver_coordinate_miss_falls_back_to_refcat(tmp_path) -> None:
+    # La parcela devuelta por BBOX (Castellana) no contiene el punto geocodificado
+    # (Calle Mayor): el proveedor no debe adjudicar una parcela arbitraria y el
+    # resolver cae al refcat que aporta CartoCiudad.
+    dgc = make_provider(
+        "dgc",
+        tmp_path,
+        extra={
+            "dgc:parcel-near:near:40.41646,-3.70466": DATA / "dgc_parcel.gml",
+            "dgc:parcel:0343302VK4704C": DATA / "dgc_madrid_parcel.gml",
+            "dgc:building:0343302VK4704C": DATA / "dgc_buildings.gml",
+        },
+    )
+    resolver = PropertyResolver(
+        providers={"dgc": dgc}, geocoder=_cartociudad_client()
+    )
+
+    property_ = resolver.resolve("Calle Mayor 1, Madrid")
+
+    assert property_.parcel.refcat == "0343302VK4704C"
+    assert len(property_.buildings) >= 1
+
+
+def test_provider_no_arbitrary_parcel_when_point_outside_all(tmp_path) -> None:
+    dgc = make_provider(
+        "dgc",
+        tmp_path,
+        extra={
+            "dgc:parcel-near:near:0.00000,0.00000": DATA / "dgc_madrid_parcel.gml",
+        },
+    )
+    with pytest.raises(ParcelNotFoundError):
+        dgc.get_parcel_near(0.0, 0.0)
 
 
 def test_determinism_same_input_same_result(tmp_path) -> None:

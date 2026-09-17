@@ -59,3 +59,10 @@ def assert_disclaimers(text: str, source_ids) -> None:
     missing = missing_disclaimers(text, source_ids)
     if missing:
         raise DisclaimerError(f"faltan disclaimers obligatorios: {len(missing)}")
+
+
+def assert_snapshot_disclaimers(text: str, disclaimers: tuple[str, ...]) -> None:
+    haystack = _normalize_ws(text)
+    missing = [item for item in disclaimers if _normalize_ws(item) not in haystack]
+    if missing:
+        raise DisclaimerError(f"faltan disclaimers del manifest: {len(missing)}")

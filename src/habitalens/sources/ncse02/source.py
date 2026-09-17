@@ -14,24 +14,32 @@ Semantica de cobertura (clave):
 
 from __future__ import annotations
 
-import xml.etree.ElementTree as ET
+import math
 
 from habitalens.cadastre_providers.inspire import _geometry_from, localname
 from habitalens.evidence.coverage import declared_envelope
 from habitalens.evidence.geometry import to_wgs84
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource
+from habitalens.sources.base import EvidenceSource, xml_features, xml_positions
 
 _FEATURE = "HazardArea2002.NCSE-02"
 
 
 def _features(content: bytes) -> list[dict]:
-    root = ET.fromstring(content)
     features = []
-    for element in root.iter():
-        if localname(element.tag) != _FEATURE:
-            continue
+    for element in xml_features(content, {_FEATURE}, limit=30):
+        positions = xml_positions(element)
+        if any(len(ring) < 4 or ring[0] != ring[-1] for ring in positions):
+            raise ValueError("invalid response ring")
+        geometry = _geometry_from(element)
+        if (
+            geometry is None
+            or geometry.geom_type not in {"Polygon", "MultiPolygon"}
+            or geometry.is_empty
+            or not geometry.is_valid
+        ):
+            raise ValueError("missing or invalid hazard geometry")
         fields = {}
         for child in element.iter():
             name = localname(child.tag)
@@ -39,7 +47,11 @@ def _features(content: bytes) -> list[dict]:
                 text = (child.text or "").strip()
                 if text and name not in fields:
                     fields[name] = text
-        features.append({"geometry": _geometry_from(element), **fields})
+        if "aceleracion" in fields:
+            acceleration = float(fields["aceleracion"])
+            if not math.isfinite(acceleration) or acceleration < 0:
+                raise ValueError("invalid hazard value")
+        features.append({"geometry": geometry, **fields})
     return features
 
 

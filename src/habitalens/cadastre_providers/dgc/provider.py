@@ -58,30 +58,49 @@ def _first_text(root: ET.Element, names: tuple[str, ...]) -> str | None:
     return None
 
 
-def parse_dnprc(content: bytes) -> DnprcData:
+def parse_dnprc(content: bytes, requested_refcat: str | None = None) -> DnprcData:
     root = ET.fromstring(content)
     error = _first_text(root, ("des",))
-    pc1 = _first_text(root, ("pc1",))
-    pc2 = _first_text(root, ("pc2",))
+    requested = (requested_refcat or "").strip().upper().replace(" ", "")
+    units = [element for element in root.iter() if _localname(element.tag) in {"bi", "rcdnp"}]
+
+    def unit_reference(unit: ET.Element) -> str:
+        return "".join(_first_text(unit, (name,)) or "" for name in ("pc1", "pc2", "car", "cc1", "cc2"))
+
+    candidates = units
+    if requested:
+        candidates = [
+            unit for unit in units
+            if unit_reference(unit) == requested
+            or (len(requested) == 14 and unit_reference(unit)[:14] == requested)
+        ]
+    selected = candidates[0] if len(candidates) == 1 and error is None else None
+    metadata = selected if selected is not None else root
+    pc1 = _first_text(metadata, ("pc1",))
+    pc2 = _first_text(metadata, ("pc2",))
     refcat = f"{pc1}{pc2}" if pc1 and pc2 else ""
-    area_raw = _first_text(root, ("sfc",))
+    if requested and len(requested) == 20 and selected is not None:
+        refcat = unit_reference(selected)
+    if not candidates and error is None:
+        error = "referencia solicitada no encontrada en la respuesta DNPRC"
+    area_raw = _first_text(selected, ("sfc",)) if selected is not None else None
     area = None
     if area_raw:
         try:
             area = float(area_raw.replace(".", "").replace(",", "."))
         except ValueError:
             area = None
-    street = _first_text(root, ("nv",))
-    number = _first_text(root, ("pnp",))
+    street = _first_text(metadata, ("nv",))
+    number = _first_text(metadata, ("pnp",))
     address = f"{street} {number}".strip() if street else None
     return DnprcData(
         refcat=refcat,
-        province_code=_first_text(root, ("cp",)),
-        municipality_code=_first_text(root, ("cm",)),
-        municipality_name=_first_text(root, ("nm",)),
-        province_name=_first_text(root, ("np",)),
+        province_code=_first_text(metadata, ("cp",)),
+        municipality_code=_first_text(metadata, ("cm",)),
+        municipality_name=_first_text(metadata, ("nm",)),
+        province_name=_first_text(metadata, ("np",)),
         area_m2=area,
-        land_use=_first_text(root, ("luso",)),
+        land_use=_first_text(selected, ("luso",)) if selected is not None else None,
         address=address,
         error=error,
     )
@@ -121,4 +140,4 @@ class DgcProvider(CadastreProvider):
             method="GET", url=self.config["dnprc"], params=(("RefCat", refcat),)
         )
         content = self._fetch_raw("dnprc", refcat, request)
-        return parse_dnprc(content)
+        return parse_dnprc(content, requested_refcat=refcat)

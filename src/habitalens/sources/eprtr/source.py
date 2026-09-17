@@ -7,26 +7,16 @@ Licencia CC BY 4.0 (atribucion EEA).
 
 from __future__ import annotations
 
-import json
-
 from shapely.geometry import Point
 
 from habitalens.evidence.geometry import bounds_wgs84, distance_m, transform
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource
+from habitalens.sources.base import EvidenceSource, feature_geometry, json_features
 
 
 def _points(content: bytes) -> list[Point]:
-    data = json.loads(content.decode("utf-8", errors="ignore"))
-    points = []
-    for feature in data.get("features", []):
-        geometry = feature.get("geometry") or {}
-        if geometry.get("type") == "Point":
-            coords = geometry.get("coordinates")
-            if coords and len(coords) >= 2:
-                points.append(Point(float(coords[0]), float(coords[1])))
-    return points
+    return [feature_geometry(feature, {"Point"}) for feature in json_features(content)]
 
 
 class EprtrSource(EvidenceSource):
@@ -89,8 +79,7 @@ class EprtrSource(EvidenceSource):
             distances = [distance_m(metric_geometry, point) for point in metric_points]
             index = min(range(len(distances)), key=distances.__getitem__)
             nearest_distance = distances[index]
-            data = json.loads(content.decode("utf-8", errors="ignore"))
-            attributes = data.get("features", [{}])[index].get("properties", {})
+            attributes = json_features(content)[index]["properties"] or {}
             nearest_site = attributes.get("siteName")
         findings.append(
             EvidenceFinding(

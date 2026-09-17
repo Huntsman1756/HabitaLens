@@ -43,9 +43,13 @@ def test_built_with_common_is_direct() -> None:
 
 
 def test_util_is_partial() -> None:
-    result = compare_area(80.0, OFFICIAL, advertised_concept=SurfaceConcept.UTIL)
+    result = compare_area(80.0, SurfaceComponents(built_m2=100.0), advertised_concept=SurfaceConcept.UTIL)
     assert result.comparability == ComparabilityStatus.PARTIAL
-    assert result.kind == KIND_MISMATCH
+    assert result.kind == KIND_POTENTIAL
+    assert result.exceeds_tolerance is True
+    finding = area_finding("p1", result, source_version="test")
+    assert finding.kind == KIND_POTENTIAL
+    assert "no acredita discrepancia" in finding.note
 
 
 def test_insufficient_when_no_official_built() -> None:

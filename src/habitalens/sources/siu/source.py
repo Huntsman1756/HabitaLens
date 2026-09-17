@@ -1,12 +1,14 @@
 """SIU (MIVAU): clases de suelo, via ArcGIS REST (`Servicios_OGC`, capa 15).
 
 Semantica de cobertura ESTRICTA: el servicio no expone una lista por municipio
-(solo cobertura agregada: 5.898 municipios integrados). Por tanto:
+(solo cobertura agregada: 5.898 municipios integrados) y la consulta es solo
+BBOX sin geometria devuelta. Por tanto:
 
-- Si la consulta devuelve features -> OBSERVED (la propia feature acredita
-  cobertura y aporta `ProvINE`/`ClaseSuelo`).
 - Si devuelve 0 features -> INCONCLUSIVE, NUNCA OBSERVED-ausencia: no puede
   acreditarse que el municipio este entre los integrados.
+- Si devuelve features -> INCONCLUSIVE: una clase candidata por BBOX no
+  acredita la clasificacion de la propiedad (sin geometria no hay
+  interseccion verificable).
 
 Licencia: reutilizacion bajo RISP (Ley 37/2007 / RD 1495/2011), atribucion
 obligatoria; sin licencia CC explicita.
@@ -14,12 +16,10 @@ obligatoria; sin licencia CC explicita.
 
 from __future__ import annotations
 
-import json
-
 from habitalens.evidence.geometry import bounds_wgs84
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource
+from habitalens.sources.base import EvidenceSource, json_features
 
 
 class SiuSource(EvidenceSource):
@@ -42,8 +42,7 @@ class SiuSource(EvidenceSource):
         )
         content = self._fetch("clases_suelo", property_id, request)
         provenance_id = self._record("clases_suelo", property_id, request, content)
-        data = json.loads(content.decode("utf-8", errors="ignore"))
-        features = data.get("features", [])
+        features = json_features(content)
 
         if not features:
             return [self._finding(
@@ -55,12 +54,10 @@ class SiuSource(EvidenceSource):
                 ),
             )]
 
-        properties = features[0].get("properties", {})
         return [self._finding(
-            property_id, operational_crs, FindingStatus.OBSERVED,
-            observed=True, value=float(len(features)), unit="classes",
+            property_id, operational_crs, FindingStatus.INCONCLUSIVE,
             provenance_id=provenance_id,
-            note=f"{properties.get('ClaseSuelo')} (ProvINE={properties.get('ProvINE')})",
+            note="resultado solo BBOX sin geometria: clasificacion de la propiedad no verificada",
         )]
 
     def _finding(

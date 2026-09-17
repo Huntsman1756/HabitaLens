@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import hashlib
 
-from habitalens.cadastre_providers.base import CadastreProvider
+from habitalens.cadastre_providers.base import CadastreProvider, ParcelNotFoundError
 from habitalens.cadastre_providers.registry import get_provider
 from habitalens.geocoding import CartoCiudadClient, GeocodeCandidate
 from habitalens.property import Address, Property, infer_territory
@@ -62,7 +62,8 @@ class PropertyResolver:
         if candidate.lat is not None and candidate.lng is not None:
             try:
                 parcel = provider.get_parcel_near(candidate.lat, candidate.lng)
-            except NotImplementedError:
+            except (NotImplementedError, ParcelNotFoundError):
+                # Sin parcela que contenga el punto: se cae al refcat del geocoder.
                 parcel = None
         if parcel is None:
             refcat = candidate.refcat

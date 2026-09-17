@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -53,16 +54,22 @@ def validate_license(data: object, origin: Path) -> LicenseDeclaration:
         raise LicensingNotDeclaredError(
             f"{origin}: {LICENSE_FILENAME} vacio o no es un mapping valido"
         )
+    data = dict(data)
+    if type(data.get("verified_on")) is date:
+        data["verified_on"] = data["verified_on"].isoformat()
     missing = [
         field
         for field in REQUIRED_FIELDS
-        if not str(data.get(field, "")).strip()
+        if not isinstance(data.get(field), str) or not data[field].strip()
     ]
     if missing:
         raise LicensingNotDeclaredError(
             f"{origin}: {LICENSE_FILENAME} carece de campos obligatorios: "
             + ", ".join(missing)
         )
+    conditions = data.get("reuse_conditions")
+    if conditions is not None and (not isinstance(conditions, str) or not conditions.strip()):
+        raise LicensingNotDeclaredError(f"{origin}: reuse_conditions debe ser texto no vacio")
     return LicenseDeclaration.from_mapping(data)
 
 

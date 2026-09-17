@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from habitalens.report.disclaimers import required_disclaimers
+from habitalens.report.manifest import validate_manifest
 
 STATUS_ORDER = ("OBSERVED", "DERIVED", "UNAVAILABLE", "INCONCLUSIVE")
 
@@ -44,6 +44,8 @@ class FindingView:
     method: str
     provenance_id: str | None
     note: str | None
+    source_version: str
+    inputs: tuple[str, ...]
 
 
 @dataclass(frozen=True)
@@ -64,6 +66,7 @@ class ReportViewModel:
     sources: tuple[dict[str, Any], ...]
     properties: tuple[PropertyView, ...]
     status_order: tuple[str, ...] = STATUS_ORDER
+    template_version: str = "1"
 
 
 def value_text(finding: dict) -> str:
@@ -71,9 +74,15 @@ def value_text(finding: dict) -> str:
     value = finding.get("value")
     unit = finding.get("unit")
     if status == "observed":
-        base = "presente" if finding.get("observed") else "ausente"
-        if value is not None and unit == "g":
-            return f"{value} g"
+        if finding.get("observed") is None:
+            raise ValueError("observed findings require an explicit boolean")
+        base = (
+            "presente" if finding["observed"]
+            else "ausencia observada en cobertura acreditada"
+        )
+        if value is not None:
+            rendered = f"{value} {unit}" if unit else str(value)
+            return f"{base}; {rendered}"
         return base
     if status == "derived":
         if value is None:
@@ -96,10 +105,13 @@ def build_finding_view(finding: dict) -> FindingView:
         method=finding.get("method", ""),
         provenance_id=finding.get("provenance_id"),
         note=finding.get("note"),
+        source_version=finding["source_version"],
+        inputs=tuple(finding.get("inputs", ())),
     )
 
 
 def build_view_model(manifest: dict) -> ReportViewModel:
+    validate_manifest(manifest)
     properties = []
     for entry in manifest["properties"]:
         findings = sorted(
@@ -116,11 +128,15 @@ def build_view_model(manifest: dict) -> ReportViewModel:
                 findings=tuple(findings),
             )
         )
-    source_ids = [source["source"] for source in manifest["sources"]]
+    disclaimers = [manifest["disclaimer"]]
+    disclaimers.extend(
+        source["attribution"] for source in sorted(manifest["sources"], key=lambda s: s["source"])
+    )
     return ReportViewModel(
         report_id=manifest["report_id"],
         generated_at=manifest["generated_at"],
-        disclaimers=tuple(required_disclaimers(source_ids)),
-        sources=tuple(manifest["sources"]),
+        disclaimers=tuple(disclaimers),
+        sources=tuple(dict(source) for source in manifest["sources"]),
         properties=tuple(properties),
+        template_version=manifest["template_version"],
     )

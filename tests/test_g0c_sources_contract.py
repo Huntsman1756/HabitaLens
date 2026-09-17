@@ -50,9 +50,12 @@ def test_btn_positive_control_detects_road(tmp_path) -> None:
     assert distance.value is not None and distance.value < 50.0
 
 
-def test_siu_positive_control_detects_class(tmp_path) -> None:
+def test_siu_control_is_inconclusive_without_verified_intersection(tmp_path) -> None:
+    # La consulta SIU es solo BBOX y sin geometria: una clase candidata no
+    # acredita la clasificacion de la propiedad -> INCONCLUSIVE honesto.
     report = EvidenceEngine(sources=make_g0c_sources(tmp_path)).evaluate(
         _control("ctrl_madrid_siu"), MADRID_SIU, "EPSG:4326"
     )
     clase = _find(report, "siu.clase_suelo")
-    assert clase.status == FindingStatus.OBSERVED and clase.observed is True
+    assert clase.status == FindingStatus.INCONCLUSIVE
+    assert clase.observed is None and clase.value is None

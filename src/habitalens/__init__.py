@@ -1,9 +1,9 @@
 """HabitaLens - motor OSS de analisis reproducible de inmuebles a partir de fuentes publicas.
 
-Este paquete implementa exclusivamente el gate G0-A (adquisicion y legal): modelos
-minimos de inmueble/parcela/edificio, adaptadores de proveedores catastrales,
-geocodificacion con CartoCiudad, encaminamiento territorial, cache, provenance y
-guardas de licencia. No implementa analisis espacial, riesgo, scores ni informes.
+Adquisicion catastral multi-proveedor (G0-A), motor de evidencia espacial con
+semantica de cobertura estricta (G0-B/G0-C), informes con manifest de
+procedencia (G0-D) y consultas de superficie/CEE (P1). No implementa scores,
+valoraciones globales ni geometria en salidas publicas.
 """
 
 from __future__ import annotations

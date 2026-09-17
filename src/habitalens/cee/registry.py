@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from habitalens.cee.base import CeeLookupResult, CeeProvider
+from habitalens.cee.base import CeeLookupResult, CeeProvider, CeeStatus
 from habitalens.cee.catalunya.provider import CatalunyaCeeProvider
 
 _CEE_TYPES: dict[str, type[CeeProvider]] = {
@@ -23,6 +23,23 @@ def get_cee_provider(region: str, **kwargs) -> CeeProvider:
 
 
 def lookup_any(refcat: str, **kwargs) -> list[CeeLookupResult]:
-    """Consulta la referencia en todas las regiones soportadas."""
+    """Consulta la referencia en todas las regiones soportadas.
 
-    return [get_cee_provider(region, **kwargs).lookup(refcat) for region in cee_regions()]
+    El fallo de un registro regional no debe tumbar las demas consultas:
+    se reporta como INCONCLUSIVE con la causa.
+    """
+
+    results = []
+    for region in cee_regions():
+        try:
+            results.append(get_cee_provider(region, **kwargs).lookup(refcat))
+        except Exception as exc:
+            results.append(
+                CeeLookupResult(
+                    refcat=refcat,
+                    region=region,
+                    status=CeeStatus.INCONCLUSIVE,
+                    note=f"{type(exc).__name__}: {exc}",
+                )
+            )
+    return results

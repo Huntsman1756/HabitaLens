@@ -31,15 +31,17 @@ def test_snczi_positive_control(tmp_path) -> None:
     assert flood.operational_crs == "EPSG:25830"
 
 
-def test_snczi_absence_is_observed_not_unavailable(tmp_path) -> None:
+def test_snczi_absence_is_inconclusive_without_accredited_coverage(tmp_path) -> None:
+    # 0 intersecciones no acredita ausencia: SNCZI solo cubre DPH de competencia
+    # estatal; las cuencas autonomicas no estan en la capa.
     item = next(c for c in CORPUS if c.id == "p01_madrid_castellana")
     wkt, source_crs = load_property(item.id)
     report = EvidenceEngine(sources=make_evidence_sources(tmp_path)).evaluate(
         item, wkt, source_crs
     )
     flood = _find(report, "snczi.flood_q100")
-    assert flood.status == FindingStatus.OBSERVED
-    assert flood.observed is False
+    assert flood.status == FindingStatus.INCONCLUSIVE
+    assert flood.observed is None and flood.value is None
     assert not report.by_status(FindingStatus.UNAVAILABLE)
 
 

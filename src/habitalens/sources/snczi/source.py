@@ -3,28 +3,26 @@
 Servicio verificado: ``https://gis.miteco.gob.es/geoserver/agua/wfs`` (workspace
 ``agua``). El WFS declara DefaultCRS EPSG:4258 y acepta ``srsName=EPSG:4326`` con
 bbox en orden lon,lat. Licencia CC BY 4.0 (atribucion MITECO).
+
+Semantica de cobertura ESTRICTA: SNCZI solo cubre el dominio publico hidraulico
+de competencia estatal; las cuencas de competencia autonomica no estan en la
+capa. Por tanto 0 intersecciones -> INCONCLUSIVE (ausencia no acreditable),
+nunca OBSERVED-ausencia. Un hallazgo OBSERVED exige interseccion verificada.
 """
 
 from __future__ import annotations
 
-import json
-
-from shapely.geometry import shape
-
 from habitalens.evidence.geometry import bounds_wgs84, to_wgs84
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource
+from habitalens.sources.base import EvidenceSource, feature_geometry, json_features
 
 
 def _polygons(content: bytes) -> list:
-    data = json.loads(content.decode("utf-8", errors="ignore"))
-    polygons = []
-    for feature in data.get("features", []):
-        geometry = feature.get("geometry")
-        if geometry:
-            polygons.append(shape(geometry))
-    return polygons
+    return [
+        feature_geometry(feature, {"Polygon", "MultiPolygon"})
+        for feature in json_features(content, limit=50)
+    ]
 
 
 class SncziSource(EvidenceSource):
@@ -60,10 +58,11 @@ class SncziSource(EvidenceSource):
                     source=self.source_id,
                     source_version=self.source_version(),
                     kind=f"snczi.{name}",
-                    status=FindingStatus.OBSERVED,
-                    observed=bool(hits),
-                    value=float(len(hits)),
-                    unit="zones",
+                    status=FindingStatus.OBSERVED if hits else FindingStatus.INCONCLUSIVE,
+                    observed=True if hits else None,
+                    value=float(len(hits)) if hits else None,
+                    unit="zones" if hits else None,
+                    note=None if hits else "sin intersecciones: cobertura SNCZI no acreditada",
                     source_crs="EPSG:4326",
                     operational_crs=operational_crs,
                     method="wfs-getfeature-bbox-intersects",

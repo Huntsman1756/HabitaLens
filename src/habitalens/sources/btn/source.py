@@ -11,35 +11,27 @@ infraestructura (OBSERVED-ausencia), no "sin cobertura".
 
 from __future__ import annotations
 
-import xml.etree.ElementTree as ET
-
 from shapely.geometry import LineString
 
-from habitalens.cadastre_providers.inspire import localname
 from habitalens.evidence.coverage import declared_envelope
 from habitalens.evidence.geometry import distance_m, to_wgs84, transform
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource
+from habitalens.sources.base import EvidenceSource, xml_features, xml_positions
 
 _NATIVE_CRS = "EPSG:4258"
 
 
 def _lines(content: bytes) -> list[LineString]:
-    root = ET.fromstring(content)
     lines: list[LineString] = []
-    for element in root.iter():
-        if localname(element.tag) not in {"RoadLink", "RailwayLink"}:
-            continue
-        for child in element.iter():
-            if localname(child.tag) == "posList" and child.text:
-                numbers = [float(part) for part in child.text.split()]
-                coords = [
-                    (numbers[i + 1], numbers[i]) for i in range(0, len(numbers) - 1, 2)
-                ]
-                if len(coords) >= 2:
-                    lines.append(LineString(coords))
-                break
+    for element in xml_features(content, {"RoadLink", "RailwayLink"}, limit=50):
+        positions = xml_positions(element)
+        if len(positions) != 1:
+            raise ValueError("unsupported multipart transport feature")
+        line = LineString(positions[0])
+        if line.is_empty or not line.is_valid:
+            raise ValueError("invalid transport geometry")
+        lines.append(line)
     return lines
 
 
