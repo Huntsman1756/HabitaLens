@@ -9,6 +9,10 @@ from __future__ import annotations
 import re
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from shapely.geometry.base import BaseGeometry
 
 _GEOGRAPHIC_EPSG = {"4326", "4258", "4230"}
 _EPSG_RE = re.compile(r"EPSG[/:]+(?:0[/:]+)?(\d+)", re.IGNORECASE)
@@ -133,7 +137,7 @@ class ParsedParcel:
     crs: str
     area_m2: float | None = None
     land_use: str | None = None
-    geometry: object | None = None
+    geometry: BaseGeometry | None = None
 
 
 @dataclass
@@ -142,7 +146,7 @@ class ParsedBuilding:
     crs: str
     refcat: str | None = None
     area_m2: float | None = None
-    geometry: object | None = None
+    geometry: BaseGeometry | None = None
 
 
 def _to_float(value: str | None) -> float | None:

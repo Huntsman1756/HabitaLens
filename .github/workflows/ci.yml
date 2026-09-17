@@ -25,10 +25,13 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: uv sync --extra dev --locked
+        run: uv sync --locked
 
       - name: Lint
         run: uv run ruff check
+
+      - name: Type check
+        run: uv run mypy src/habitalens
 
       - name: Tests (offline fixtures)
         run: uv run pytest

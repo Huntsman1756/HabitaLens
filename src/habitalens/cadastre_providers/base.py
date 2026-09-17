@@ -127,7 +127,12 @@ class CadastreProvider(ABC):
         ]
         if not inside:
             return []
-        inside.sort(key=lambda item: item.geometry.area)
+
+        def _area(item: ParsedParcel) -> float:
+            assert item.geometry is not None
+            return float(item.geometry.area)
+
+        inside.sort(key=_area)
         outside = [item for item in parsed_list if item not in inside]
         return inside + outside
 

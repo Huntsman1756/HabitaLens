@@ -13,7 +13,7 @@ verificaciones y proponer cambios.
 ```bash
 git clone https://github.com/Huntsman1756/HabitaLens.git
 cd HabitaLens
-uv sync --extra dev
+uv sync
 ```
 
 ## Verificaciones
@@ -21,6 +21,7 @@ uv sync --extra dev
 ```bash
 uv run pytest        # suite completa, 100% offline (fixtures congeladas)
 uv run ruff check    # lint
+uv run mypy src/habitalens   # type check
 uv run ruff format --check   # formato (opcional)
 uv build             # verifica que el paquete construye
 ```
