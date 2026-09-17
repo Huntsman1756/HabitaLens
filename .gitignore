@@ -25,3 +25,8 @@ capture_*_output.*
 p0rd_output.txt
 p0rd/reports/
 
+# local tool configs and OS artifacts (never commit)
+opencode.json
+/nul
+*.log
+

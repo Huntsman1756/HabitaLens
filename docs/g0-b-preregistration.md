@@ -193,3 +193,15 @@ fecha y justificacion, antes de ejecutar la fuente afectada.
   (no alteran las 8 propiedades): Ebro-Zaragoza para SNCZI (inundacion Q100) y
   Bilbao-ELMET para E-PRTR (instalacion). Su unica finalidad es demostrar
   deteccion positiva de cada fuente.
+- **E6 (2026-09-17).** Correccion de auditoria sobre respuestas ya capturadas
+  (sin nueva consulta live):
+  - SNCZI: 0 intersecciones deja de emitirse como OBSERVED-ausencia y pasa a
+    INCONCLUSIVE. La capa cubre el DPH de competencia estatal; las cuencas
+    autonomicas no estan incluidas, por lo que la ausencia no es acreditable.
+    El control positivo Ebro sigue detectando (OBSERVED).
+  - Las respuestas de fuente se validan de forma estricta: errores de
+    servicio, paginacion (`next`/`hasMore`/limites de transferencia) y
+    conteos inconsistentes invalidan la respuesta en lugar de parsearse como
+    ausencia. Las geometrias invalidas habituales en WFS publicos
+    (autointersecciones, miembros degenerados sin area) se reparan; una
+    geometria sin nada interpretable invalida la feature.

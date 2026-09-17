@@ -209,3 +209,14 @@ No promover CSN por esta via. No incorporar IS-47 como sustituto.
   (Granada NCSE, Madrid NCSE-null, Madrid BTN, Madrid SIU), sin alterar las 24
   propiedades.
 
+- **E4 (2026-09-17).** Correccion de auditoria sobre las respuestas ya
+  capturadas (sin nueva consulta live):
+  - SIU pasa de PASS a INCONCLUSIVE: la consulta ArcGIS REST es solo BBOX y
+    devuelve features sin geometria (`returnGeometry=false`), por lo que una
+    `ClaseSuelo` candidata no acredita la clasificacion de la propiedad. Los
+    24 hallazgos SIU del corpus y el control Madrid pasan a INCONCLUSIVE.
+    Reactivar SIU como OBSERVED exigiria una consulta con geometria de la
+    parcela y verificacion de interseccion (enmienda futura con evidencia).
+  - BTN: una respuesta del corpus (g0c10) llego paginada (`next` con
+    `STARTINDEX`), lo que ahora invalida la respuesta -> `btn.status`
+    INCONCLUSIVE en lugar de un conteo parcial silencioso.

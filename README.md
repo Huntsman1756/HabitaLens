@@ -9,14 +9,23 @@ Motor OSS de analisis reproducible de inmuebles a partir de fuentes publicas.
 
 ## Estado del proyecto
 
-Este repositorio implementa exclusivamente el gate **G0-A (adquisicion y legal)**:
-adquisicion y normalizacion de informacion basica de inmueble/parcela/edificio
-desde cinco proveedores catastrales, geocodificacion con CartoCiudad, encaminamiento
-territorial, cache, provenance y guarda de licencias.
+El repositorio implementa:
 
-No se implementa (fuera de alcance G0-A): SNCZI, CSN, E-PRTR, SIU, NCSE-02, BTN,
-DANA, reglas de riesgo, scores, informes, HTML/PDF, visor web, IA, usuarios, pagos,
-historico inmobiliario ni reproyeccion para analisis espacial.
+- **G0-A (adquisicion y legal)**: adquisicion y normalizacion de
+  inmueble/parcela/edificio desde cinco proveedores catastrales,
+  geocodificacion con CartoCiudad, encaminamiento territorial, cache,
+  provenance y guarda de licencias.
+- **G0-B/G0-C (evidencia espacial y cobertura)**: motor de hallazgos
+  deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE` sobre
+  fuentes oficiales (SNCZI, E-PRTR, SIU, NCSE-02, BTN; CSN no activado por
+  licencia).
+- **G0-D (informe)**: manifest de procedencia como fuente unica de verdad,
+  render HTML/PDF, disclaimers y guarda de cero score global.
+- **P1 (actionabilidad)**: comparacion de superficie anunciada vs oficial con
+  semantica de comparabilidad y consulta CEE regional (Catalunya).
+
+No se implementa: DANA, reglas de riesgo normativo, scores o valoraciones
+globales, visor web, IA, usuarios, pagos ni historico inmobiliario.
 
 - Proyecto: `HabitaLens`
 - Distribucion Python / import / CLI: `habitalens`
@@ -52,6 +61,9 @@ habitalens resolve 1707903VK4810F      # referencia catastral
 habitalens resolve "Calle Mayor 1, Madrid"   # direccion
 habitalens resolve <refcat|direccion> --refresh   # fuerza refetch
 habitalens resolve <refcat|direccion> --json      # salida JSON sin geometria
+habitalens surface <refcat> --advertised 92 --concept construida
+habitalens cee <refcat>                # certificado energetico (registros autonomicos)
+habitalens report <manifest.json> --out <dir>     # informe HTML/PDF + manifest
 habitalens --help
 ```
 
@@ -114,7 +126,7 @@ hallazgos deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE`.
 
 | Gate | Estado | Nota |
 |------|--------|------|
-| SNCZI (zonas inundables) | PASS | WFS INSPIRE; control positivo Ebro Q100. |
+| SNCZI (zonas inundables) | PASS | WFS INSPIRE; control positivo Ebro Q100. Correccion de auditoria (2026-09-17): 0 intersecciones -> INCONCLUSIVE, no OBSERVED-ausencia (SNCZI solo cubre DPH de competencia estatal). |
 | E-PRTR (instalaciones) | PASS | ArcGIS REST GeoJSON; distancia derivada; control ELMET 0 m. |
 | CSN (radon) | INCONCLUSIVE | Sin servicio OGC y sin licencia abierta declarada: no se activa. |
 | Evidence engine | PASS | Taxonomia, CRS operacional explicito, provenance, replay determinista. |
@@ -126,9 +138,9 @@ Cobertura como ciudadano de primera clase: `0 features` no es ausencia.
 
 | Gate | Estado | Nota |
 |------|--------|------|
-| SIU | PASS | 23 OBSERVED + 1 INCONCLUSIVE; 0 features nunca es ausencia; control Madrid. |
+| SIU | INCONCLUSIVE | Correccion de auditoria (2026-09-17): la consulta es solo BBOX sin geometria devuelta; una clase candidata no acredita la clasificacion de la propiedad. 24 INCONCLUSIVE honestos. |
 | NCSE-02 | PASS | 8 OBSERVED + 16 UNAVAILABLE (null dentro de cobertura); control Granada 0.23 g. |
-| BTN | PASS | 48 OBSERVED + 20 DERIVED; ausencia dentro de cobertura declarada; control Madrid. |
+| BTN | PASS | 46 OBSERVED + 18 DERIVED + 1 INCONCLUSIVE (respuesta paginada no completa); control Madrid. |
 | Coverage core | PASS | `evidence/coverage.py` + semantica UNAVAILABLE/INCONCLUSIVE estricta. |
 | Corpus 24 | PASS | Materializado outcome-blind antes de consultar fuentes; replay offline. |
 | CSN | INCONCLUSIVE | Dependencia externa (G0-B.1); no se promociona. |
@@ -173,7 +185,8 @@ disclaimers y **cero score global**.
 - `docs/p1-buyer-actionability-upgrade.md` — P1 (superficie con comparabilidad + CEE regional).
 
 Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
-(`g0-b-inconclusive`), G0-C **PASS** (`g0-c-pass`), G0-D **PASS** (`g0-d-pass`),
+(`g0-b-inconclusive`), G0-C **INCONCLUSIVE**/SIU no verificable (`g0-c-pass`
+queda revisado por auditoria 2026-09-17; NCSE-02 y BTN PASS), G0-D **PASS** (`g0-d-pass`),
 P0 **INCONCLUSIVE** (`p0-inconclusive`), P0.1 **DEFERRED**, P0-T0 **FAIL**
 (`p0-t0-fail`), P0-R **INCONCLUSIVE**/frame incompleto (`p0-r-preregistered`),
 P0-RD **FAIL** (1/10 actionable; `technical_validity: PROVEN`, `buyer_utility: NOT PROVEN`).
