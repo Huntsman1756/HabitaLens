@@ -1,0 +1,11 @@
+source_authority: "Gobierno Vasco - Registro de Certificados de Eficiencia Energetica (Open Data Euskadi)"
+license_name: "Creative Commons Reconocimiento (CC BY)"
+license_url: "https://opendata.euskadi.eus/catalogo/-/registro-de-certificados-de-eficiencia-energetica-de-euskadi/"
+verified_on: "2026-09-17"
+applicable_version: "API REST api.euskadi.eus/energy-efficiency (OpenAPI 3.0), actualizacion semanal"
+reuse_conditions: >-
+  Licencia CC BY declarada en el catalogo de Open Data Euskadi: reutilizacion
+  permitida con reconocimiento de la fuente. El registro es publico y de
+  acceso libre; informa de la eficiencia energetica del edificio sin suponer
+  acreditacion del cumplimiento de otros requisitos. No se presenta como
+  informacion oficial fehaciente.

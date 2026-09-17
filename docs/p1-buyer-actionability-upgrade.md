@@ -88,4 +88,16 @@ P1 global (utilidad)   PASS | FAIL | INCONCLUSIVE
 
 ## 7. Enmiendas
 
-- (sin enmiendas)
+- **E1 (2026-09-17).** CEE Euskadi activado: Open Data Euskadi expone
+  `api.euskadi.eus/energy-efficiency/buildings` (OpenAPI 3.0, CC BY) con filtro
+  `cadastral-ref` sobre las referencias forales (formato provincial, no DGC-20).
+  Adaptador `cee/euskadi` con `LICENSE.yaml`; verificado live: `4774399`
+  (Bergara) -> edificio con `energyRating` F. La API omite `items` cuando
+  `totalItems` es 0; respuesta vacia -> INCONCLUSIVE (cobertura completa no
+  acreditada).
+- **E2 (2026-09-17).** CEE Andalucia evaluado: el portal CKAN de la Junta
+  publica el registro como 8 recursos `.xml.7z` provinciales
+  (`datastore_active: false`, ~1,46M registros, actualizacion trimestral). Sin
+  API de consulta por referencia -> mismo veredicto que Madrid/CLM: adaptador
+  de descarga+indice pendiente con su preregistro; no se implementa aun para no
+  introducir infraestructura de indice masivo sin preregistro propio.

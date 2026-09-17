@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from habitalens.cee.base import CeeLookupResult, CeeProvider, CeeStatus
 from habitalens.cee.catalunya.provider import CatalunyaCeeProvider
+from habitalens.cee.euskadi.provider import EuskadiCeeProvider
 
 _CEE_TYPES: dict[str, type[CeeProvider]] = {
     "catalunya": CatalunyaCeeProvider,
+    "euskadi": EuskadiCeeProvider,
 }
 
 

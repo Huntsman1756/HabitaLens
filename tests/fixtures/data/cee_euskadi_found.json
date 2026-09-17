@@ -1,0 +1,59 @@
+{
+  "totalItems" : 1,
+  "totalPages" : 1,
+  "currentPage" : 1,
+  "itemsOfPage" : 1,
+  "items" : [ {
+    "id" : "82007400005830",
+    "name" : "LIZARIA 2 (SAN LORENZO 2)",
+    "type" : "Vivienda",
+    "energyRating" : "F",
+    "energyEmissionsRating" : "E",
+    "procedure" : "CE3X",
+    "scope" : "Existente",
+    "climaticZone" : "D1",
+    "constructionYear" : 1956,
+    "numberOfHouses" : 12,
+    "cadastralData" : "4774399",
+    "address" : "Kalea/Calle Lizaria 2, 20570 Bergara Gipuzkoa",
+    "location" : {
+      "roadType" : "Kalea/Calle",
+      "street" : "Lizaria",
+      "portal" : "2",
+      "postalCode" : "20570",
+      "locality" : "Bergara",
+      "municipality" : "Bergara",
+      "county" : "Gipuzkoa",
+      "state" : "Euskadi",
+      "portalId" : 82007400005830,
+      "streetId" : 132007400000680,
+      "localityId" : "12007400000108",
+      "municipalityId" : "074",
+      "countyId" : "20"
+    },
+    "_links" : {
+      "self" : {
+        "name" : "LIZARIA 2 (SAN LORENZO 2)",
+        "href" : "https://api.euskadi.eus/energy-efficiency/buildings/82007400005830"
+      },
+      "location" : {
+        "name" : "Kalea/Calle Lizaria 2, 20570 Bergara Gipuzkoa",
+        "href" : "https://api.euskadi.eus/nora/states/16/counties/20/municipalities/074/localities/12007400000108/streets/132007400000680/portals/82007400005830"
+      },
+      "certificates" : {
+        "buildings" : [ {
+          "name" : "CEE-CAPV-2019-00163348-E",
+          "href" : "https://api.euskadi.eus/energy-efficiency/certificates/CEE-CAPV-2019-00163348-E"
+        } ],
+        "households" : [ {
+          "name" : "CEE-CAPV-2018-00110625-E",
+          "href" : "https://api.euskadi.eus/energy-efficiency/certificates/CEE-CAPV-2018-00110625-E"
+        } ]
+      },
+      "households" : [ {
+        "name" : "Kalea/Calle Lizaria 2 3º DCH, 20570 Bergara Gipuzkoa",
+        "href" : "https://api.euskadi.eus/energy-efficiency/households/82007400005830_3dch"
+      } ]
+    }
+  } ]
+}
