@@ -181,15 +181,17 @@ def test_snczi_requires_verified_hit(tmp_path, intersects):
 
 
 @pytest.mark.parametrize("classes", [["Urbano"], ["Urbano", "Rural"], ["Rural", "Urbano"]])
-def test_siu_bbox_candidates_do_not_classify_property(tmp_path, classes):
+def test_siu_intersecting_classes_are_observed(tmp_path, classes):
+    # La consulta envia la parcela por POST; solo vuelven clases que la
+    # intersectan de verdad (verificado por el servidor).
     content = _collection([_feature(properties={"ClaseSuelo": value, "ProvINE": "28"}) for value in classes])
     finding, = _report(tmp_path, "siu", content).findings
     assert finding.kind == "siu.clase_suelo"
-    assert finding.status == FindingStatus.INCONCLUSIVE
-    assert finding.observed is None and finding.value is None and finding.unit is None
-    assert "BBOX" in finding.note
-    assert all(value not in finding.note for value in classes)
-    assert finding.method == "arcgis-rest-bbox-query"
+    assert finding.status == FindingStatus.OBSERVED
+    assert finding.observed is True
+    assert finding.value == len(set(classes)) and finding.unit == "classes"
+    assert all(value in finding.note for value in set(classes))
+    assert finding.method == "arcgis-rest-parcel-intersects"
 
 
 @pytest.mark.parametrize("source_id", XML_SOURCES)
@@ -233,7 +235,7 @@ def test_valid_empty_xml_preserves_coverage_contract(tmp_path, source_id):
 
 def test_btn_positive_and_malformed_positions(tmp_path):
     content = _xml(_road(), 'numberMatched="1" numberReturned="1"')
-    assert len(_lines(content)) == 1
+    assert len(_lines([content])) == 1
     report = _report(tmp_path, "btn", content)
     roads = next(f for f in report.findings if f.kind == "btn.roads")
     assert roads.status == FindingStatus.OBSERVED and roads.value == 1

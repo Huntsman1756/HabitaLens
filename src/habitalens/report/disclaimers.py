@@ -15,8 +15,9 @@ ATTRIBUTIONS: dict[str, str] = {
         "Pollutant Release and Transfer Register (E-PRTR). CC BY 4.0."
     ),
     "csn_radon": (
-        "Potencial de radon (CSN): fuente NO activada; resultado INCONCLUSIVE. "
-        "Sin licencia abierta declarada."
+        "Potencial de radon: Mapa del Potencial de Radon de Espana CSN, 2017, "
+        "via SIU (MIVAU). Cita obligatoria del CSN. No sustituye a la medicion "
+        "in situ ni a la zonificacion municipal del CTE DB-HS6."
     ),
     "siu": (
         "Clasificacion urbanistica: Sistema de Informacion Urbana (SIU), MIVAU. "

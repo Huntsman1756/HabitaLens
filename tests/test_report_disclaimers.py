@@ -30,4 +30,4 @@ def test_assert_disclaimers_passes_when_present() -> None:
 def test_attribution_per_source_required() -> None:
     assert any("SIU" in item for item in required_disclaimers(["siu"]))
     assert any("IGN" in item for item in required_disclaimers(["ncse02"]))
-    assert any("NO activada" in item or "INCONCLUSIVE" in item for item in required_disclaimers(["csn_radon"]))
+    assert any("CSN" in item for item in required_disclaimers(["csn_radon"]))

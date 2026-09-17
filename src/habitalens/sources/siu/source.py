@@ -1,14 +1,16 @@
 """SIU (MIVAU): clases de suelo, via ArcGIS REST (`Servicios_OGC`, capa 15).
 
-Semantica de cobertura ESTRICTA: el servicio no expone una lista por municipio
-(solo cobertura agregada: 5.898 municipios integrados) y la consulta es solo
-BBOX sin geometria devuelta. Por tanto:
+La consulta envia la geometria de la parcela por POST (las parcelas reales
+exceden el limite de URL en GET) con ``spatialRel=esriSpatialRelIntersects``:
+solo vuelven las clases cuya geometria intersecta la parcela, de modo que la
+interseccion queda verificada por el servidor sin exponer ni persistir
+geometria de respuesta.
 
-- Si devuelve 0 features -> INCONCLUSIVE, NUNCA OBSERVED-ausencia: no puede
-  acreditarse que el municipio este entre los integrados.
-- Si devuelve features -> INCONCLUSIVE: una clase candidata por BBOX no
-  acredita la clasificacion de la propiedad (sin geometria no hay
-  interseccion verificable).
+- Si devuelve >=1 clase -> OBSERVED: la interseccion esta verificada. La
+  parcela puede tocar varias clases; se listan todas en la nota.
+- Si devuelve 0 features -> INCONCLUSIVE, NUNCA OBSERVED-ausencia: el servicio
+  no expone una lista por municipio (cobertura agregada: 5.898 municipios
+  integrados) y no puede acreditarse que el municipio este entre ellos.
 
 Licencia: reutilizacion bajo RISP (Ley 37/2007 / RD 1495/2011), atribucion
 obligatoria; sin licencia CC explicita.
@@ -16,33 +18,48 @@ obligatoria; sin licencia CC explicita.
 
 from __future__ import annotations
 
-from habitalens.evidence.geometry import bounds_wgs84
+import json
+from urllib.parse import urlencode
+
+from habitalens.evidence.geometry import to_wgs84
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource, json_features
+from habitalens.sources.base import (
+    EvidenceSource,
+    arcgis_next_request,
+    arcgis_polygon,
+    json_features,
+)
 
 
 class SiuSource(EvidenceSource):
     source_id = "siu"
 
     def evaluate(self, geometry, source_crs, operational_crs, property_id) -> list[EvidenceFinding]:
-        minlon, minlat, maxlon, maxlat = bounds_wgs84(geometry, source_crs)
+        parcel = to_wgs84(geometry, source_crs)
+        body = urlencode(
+            {
+                "f": "geojson",
+                "geometry": json.dumps(arcgis_polygon(parcel)),
+                "geometryType": "esriGeometryPolygon",
+                "inSR": "4326",
+                "spatialRel": "esriSpatialRelIntersects",
+                "outFields": "ProvINE,ClaseSuelo",
+                "orderByFields": "OBJECTID",
+                "returnGeometry": "false",
+            }
+        ).encode()
         request = HttpRequest(
-            method="GET",
+            method="POST",
             url=self.config["rest_query"],
-            params=(
-                ("geometry", f"{minlon},{minlat},{maxlon},{maxlat}"),
-                ("geometryType", "esriGeometryEnvelope"),
-                ("inSR", "4326"),
-                ("spatialRel", "esriSpatialRelIntersects"),
-                ("outFields", "ProvINE,ClaseSuelo"),
-                ("returnGeometry", "false"),
-                ("f", "geojson"),
-            ),
+            data=body,
+            headers=(("Content-Type", "application/x-www-form-urlencoded"),),
         )
-        content = self._fetch("clases_suelo", property_id, request)
-        provenance_id = self._record("clases_suelo", property_id, request, content)
-        features = json_features(content)
+        pages = self._fetch_pages(
+            "clases_suelo", property_id, request, arcgis_next_request
+        )
+        provenance_id = pages[0][1]
+        features = [f for content, _ in pages for f in json_features(content, page=True)]
 
         if not features:
             return [self._finding(
@@ -54,10 +71,18 @@ class SiuSource(EvidenceSource):
                 ),
             )]
 
+        classes = []
+        for feature in features:
+            props = feature.get("properties") or {}
+            clase = props.get("ClaseSuelo")
+            provine = props.get("ProvINE")
+            entry = f"{clase} (ProvINE={provine})"
+            if entry not in classes:
+                classes.append(entry)
         return [self._finding(
-            property_id, operational_crs, FindingStatus.INCONCLUSIVE,
-            provenance_id=provenance_id,
-            note="resultado solo BBOX sin geometria: clasificacion de la propiedad no verificada",
+            property_id, operational_crs, FindingStatus.OBSERVED,
+            observed=True, value=float(len(classes)), unit="classes",
+            provenance_id=provenance_id, note="; ".join(classes),
         )]
 
     def _finding(
@@ -83,7 +108,7 @@ class SiuSource(EvidenceSource):
             unit=unit,
             source_crs=self.config["default_crs"],
             operational_crs=operational_crs,
-            method="arcgis-rest-bbox-query",
+            method="arcgis-rest-parcel-intersects",
             inputs=("property_geometry", self.config["layer"]),
             provenance_id=provenance_id,
             note=note,

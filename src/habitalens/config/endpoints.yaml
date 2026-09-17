@@ -166,14 +166,13 @@ evidence_sources:
     search_radius_deg: 0.05
     license_url: "https://www.eea.europa.eu/en/legal-notice"
   csn_radon:
-    source_version: "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)"
+    source_version: "MIVAU SIU ArcGIS Potencial_riesgo_de_radon (capa 0, dato CSN 2017), verificado 2026-09-17"
+    rest_query: "https://mapas.fomento.gob.es/arcgis/rest/services/SIU/Potencial_riesgo_de_rad%C3%B3n/MapServer/0/query"
+    layer: "Potencial_riesgo_de_radon"
     default_crs: "EPSG:4326"
-    usable: false
-    unusable_reason: >-
-      Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion
-      depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente
-      productora hasta que exista licencia declarada y acceso reproducible (regla de
-      G0-B: licencia y acceso antes que parsing).
+    coverage_bounds_wgs84: [-18.18, 27.63, 4.34, 43.80]
+    coverage_description: "Mapa del potencial de radon de Espana (CSN 2017), cobertura estatal."
+    license_url: "https://www.csn.es/mapa-del-potencial-de-radon-en-espana"
 
   siu:
     source_version: "SIU MIVAU ArcGIS Servicios_OGC (REST/WFS), verificado 2026-09-14"
@@ -207,10 +206,15 @@ evidence_sources:
     coverage_description: "Red de transporte de cobertura nacional (BTN)"
     license_url: "https://centrodedescargas.cnig.es/CentroDescargas/politica-datos"
 
-# P1.B: registros autonomicos de CEE. Solo Cataluna es consultable por refcat;
-# Madrid y Castilla-La Mancha publican ZIP/XML masivos (adaptadores pendientes).
+# P1.B: registros autonomicos de CEE consultables por refcat.
+# Madrid y Castilla-La Mancha publican ZIP/XML masivos; Andalucia publica CSV
+# provinciales (~100 MB): pendientes de un adaptador de indice local.
 cee_sources:
   catalunya:
     source_version: "ICAEN CEE Catalunya (Socrata j6ii-t3w2), verificado 2026-09-14"
     resource: "https://analisi.transparenciacatalunya.cat/resource/j6ii-t3w2.json"
     license_url: "https://analisi.transparenciacatalunya.cat/"
+  euskadi:
+    source_version: "Registro CEE Euskadi API REST (api.euskadi.eus, OpenAPI 3.0), verificado 2026-09-17"
+    resource: "https://api.euskadi.eus/energy-efficiency/buildings"
+    license_url: "https://opendata.euskadi.eus/catalogo/-/registro-de-certificados-de-eficiencia-energetica-de-euskadi/"

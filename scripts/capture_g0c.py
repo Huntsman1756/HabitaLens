@@ -50,7 +50,7 @@ class MirrorSource(HttpSource):
         data = super().fetch(namespace, key, request, **kwargs)
         ext = kwargs.get("ext", "json")
         safe = f"{namespace}__{key}".replace(":", "_").replace(",", "_").replace(".", "_")
-        safe = safe.replace("/", "_")
+        safe = safe.replace("/", "_").replace("#", "_")
         name = f"{safe}.{ext}.gz"
         self.out_dir.mkdir(parents=True, exist_ok=True)
         (self.out_dir / name).write_bytes(gzip.compress(data))

@@ -50,7 +50,7 @@ class MirrorSource(HttpSource):
         data = super().fetch(namespace, key, request, **kwargs)
         ext = kwargs.get("ext", "json")
         safe = f"{namespace}__{key}".replace(":", "_").replace(",", "_").replace(".", "_")
-        safe = safe.replace("/", "_")
+        safe = safe.replace("/", "_").replace("#", "_")
         name = f"{safe}.{ext}.gz"
         self.out_dir.mkdir(parents=True, exist_ok=True)
         (self.out_dir / name).write_bytes(gzip.compress(data))
@@ -66,6 +66,15 @@ def main() -> None:
 
     geometries: dict[str, tuple[str, str]] = {}
     for item in CORPUS:
+        # Las geometrias del corpus son preregistradas: si ya existen como
+        # fixture se reutilizan; solo se capturan del catastro las que falten.
+        wkt_path = PROPERTIES / f"{item.id}.wkt"
+        meta_path = PROPERTIES / f"{item.id}.json"
+        if wkt_path.exists() and meta_path.exists():
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            geometries[item.id] = (wkt_path.read_text(encoding="utf-8"), meta["source_crs"])
+            print(f"{item.id}: WKT existente reutilizado")
+            continue
         provider = get_provider(
             item.provider_id, cache=cache, provenance=provenance, persist=True
         )
@@ -74,8 +83,8 @@ def main() -> None:
         if geometry is None:
             raise SystemExit(f"sin geometria para {item.id} ({item.refcat})")
         wkt = geometry.wkt
-        (PROPERTIES / f"{item.id}.wkt").write_text(wkt, encoding="utf-8")
-        (PROPERTIES / f"{item.id}.json").write_text(
+        wkt_path.write_text(wkt, encoding="utf-8")
+        meta_path.write_text(
             json.dumps({"property_id": item.id, "source_crs": crs, "refcat": item.refcat}),
             encoding="utf-8",
         )
@@ -83,7 +92,14 @@ def main() -> None:
         print(f"{item.id}: {item.provider_id} {item.refcat} crs={crs}")
 
     mirror = MirrorSource(cache, EVIDENCE)
-    sources = all_sources(cache=cache, provenance=provenance)
+    mirror.index.update(
+        json.loads((EVIDENCE / "_index.json").read_text(encoding="utf-8"))
+        if (EVIDENCE / "_index.json").exists() else {}
+    )
+    sources = {
+        sid: all_sources(cache=cache, provenance=provenance)[sid]
+        for sid in ("snczi", "eprtr", "csn_radon")
+    }
     for source in sources.values():
         source.source = mirror
     engine = EvidenceEngine(sources=sources)

@@ -17,21 +17,29 @@ from habitalens.evidence.coverage import declared_envelope
 from habitalens.evidence.geometry import distance_m, to_wgs84, transform
 from habitalens.evidence.models import EvidenceFinding, FindingStatus
 from habitalens.net import HttpRequest
-from habitalens.sources.base import EvidenceSource, xml_features, xml_positions
+from habitalens.sources.base import (
+    EvidenceSource,
+    wfs_next_request,
+    xml_features,
+    xml_positions,
+)
 
 _NATIVE_CRS = "EPSG:4258"
 
 
-def _lines(content: bytes) -> list[LineString]:
+def _lines(pages: list[bytes]) -> list[LineString]:
     lines: list[LineString] = []
-    for element in xml_features(content, {"RoadLink", "RailwayLink"}, limit=50):
-        positions = xml_positions(element)
-        if len(positions) != 1:
-            raise ValueError("unsupported multipart transport feature")
-        line = LineString(positions[0])
-        if line.is_empty or not line.is_valid:
-            raise ValueError("invalid transport geometry")
-        lines.append(line)
+    for content in pages:
+        for element in xml_features(
+            content, {"RoadLink", "RailwayLink"}, limit=50, page=True
+        ):
+            positions = xml_positions(element)
+            if len(positions) != 1:
+                raise ValueError("unsupported multipart transport feature")
+            line = LineString(positions[0])
+            if line.is_empty or not line.is_valid:
+                raise ValueError("invalid transport geometry")
+            lines.append(line)
     return lines
 
 
@@ -60,8 +68,10 @@ class BtnSource(EvidenceSource):
                     ("count", "50"),
                 ),
             )
-            content = self._fetch(name, f"{property_id}:{name}", request)
-            provenance_id = self._record(name, property_id, request, content)
+            pages = self._fetch_pages(
+                name, property_id, request, wfs_next_request, ext="xml"
+            )
+            provenance_id = pages[0][1]
 
             if not coverage.is_covered:
                 findings.append(self._finding(
@@ -71,7 +81,7 @@ class BtnSource(EvidenceSource):
                 ))
                 continue
 
-            lines = _lines(content)
+            lines = _lines([content for content, _ in pages])
             findings.append(self._finding(
                 property_id, operational_crs, f"{self.source_id}.{name}",
                 FindingStatus.OBSERVED, observed=bool(lines), value=float(len(lines)),

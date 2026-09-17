@@ -220,3 +220,12 @@ No promover CSN por esta via. No incorporar IS-47 como sustituto.
   - BTN: una respuesta del corpus (g0c10) llego paginada (`next` con
     `STARTINDEX`), lo que ahora invalida la respuesta -> `btn.status`
     INCONCLUSIVE en lugar de un conteo parcial silencioso.
+- **E5 (2026-09-17).** Upgrade con nueva captura live:
+  - SIU: la consulta pasa a enviar la geometria de la parcela por POST con
+    `esriSpatialRelIntersects` y `returnGeometry=false`; el servidor solo
+    devuelve clases que intersectan la parcela -> OBSERVED verificado (E4
+    anticipaba esta enmienda). Resultado: 23 OBSERVED + 1 INCONCLUSIVE
+    (g0c07, Navarra no integrada: 0 features sigue sin acreditar ausencia).
+  - BTN: se implementa seguimiento de paginacion WFS (`next`) con limite de
+    paginas; la respuesta de g0c10 se completa (50 segmentos) en vez de
+    invalidarse. Resultado: 48 OBSERVED + 20 DERIVED, sin INCONCLUSIVE.

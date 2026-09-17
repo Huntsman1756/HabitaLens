@@ -17,12 +17,11 @@ El repositorio implementa:
   provenance y guarda de licencias.
 - **G0-B/G0-C (evidencia espacial y cobertura)**: motor de hallazgos
   deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE` sobre
-  fuentes oficiales (SNCZI, E-PRTR, SIU, NCSE-02, BTN; CSN no activado por
-  licencia).
+  fuentes oficiales (SNCZI, E-PRTR, CSN radon, SIU, NCSE-02, BTN).
 - **G0-D (informe)**: manifest de procedencia como fuente unica de verdad,
   render HTML/PDF, disclaimers y guarda de cero score global.
 - **P1 (actionabilidad)**: comparacion de superficie anunciada vs oficial con
-  semantica de comparabilidad y consulta CEE regional (Catalunya).
+  semantica de comparabilidad y consulta CEE regional (Catalunya y Euskadi).
 
 No se implementa: DANA, reglas de riesgo normativo, scores o valoraciones
 globales, visor web, IA, usuarios, pagos ni historico inmobiliario.
@@ -128,7 +127,7 @@ hallazgos deterministas `OBSERVED` / `DERIVED` / `UNAVAILABLE` / `INCONCLUSIVE`.
 |------|--------|------|
 | SNCZI (zonas inundables) | PASS | WFS INSPIRE; control positivo Ebro Q100. Correccion de auditoria (2026-09-17): 0 intersecciones -> INCONCLUSIVE, no OBSERVED-ausencia (SNCZI solo cubre DPH de competencia estatal). |
 | E-PRTR (instalaciones) | PASS | ArcGIS REST GeoJSON; distancia derivada; control ELMET 0 m. |
-| CSN (radon) | INCONCLUSIVE | Sin servicio OGC y sin licencia abierta declarada: no se activa. |
+| CSN (radon) | PASS | Mapa del Potencial de Radon CSN 2017 via capa ArcGIS del SIU (MIVAU); interseccion parcela-zona verificada; 8 OBSERVED en corpus. Correccion de auditoria (2026-09-17): servicio localizado y activado. |
 | Evidence engine | PASS | Taxonomia, CRS operacional explicito, provenance, replay determinista. |
 | Corpus 8 propiedades | PASS | Replay offline + controles; sin fuga de geometria. |
 
@@ -138,12 +137,11 @@ Cobertura como ciudadano de primera clase: `0 features` no es ausencia.
 
 | Gate | Estado | Nota |
 |------|--------|------|
-| SIU | INCONCLUSIVE | Correccion de auditoria (2026-09-17): la consulta es solo BBOX sin geometria devuelta; una clase candidata no acredita la clasificacion de la propiedad. 24 INCONCLUSIVE honestos. |
+| SIU | PASS | Correccion de auditoria (2026-09-17): la consulta envia la parcela por POST con interseccion verificada por el servidor -> 23 OBSERVED + 1 INCONCLUSIVE (Navarra no integrada). |
 | NCSE-02 | PASS | 8 OBSERVED + 16 UNAVAILABLE (null dentro de cobertura); control Granada 0.23 g. |
-| BTN | PASS | 46 OBSERVED + 18 DERIVED + 1 INCONCLUSIVE (respuesta paginada no completa); control Madrid. |
+| BTN | PASS | 48 OBSERVED + 20 DERIVED; paginacion WFS seguida hasta completar la respuesta; control Madrid. |
 | Coverage core | PASS | `evidence/coverage.py` + semantica UNAVAILABLE/INCONCLUSIVE estricta. |
 | Corpus 24 | PASS | Materializado outcome-blind antes de consultar fuentes; replay offline. |
-| CSN | INCONCLUSIVE | Dependencia externa (G0-B.1); no se promociona. |
 
 ## Gate G0-D (informe)
 
@@ -184,9 +182,9 @@ disclaimers y **cero score global**.
 - `docs/surface-discrepancy.md` — capacidad superficie anunciada vs oficial (Fase 3).
 - `docs/p1-buyer-actionability-upgrade.md` — P1 (superficie con comparabilidad + CEE regional).
 
-Estado: G0-A **PASS** (`g0-a-pass`), G0-B **INCONCLUSIVE**/CSN externo
-(`g0-b-inconclusive`), G0-C **INCONCLUSIVE**/SIU no verificable (`g0-c-pass`
-queda revisado por auditoria 2026-09-17; NCSE-02 y BTN PASS), G0-D **PASS** (`g0-d-pass`),
+Estado: G0-A **PASS** (`g0-a-pass`), G0-B **PASS** tras activacion del radon
+CSN via SIU (auditoria 2026-09-17), G0-C **PASS** tras verificar interseccion
+real en SIU y completar paginacion BTN (auditoria 2026-09-17), G0-D **PASS** (`g0-d-pass`),
 P0 **INCONCLUSIVE** (`p0-inconclusive`), P0.1 **DEFERRED**, P0-T0 **FAIL**
 (`p0-t0-fail`), P0-R **INCONCLUSIVE**/frame incompleto (`p0-r-preregistered`),
 P0-RD **FAIL** (1/10 actionable; `technical_validity: PROVEN`, `buyer_utility: NOT PROVEN`).

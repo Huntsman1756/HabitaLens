@@ -33,15 +33,18 @@ def test_declared_envelope_unit() -> None:
 
 def test_siu_zero_features_is_inconclusive_not_absence() -> None:
     golden = g0c_golden("_results.json")
-    siu = {pid: rep for pid, rep in golden.items()}
-    statuses = [
-        finding["status"]
-        for rep in siu.values()
+    siu_findings = [
+        finding
+        for rep in golden.values()
         for finding in rep["findings"]
         if finding["source"] == "siu"
     ]
+    statuses = [finding["status"] for finding in siu_findings]
     assert "inconclusive" in statuses, "debe haber al menos un caso sin cobertura acreditada"
     assert "unavailable" not in statuses, "SIU no usa UNAVAILABLE para 0 features"
+    # Con interseccion verificada SIU puede ser OBSERVED, pero nunca afirma
+    # ausencia (observed=False): 0 features sigue siendo INCONCLUSIVE.
+    assert not any(f["observed"] is False for f in siu_findings)
     # g0c07 (Navarra) es el caso sin cobertura acreditada -> INCONCLUSIVE
     g0c07 = next(f for f in golden["g0c07"]["findings"] if f["source"] == "siu")
     assert g0c07["status"] == "inconclusive"

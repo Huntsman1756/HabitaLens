@@ -69,14 +69,17 @@ def test_engine_is_deterministic(tmp_path) -> None:
     assert normalized(first) == normalized(second)
 
 
-def test_csn_is_inconclusive_not_unavailable(tmp_path) -> None:
+def test_csn_radon_is_observed_from_verified_intersection(tmp_path) -> None:
+    # Desde la activacion (capa SIU ArcGIS, dato CSN 2017) el potencial de radon
+    # se observa con interseccion verificada por el servidor.
     item = CORPUS[0]
     wkt, source_crs = load_property(item.id)
     report = EvidenceEngine(sources=make_evidence_sources(tmp_path)).evaluate(
         item, wkt, source_crs
     )
     csn = [f for f in report.findings if f.source == "csn_radon"]
-    assert csn and all(f.status.value == "inconclusive" for f in csn)
+    assert csn and all(f.status.value == "observed" for f in csn)
+    assert all(f.value is not None for f in csn)
 
 
 def test_no_geometry_leakage(tmp_path) -> None:

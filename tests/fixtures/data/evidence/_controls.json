@@ -5,6 +5,7 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
+        "property_id": "control_ebro_flood",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
@@ -19,12 +20,12 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
-        "note": null,
-        "property_id": "control_ebro_flood",
-        "provenance_id": "552e4ddab1a74a5e",
-        "retrieved_at": "2026-09-14T10:41:59.389027Z"
+        "provenance_id": "ea249f16805b4d84",
+        "retrieved_at": "2026-09-17T05:01:10.327356Z",
+        "note": null
       },
       {
+        "property_id": "control_ebro_flood",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
@@ -39,12 +40,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
-        "note": "sin intersecciones: cobertura SNCZI no acreditada",
-        "property_id": "control_ebro_flood",
-        "provenance_id": "95303e612374440b",
-        "retrieved_at": "2026-09-14T10:41:59.510759Z"
+        "provenance_id": "bfc56bd99f2a4cf7",
+        "retrieved_at": "2026-09-17T05:01:10.331355Z",
+        "note": "sin intersecciones: cobertura SNCZI no acreditada"
       },
       {
+        "property_id": "control_ebro_flood",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -59,12 +60,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
-        "note": null,
-        "property_id": "control_ebro_flood",
-        "provenance_id": "4832e571fb0b472d",
-        "retrieved_at": "2026-09-14T10:41:59.736097Z"
+        "provenance_id": "c0fe3d4c8ed748b6",
+        "retrieved_at": "2026-09-17T05:01:10.341414Z",
+        "note": null
       },
       {
+        "property_id": "control_ebro_flood",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -79,27 +80,29 @@
           "property_geometry",
           "eprtr.facilities"
         ],
-        "note": "SAICA NATUR, S.L. ZARAGOZA",
-        "property_id": "control_ebro_flood",
-        "provenance_id": "4832e571fb0b472d",
-        "retrieved_at": "2026-09-14T10:42:00.214392Z"
+        "provenance_id": "c0fe3d4c8ed748b6",
+        "retrieved_at": "2026-09-17T05:01:10.837302Z",
+        "note": "SAICA NATUR, S.L. ZARAGOZA"
       },
       {
+        "property_id": "control_ebro_flood",
         "source": "csn_radon",
-        "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
-        "kind": "csn_radon.status",
-        "status": "inconclusive",
-        "observed": null,
-        "value": null,
-        "unit": null,
+        "source_version": "MIVAU SIU ArcGIS Potencial_riesgo_de_radon (capa 0, dato CSN 2017), verificado 2026-09-17",
+        "kind": "csn_radon.potential",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "categoria P90",
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
-        "method": "source-not-usable",
-        "inputs": [],
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
-        "property_id": "control_ebro_flood",
-        "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:42:00.214462Z"
+        "method": "arcgis-rest-parcel-intersects",
+        "inputs": [
+          "property_geometry",
+          "Potencial_riesgo_de_radon"
+        ],
+        "provenance_id": "3840e7791c7b4f8b",
+        "retrieved_at": "2026-09-17T05:01:10.840694Z",
+        "note": "P90 entre 101 y 200 Bq/m3"
       }
     ]
   },
@@ -109,6 +112,7 @@
     "operational_crs": "EPSG:25830",
     "findings": [
       {
+        "property_id": "control_bilbao_plant",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.flood_q100",
@@ -123,12 +127,12 @@
           "property_geometry",
           "agua:Zi_laminas_q100"
         ],
-        "note": "sin intersecciones: cobertura SNCZI no acreditada",
-        "property_id": "control_bilbao_plant",
-        "provenance_id": "e9d16b9b32c74d08",
-        "retrieved_at": "2026-09-14T10:42:00.368825Z"
+        "provenance_id": "d60dc8b3e5e94fa8",
+        "retrieved_at": "2026-09-17T05:01:10.876984Z",
+        "note": "sin intersecciones: cobertura SNCZI no acreditada"
       },
       {
+        "property_id": "control_bilbao_plant",
         "source": "snczi",
         "source_version": "SNCZI GeoServer WFS 2.0.0 (agua), updateSequence 208597, verificado 2026-09-14",
         "kind": "snczi.dph_deslindado",
@@ -143,12 +147,12 @@
           "property_geometry",
           "agua:DPH_Deslindado"
         ],
-        "note": "sin intersecciones: cobertura SNCZI no acreditada",
-        "property_id": "control_bilbao_plant",
-        "provenance_id": "df34e176c5054ebe",
-        "retrieved_at": "2026-09-14T10:42:00.470229Z"
+        "provenance_id": "c50048d026e94e48",
+        "retrieved_at": "2026-09-17T05:01:10.877984Z",
+        "note": "sin intersecciones: cobertura SNCZI no acreditada"
       },
       {
+        "property_id": "control_bilbao_plant",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.facilities",
@@ -163,12 +167,12 @@
           "property_geometry",
           "bbox+0.05deg"
         ],
-        "note": null,
-        "property_id": "control_bilbao_plant",
-        "provenance_id": "ccc2012ba65f44c9",
-        "retrieved_at": "2026-09-14T10:42:00.701397Z"
+        "provenance_id": "96526bb1da2d4f55",
+        "retrieved_at": "2026-09-17T05:01:10.881119Z",
+        "note": null
       },
       {
+        "property_id": "control_bilbao_plant",
         "source": "eprtr",
         "source_version": "EEA Industrial Emissions Portal / E-PRTR punto v16 (2007-2024), verificado 2026-09-14",
         "kind": "eprtr.nearest_facility_distance_m",
@@ -183,27 +187,29 @@
           "property_geometry",
           "eprtr.facilities"
         ],
-        "note": "ELMET, S.L.U. (ELMET)",
-        "property_id": "control_bilbao_plant",
-        "provenance_id": "ccc2012ba65f44c9",
-        "retrieved_at": "2026-09-14T10:42:00.859557Z"
+        "provenance_id": "96526bb1da2d4f55",
+        "retrieved_at": "2026-09-17T05:01:11.046551Z",
+        "note": "ELMET, S.L.U. (ELMET)"
       },
       {
+        "property_id": "control_bilbao_plant",
         "source": "csn_radon",
-        "source_version": "CSN Mapa del potencial de radon (GDB, Last-Modified 2023-01-20)",
-        "kind": "csn_radon.status",
-        "status": "inconclusive",
-        "observed": null,
-        "value": null,
-        "unit": null,
+        "source_version": "MIVAU SIU ArcGIS Potencial_riesgo_de_radon (capa 0, dato CSN 2017), verificado 2026-09-17",
+        "kind": "csn_radon.potential",
+        "status": "observed",
+        "observed": true,
+        "value": 2.0,
+        "unit": "categoria P90",
         "source_crs": "EPSG:4326",
         "operational_crs": "EPSG:25830",
-        "method": "source-not-usable",
-        "inputs": [],
-        "note": "Sin servicio OGC verificado y sin licencia abierta declarada: la reutilizacion depende del aviso legal del CSN y de la Ley 37/2007. No se activa como fuente productora hasta que exista licencia declarada y acceso reproducible (regla de G0-B: licencia y acceso antes que parsing).",
-        "property_id": "control_bilbao_plant",
-        "provenance_id": null,
-        "retrieved_at": "2026-09-14T10:42:00.859585Z"
+        "method": "arcgis-rest-parcel-intersects",
+        "inputs": [
+          "property_geometry",
+          "Potencial_riesgo_de_radon"
+        ],
+        "provenance_id": "92483f00e3c745dd",
+        "retrieved_at": "2026-09-17T05:01:11.048564Z",
+        "note": "P90 entre 101 y 200 Bq/m3"
       }
     ]
   }

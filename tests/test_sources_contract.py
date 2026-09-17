@@ -72,8 +72,8 @@ def test_eprtr_absence_reported_not_unavailable(tmp_path) -> None:
     assert distance.status == FindingStatus.DERIVED and distance.value is None
 
 
-def test_csn_source_is_registered_but_not_usable() -> None:
+def test_csn_source_is_registered_and_usable() -> None:
+    # Desde 2026-09-17 el mapa CSN 2017 es consultable via capa ArcGIS del SIU.
     source = get_source("csn_radon")
-    assert source.usable is False
-    assert source.unusable_reason
-    assert "licencia" in source.unusable_reason.lower()
+    assert source.usable is True
+    assert not source.unusable_reason

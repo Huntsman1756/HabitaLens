@@ -54,6 +54,22 @@ dato abierto en la Sede y publicado segun RD 1495/2011", y esa consideracion no
 se ha podido verificar para la cartografia de radon. **CSN permanece
 INCONCLUSIVE.**
 
+## Resolucion (2026-09-17)
+
+El acceso reproducible existia fuera de la Sede del CSN: el Mapa del Potencial
+de Radon de Espana (CSN, 2017) esta republicado como capa ArcGIS consultable en
+el servidor del SIU de MIVAU (`mapas.fomento.gob.es`,
+`SIU/Potencial_riesgo_de_radon/MapServer/0`), con `Fuente` = "Consejo de
+Seguridad Nuclear" en cada entidad. La pagina del producto en csn.es exige
+citar la cartografia como "Mapa del Potencial de Radon de Espana CSN, 2017".
+
+Con licencia declarada en `sources/csn_radon/LICENSE.yaml` (atribucion CSN +
+RISP del servicio MIVAU) y acceso verificado en vivo, la fuente se activo:
+consulta por geometria de parcela con interseccion verificada por el servidor.
+Corpus G0-B: 8 OBSERVED. La consulta formal al CSN (plantilla abajo) sigue
+siendo recomendable para confirmar la redistribucion a largo plazo, pero ya no
+bloquea el gate.
+
 ## Acciones propuestas (no ejecutadas)
 
 1. **Consulta formal al CSN** (plantilla abajo) sobre condiciones de

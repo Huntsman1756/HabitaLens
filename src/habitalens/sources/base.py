@@ -34,21 +34,27 @@ def _response_count(value) -> int:
     return count
 
 
-def _validate_completeness(data: dict, size: int, limit: int | None = None) -> None:
+def _validate_completeness(data: dict, size: int, limit: int | None = None, *, page: bool = False) -> None:
     for key in ("error", "errors", "exception", "exceptions"):
         if key in data:
             raise ValueError("source returned an error response")
-    for key in ("exceededTransferLimit", "hasMore", "truncated"):
+    # hasMore/truncated no son senales seguibles: invalidan la pagina incluso
+    # en modo paginado. next/exceededTransferLimit/links los gestiona el
+    # paginador y solo se toleran con page=True.
+    for key in ("hasMore", "truncated"):
         if key in data and data[key] not in (False, "false", "0"):
             raise ValueError("incomplete source response")
-    for key in ("next", "nextPage", "nextRecord"):
-        if data.get(key):
+    if not page:
+        if "exceededTransferLimit" in data and data["exceededTransferLimit"] not in (False, "false", "0"):
+            raise ValueError("incomplete source response")
+        for key in ("next", "nextPage", "nextRecord"):
+            if data.get(key):
+                raise ValueError("paginated source response")
+        links = data.get("links", [])
+        if not isinstance(links, list) or any(not isinstance(link, dict) for link in links):
+            raise ValueError("invalid response links")
+        if any(link.get("rel") == "next" for link in links):
             raise ValueError("paginated source response")
-    links = data.get("links", [])
-    if not isinstance(links, list) or any(not isinstance(link, dict) for link in links):
-        raise ValueError("invalid response links")
-    if any(link.get("rel") == "next" for link in links):
-        raise ValueError("paginated source response")
     total_known = False
     for key in ("numberReturned", "numberMatched", "totalFeatures", "numberOfFeatures", "count"):
         if key not in data:
@@ -63,18 +69,18 @@ def _validate_completeness(data: dict, size: int, limit: int | None = None) -> N
         raise ValueError("response reached request limit without a complete total")
 
 
-def json_features(content: bytes, *, limit: int | None = None) -> list[dict]:
+def json_features(content: bytes, *, limit: int | None = None, page: bool = False) -> list[dict]:
     data = json.loads(content.decode("utf-8"))
     if not isinstance(data, dict) or data.get("type") != "FeatureCollection":
         raise ValueError("expected a feature collection")
     features = data.get("features")
     if not isinstance(features, list):
         raise ValueError("missing or invalid feature list")
-    _validate_completeness(data, len(features), limit)
+    _validate_completeness(data, len(features), limit, page=page)
     if "properties" in data:
         if not isinstance(data["properties"], dict):
             raise ValueError("invalid collection metadata")
-        _validate_completeness(data["properties"], len(features))
+        _validate_completeness(data["properties"], len(features), page=page)
     for feature in features:
         if not isinstance(feature, dict) or feature.get("type") != "Feature":
             raise ValueError("invalid feature")
@@ -132,7 +138,7 @@ def feature_geometry(feature: dict, allowed_types: set[str]):
     return geometry
 
 
-def xml_features(content: bytes, names: set[str], *, limit: int) -> list[ET.Element]:
+def xml_features(content: bytes, names: set[str], *, limit: int, page: bool = False) -> list[ET.Element]:
     from habitalens.cadastre_providers.inspire import localname
 
     root = ET.fromstring(content)
@@ -157,9 +163,102 @@ def xml_features(content: bytes, names: set[str], *, limit: int) -> list[ET.Elem
             raise ValueError("unexpected feature type")
         features.extend(members)
     _validate_completeness(
-        {localname(key): value for key, value in root.attrib.items()}, len(features), limit
+        {localname(key): value for key, value in root.attrib.items()},
+        len(features),
+        limit,
+        page=page,
     )
     return features
+
+
+def wfs_next_request(request: HttpRequest, content: bytes) -> HttpRequest | None:
+    """Siguiente pagina WFS: atributo ``next`` de la FeatureCollection raiz."""
+    from habitalens.cadastre_providers.inspire import localname
+
+    root = ET.fromstring(content)
+    if localname(root.tag) != "FeatureCollection":
+        raise ValueError("expected a feature collection")
+    href = root.get("next")
+    if not href:
+        return None
+    return HttpRequest(method="GET", url=href)
+
+
+def arcgis_next_request(request: HttpRequest, content: bytes) -> HttpRequest | None:
+    """Siguiente pagina JSON: ``exceededTransferLimit``/``resultOffset`` o ``next``.
+
+    Soporta la paginacion ArcGIS REST (``exceededTransferLimit`` +
+    ``resultOffset``, reescrito dentro del cuerpo POST si la peticion lo es) y
+    enlaces ``next``/``links[rel=next]`` estilo OGC API. Una pagina que declara
+    mas datos pero devuelve 0 features, o una senal de paginacion que no puede
+    seguirse, se rechaza en vez de aceptar el resultado parcial.
+    """
+    from urllib.parse import parse_qsl, urlencode
+
+    data = json.loads(content.decode("utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError("invalid paged response")
+
+    href = data.get("next") or data.get("nextPage") or data.get("nextRecord")
+    if href is None:
+        links = data.get("links")
+        if isinstance(links, list):
+            href = next(
+                (link.get("href") for link in links
+                 if isinstance(link, dict) and link.get("rel") == "next"),
+                None,
+            )
+    if href is not None:
+        if not isinstance(href, str) or not href.startswith("http"):
+            raise ValueError("invalid pagination link")
+        return HttpRequest(method="GET", url=href)
+
+    exceeded = data.get("exceededTransferLimit")
+    properties = data.get("properties")
+    if isinstance(properties, dict):
+        exceeded = exceeded or properties.get("exceededTransferLimit")
+    if not exceeded:
+        return None
+    features = data.get("features")
+    returned = len(features) if isinstance(features, list) else 0
+    if not returned:
+        raise ValueError("paginated response without features")
+    if request.data is not None:
+        fields = parse_qsl(request.data.decode("utf-8"), keep_blank_values=True)
+        previous = next(
+            (int(v) for k, v in fields if k == "resultOffset" and v.isdigit()), 0
+        )
+        body = urlencode(
+            [(k, v) for k, v in fields if k != "resultOffset"]
+            + [("resultOffset", str(previous + returned))]
+        ).encode()
+        return HttpRequest(
+            method=request.method, url=request.url, params=request.params,
+            data=body, headers=request.headers,
+        )
+    params = [(k, v) for k, v in request.params if k != "resultOffset"]
+    previous = next((int(v) for k, v in request.params if k == "resultOffset" and v.isdigit()), 0)
+    return HttpRequest(
+        method=request.method,
+        url=request.url,
+        params=(*params, ("resultOffset", str(previous + returned))),
+        data=request.data,
+        headers=request.headers,
+    )
+
+
+def arcgis_polygon(geometry) -> dict:
+    """Geometria de parcela WGS84 como poligono JSON Esri para ArcGIS REST."""
+    parts = [geometry] if geometry.geom_type == "Polygon" else [
+        part for part in getattr(geometry, "geoms", []) if part.geom_type == "Polygon"
+    ]
+    if not parts:
+        raise ValueError("property geometry has no polygonal part")
+    rings = []
+    for polygon in parts:
+        rings.append([list(coord) for coord in polygon.exterior.coords])
+        rings.extend([list(coord) for coord in ring.coords] for ring in polygon.interiors)
+    return {"rings": rings, "spatialReference": {"wkid": 4326}}
 
 
 def xml_positions(element: ET.Element) -> list[list[tuple[float, float]]]:
@@ -230,13 +329,12 @@ class EvidenceSource(ABC):
         *,
         ext: str = "json",
     ) -> bytes:
-        # La clave incluye un hash de la peticion (url+params): cambiar bbox,
-        # radio o capa nunca reutiliza una respuesta cacheada obsoleta.
+        # La clave incluye un hash de la peticion (url+params+cuerpo): cambiar
+        # bbox, radio o capa nunca reutiliza una respuesta cacheada obsoleta.
         import hashlib
 
-        digest = hashlib.sha256(
-            f"{request.url}?{request.query_string()}".encode()
-        ).hexdigest()[:10]
+        material = f"{request.url}?{request.query_string()}".encode() + (request.data or b"")
+        digest = hashlib.sha256(material).hexdigest()[:10]
         return self.source.fetch(
             self.source_id,
             f"{kind}:{key}:{digest}",
@@ -245,6 +343,33 @@ class EvidenceSource(ABC):
             ext=ext,
             meta={"source": self.source_id, "kind": kind, "key": key},
         )
+
+    def _fetch_pages(
+        self,
+        kind: str,
+        property_id: str,
+        request: HttpRequest,
+        next_request,
+        *,
+        max_pages: int = 8,
+        ext: str = "json",
+    ) -> list[tuple[bytes, str]]:
+        """Fetch paginado: sigue ``next_request`` hasta agotar paginas.
+
+        Cada pagina queda cacheada y registrada en procedencia con su propia
+        peticion. Si el servicio no termina de paginar, se rechaza la respuesta
+        (max_pages) en vez de aceptar un resultado incompleto.
+        """
+        pages = []
+        current = request
+        for index in range(max_pages):
+            content = self._fetch(kind, f"{property_id}:{kind}#p{index}", current, ext=ext)
+            provenance_id = self._record(kind, property_id, current, content)
+            pages.append((content, provenance_id))
+            current = next_request(current, content)
+            if current is None:
+                return pages
+        raise ValueError(f"pagination limit reached after {max_pages} pages")
 
     def _record(self, kind: str, property_id: str, request: HttpRequest, content: bytes) -> str:
         record = self.provenance.record(

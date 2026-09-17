@@ -25,12 +25,13 @@ def test_all_sources_declare_valid_license() -> None:
         assert declaration.applicable_version
 
 
-def test_csn_license_records_undeclared_open_license() -> None:
+def test_csn_license_records_attribution_requirement() -> None:
+    # CSN 2017 via capa SIU (MIVAU): cita obligatoria de la cartografia.
     root = Path(sources_package.__file__).parent
     declaration = load_license(root / "csn_radon")
-    assert "sin licencia abierta" in declaration.license_name.lower()
+    assert declaration.license_name
     assert declaration.reuse_conditions
-    assert "1495" in declaration.reuse_conditions or "aviso legal" in declaration.reuse_conditions.lower()
+    assert "CSN" in declaration.reuse_conditions
 
 
 def test_missing_license_raises(tmp_path) -> None:

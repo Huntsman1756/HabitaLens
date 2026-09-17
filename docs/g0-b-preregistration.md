@@ -205,3 +205,15 @@ fecha y justificacion, antes de ejecutar la fuente afectada.
     ausencia. Las geometrias invalidas habituales en WFS publicos
     (autointersecciones, miembros degenerados sin area) se reparan; una
     geometria sin nada interpretable invalida la feature.
+- **E7 (2026-09-17).** Activacion de CSN radon con nueva consulta live:
+  el Mapa del Potencial de Radon de Espana (CSN, 2017) se publica como capa
+  ArcGIS consultable en el servidor del SIU de MIVAU
+  (`SIU/Potencial_riesgo_de_radon/MapServer/0`), con `Fuente` = "Consejo de
+  Seguridad Nuclear" y condicion de uso de cita de la cartografia. Se verifico
+  en vivo que la consulta por geometria de parcela (POST,
+  `esriSpatialRelIntersects`, `returnGeometry=false`) devuelve solo las zonas
+  que intersectan la parcela -> OBSERVED con la peor categoria P90 que la toca.
+  La licencia queda declarada en `sources/csn_radon/LICENSE.yaml`
+  (atribucion CSN 2017 + RISP del servicio MIVAU). Semantica: fuera de la
+  cobertura declarada -> UNAVAILABLE; 0 zonas dentro -> INCONCLUSIVE. Corpus:
+  8 OBSERVED + 2 controles OBSERVED.
